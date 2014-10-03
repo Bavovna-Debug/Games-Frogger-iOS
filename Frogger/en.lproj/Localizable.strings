@@ -1,0 +1,12 @@
+/******************************************************************************/
+/*                                                                            */
+/*  Frogger                                                                   */
+/*                                                                            */
+/*  Copyright (c) 2014 Meine Werke. All rights reserved.                      */
+/*                                                                            */
+/******************************************************************************/
+
+"SCENE_LABEL_TAP_SCREEN"            = "Tap screen";
+"SCENE_LABEL_PREPARING"             = "Calibrating GPS...";
+"SCENE_LABEL_GAME_OVER"             = "Uuuups...";
+"SCENE_LABEL_MISSION_COMPLETE"      = "You did it!";

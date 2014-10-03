@@ -4,12 +4,14 @@
 //  Copyright (c) 2014 Meine Werke. All rights reserved.
 //
 
-#import "GameViewController.h"
-#import "GameScene.h"
+#import "GameCenter.h"
+#import "MainViewController.h"
+#import "WelcomeScene.h"
 
 @implementation SKScene (Unarchive)
 
-+ (instancetype)unarchiveFromFile:(NSString *)file {
++ (instancetype)unarchiveFromFile:(NSString *)file
+{
     /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
     /* Unarchive the file to an SKScene object */
@@ -26,25 +28,24 @@
 
 @end
 
-@implementation GameViewController
+@implementation MainViewController
+
+#pragma mark UI events
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    /* Sprite Kit applies additional optimizations to improve rendering performance */
-    skView.ignoresSiblingOrder = YES;
-    
-    // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
+    [[GameCenter sharedGameCenter] authenticatePlayer:self];
+
+    SKView *view = (SKView *)self.view;
+    view.ignoresSiblingOrder = YES;
+
+    WelcomeScene *scene =
+    [[WelcomeScene alloc] initWithSize:CGSizeMake(view.bounds.size.width,
+                                                  view.bounds.size.height)];
+
+    [view presentScene:scene];
 }
 
 - (BOOL)shouldAutorotate
@@ -54,20 +55,14 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
         return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
+    else
         return UIInterfaceOrientationMaskAll;
-    }
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL)prefersStatusBarHidden
 {
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (BOOL)prefersStatusBarHidden {
     return YES;
 }
 

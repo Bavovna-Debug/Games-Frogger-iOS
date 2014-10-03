@@ -8,4 +8,7 @@
 
 @interface GameScene : SKScene
 
+#define PlaygroundWidthInMeterOnPad    120.0f
+#define PlaygroundWidthInMeterOnPhone  80.0f
+
 @end

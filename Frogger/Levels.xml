@@ -1,0 +1,23 @@
+<Levels>
+    <Level MusicTitle="Pogodi">
+        <Ground Surface="Stones" Length="50" />
+        <Road RoadType="CityStreet">
+            <LaneMarking Type="Solid" />
+            <Lane TrafficDirection="LeftToRight" Speed="2.0-6.0" Interval="3.0-10.0" />
+            <LaneMarking Type="Dash" />
+            <Lane TrafficDirection="LeftToRight" Speed="2.0-6.0" Interval="4.0-8.0" />
+            <LaneMarking Type="Double" />
+            <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="2.0-8.0" />
+            <LaneMarking Type="Solid" />
+        </Road>
+        <Ground Surface="Grass" Length="40" />
+        <Road RoadType="Highway">
+            <LaneMarking Type="Solid" />
+            <Lane TrafficDirection="LeftToRight" Speed="4.0-12.0" Interval="3.0-12.0" />
+            <LaneMarking Type="Double" />
+            <Lane TrafficDirection="RightToLeft" Speed="4.0-12.0" Interval="3.0-12.0" />
+            <LaneMarking Type="Solid" />
+        </Road>
+        <Destination />
+    </Level>
+</Levels>
