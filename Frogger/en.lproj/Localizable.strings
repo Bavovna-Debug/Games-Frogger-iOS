@@ -10,3 +10,14 @@
 "SCENE_LABEL_PREPARING"             = "Calibrating GPS...";
 "SCENE_LABEL_GAME_OVER"             = "Uuuups...";
 "SCENE_LABEL_MISSION_COMPLETE"      = "You did it!";
+
+"ALERT_BUTTON_OK"                   = "OK";
+
+"AD_OFF_MESSAGE"                    = "Would you like to get rid of annoying ads and activate all levels?";
+"AD_OFF_BUTTON_NOT_YET"             = "No, not yet";
+"AD_OFF_BUTTON_DETAILS"             = "Details...";
+
+"APP_STORE_ERROR_MESSAGE"           = "Cannot proceed with your purchase right now! Try it later.";
+
+"APP_STORE_CANCEL"                  = "No, thanks";
+"APP_STORE_SUBMIT"                  = "Buy - %@";

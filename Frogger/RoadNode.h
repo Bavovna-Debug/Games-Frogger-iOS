@@ -10,7 +10,8 @@
 
 @interface RoadNode : SKSpriteNode
 
-@property (nonatomic, assign, readonly) RoadType roadType;
+@property (nonatomic, assign, readonly)  RoadType  roadType;
+@property (nonatomic, assign, readwrite) Boolean   withPedestrian;
 
 - (id)initWithAttributes:(NSDictionary *)attributes
               playground:(SKSpriteNode *)playground;

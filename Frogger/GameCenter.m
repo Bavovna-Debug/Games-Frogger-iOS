@@ -31,10 +31,6 @@
 
 - (void)authenticatePlayer:(UIViewController *)mainViewController
 {
-#ifdef DEBUG
-    return;
-#endif
-
     GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
 
     localPlayer.authenticateHandler =

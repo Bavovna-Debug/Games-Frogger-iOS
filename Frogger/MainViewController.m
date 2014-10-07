@@ -8,23 +8,7 @@
 #import "MainViewController.h"
 #import "WelcomeScene.h"
 
-@implementation SKScene (Unarchive)
-
-+ (instancetype)unarchiveFromFile:(NSString *)file
-{
-    /* Retrieve scene file path from the application bundle */
-    NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
-    /* Unarchive the file to an SKScene object */
-    NSData *data = [NSData dataWithContentsOfFile:nodePath
-                                          options:NSDataReadingMappedIfSafe
-                                            error:nil];
-    NSKeyedUnarchiver *arch = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-    [arch setClass:self forClassName:@"SKScene"];
-    SKScene *scene = [arch decodeObjectForKey:NSKeyedArchiveRootObjectKey];
-    [arch finishDecoding];
-    
-    return scene;
-}
+@interface MainViewController ()
 
 @end
 
@@ -36,7 +20,9 @@
 {
     [super viewDidLoad];
 
+#ifndef DEBUG
     [[GameCenter sharedGameCenter] authenticatePlayer:self];
+#endif
 
     SKView *view = (SKView *)self.view;
     view.ignoresSiblingOrder = YES;

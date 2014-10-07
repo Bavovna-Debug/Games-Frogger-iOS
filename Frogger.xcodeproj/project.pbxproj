@@ -88,6 +88,37 @@
 		94730E4719D6C85C0013F267 /* LaneMarkingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94730E4619D6C85C0013F267 /* LaneMarkingNode.m */; };
 		94730E4A19D6E7110013F267 /* GroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94730E4919D6E7110013F267 /* GroundNode.m */; };
 		94730E5119D6F00B0013F267 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94730E5319D6F00B0013F267 /* Localizable.strings */; };
+		947BA34619E08710000BDB86 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947BA34519E08710000BDB86 /* iAd.framework */; };
+		947BA34819E158AB000BDB86 /* Railway@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA34719E158AB000BDB86 /* Railway@3x.png */; };
+		947BA34C19E15970000BDB86 /* Wagon-0005.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA34919E15970000BDB86 /* Wagon-0005.png */; };
+		947BA34D19E15970000BDB86 /* Wagon-0005@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA34A19E15970000BDB86 /* Wagon-0005@2x.png */; };
+		947BA34E19E15970000BDB86 /* Wagon-0005@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA34B19E15970000BDB86 /* Wagon-0005@3x.png */; };
+		947BA35219E16536000BDB86 /* RailLightsRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA34F19E16536000BDB86 /* RailLightsRed.png */; };
+		947BA35319E16536000BDB86 /* RailLightsRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA35019E16536000BDB86 /* RailLightsRed@2x.png */; };
+		947BA35419E16536000BDB86 /* RailLightsRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA35119E16536000BDB86 /* RailLightsRed@3x.png */; };
+		947BA35719E16553000BDB86 /* RailLightsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BA35619E16553000BDB86 /* RailLightsNode.m */; };
+		947BA35B19E16A45000BDB86 /* RailLightsGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA35819E16A45000BDB86 /* RailLightsGreen.png */; };
+		947BA35C19E16A45000BDB86 /* RailLightsGreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA35919E16A45000BDB86 /* RailLightsGreen@2x.png */; };
+		947BA35D19E16A45000BDB86 /* RailLightsGreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA35A19E16A45000BDB86 /* RailLightsGreen@3x.png */; };
+		947BA36919E194F5000BDB86 /* Gravel.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA36619E194F5000BDB86 /* Gravel.png */; };
+		947BA36A19E194F5000BDB86 /* Gravel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA36719E194F5000BDB86 /* Gravel@2x.png */; };
+		947BA36B19E194F5000BDB86 /* Gravel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA36819E194F5000BDB86 /* Gravel@3x.png */; };
+		947BA3C119E2DFCB000BDB86 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947BA3C019E2DFCB000BDB86 /* StoreKit.framework */; };
+		947BA3C419E3D3BF000BDB86 /* SelectLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BA3C319E3D3BF000BDB86 /* SelectLevelScene.m */; };
+		947BA3C719E3DC61000BDB86 /* AppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BA3C619E3DC61000BDB86 /* AppStore.m */; };
+		947BA3CA19E3E01D000BDB86 /* SceneWithAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BA3C919E3E01D000BDB86 /* SceneWithAds.m */; };
+		947BA3CD19E40C48000BDB86 /* SelectLevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 947BA3CC19E40C48000BDB86 /* SelectLevelButton.m */; };
+		947BA3CF19E44246000BDB86 /* Asphalt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3CE19E44246000BDB86 /* Asphalt@3x.png */; };
+		947BA3D119E4629B000BDB86 /* SceneLogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D019E4629B000BDB86 /* SceneLogo@3x.png */; };
+		947BA3D319E462A4000BDB86 /* SceneTileBackground@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D219E462A4000BDB86 /* SceneTileBackground@3x.png */; };
+		947BA3DC19E463DB000BDB86 /* Player-0001@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D419E463DB000BDB86 /* Player-0001@3x.png */; };
+		947BA3DD19E463DB000BDB86 /* Player-0002@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D519E463DB000BDB86 /* Player-0002@3x.png */; };
+		947BA3DE19E463DB000BDB86 /* Player-0003@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D619E463DB000BDB86 /* Player-0003@3x.png */; };
+		947BA3DF19E463DB000BDB86 /* Player-0004@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D719E463DB000BDB86 /* Player-0004@3x.png */; };
+		947BA3E019E463DB000BDB86 /* Player-0005@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D819E463DB000BDB86 /* Player-0005@3x.png */; };
+		947BA3E119E463DB000BDB86 /* Player-0006@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3D919E463DB000BDB86 /* Player-0006@3x.png */; };
+		947BA3E219E463DB000BDB86 /* Player-0007@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3DA19E463DB000BDB86 /* Player-0007@3x.png */; };
+		947BA3E319E463DB000BDB86 /* Player-0008@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947BA3DB19E463DB000BDB86 /* Player-0008@3x.png */; };
 		94A6481B19DC356A00CAF266 /* Grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A6481819DC356A00CAF266 /* Grass.png */; };
 		94A6481C19DC356A00CAF266 /* Grass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A6481919DC356A00CAF266 /* Grass@2x.png */; };
 		94A6481D19DC356A00CAF266 /* Grass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A6481A19DC356A00CAF266 /* Grass@3x.png */; };
@@ -103,6 +134,23 @@
 		94A99BD419DA901E009AF19E /* SceneLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A99BD019DA901E009AF19E /* SceneLogo@2x.png */; };
 		94A99BD519DA901E009AF19E /* SceneTileBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A99BD119DA901E009AF19E /* SceneTileBackground.png */; };
 		94A99BD619DA901E009AF19E /* SceneTileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A99BD219DA901E009AF19E /* SceneTileBackground@2x.png */; };
+		94A9ABF419DF3E0C009F65B6 /* Railway.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABF219DF3E0C009F65B6 /* Railway.png */; };
+		94A9ABF519DF3E0C009F65B6 /* Railway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABF319DF3E0C009F65B6 /* Railway@2x.png */; };
+		94A9AC0119DF3E3C009F65B6 /* Machine-0001.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABF719DF3E3C009F65B6 /* Machine-0001.png */; };
+		94A9AC0219DF3E3C009F65B6 /* Machine-0001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABF819DF3E3C009F65B6 /* Machine-0001@2x.png */; };
+		94A9AC0319DF3E3C009F65B6 /* Wagon-0001.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABF919DF3E3C009F65B6 /* Wagon-0001.png */; };
+		94A9AC0419DF3E3C009F65B6 /* Wagon-0001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABFA19DF3E3C009F65B6 /* Wagon-0001@2x.png */; };
+		94A9AC0519DF3E3C009F65B6 /* Wagon-0002.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABFB19DF3E3C009F65B6 /* Wagon-0002.png */; };
+		94A9AC0619DF3E3C009F65B6 /* Wagon-0002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABFC19DF3E3C009F65B6 /* Wagon-0002@2x.png */; };
+		94A9AC0719DF3E3C009F65B6 /* Wagon-0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABFD19DF3E3C009F65B6 /* Wagon-0003.png */; };
+		94A9AC0819DF3E3C009F65B6 /* Wagon-0003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABFE19DF3E3C009F65B6 /* Wagon-0003@2x.png */; };
+		94A9AC0919DF3E3C009F65B6 /* Wagon-0004.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9ABFF19DF3E3C009F65B6 /* Wagon-0004.png */; };
+		94A9AC0A19DF3E3C009F65B6 /* Wagon-0004@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9AC0019DF3E3C009F65B6 /* Wagon-0004@2x.png */; };
+		94A9AC1319E0514C009F65B6 /* Machine-0001@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9AC0E19E0514C009F65B6 /* Machine-0001@3x.png */; };
+		94A9AC1419E0514C009F65B6 /* Wagon-0001@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9AC0F19E0514C009F65B6 /* Wagon-0001@3x.png */; };
+		94A9AC1519E0514C009F65B6 /* Wagon-0002@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9AC1019E0514C009F65B6 /* Wagon-0002@3x.png */; };
+		94A9AC1619E0514C009F65B6 /* Wagon-0003@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9AC1119E0514C009F65B6 /* Wagon-0003@3x.png */; };
+		94A9AC1719E0514C009F65B6 /* Wagon-0004@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A9AC1219E0514C009F65B6 /* Wagon-0004@3x.png */; };
 		94B19B2519D28F8500CA0E50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2419D28F8500CA0E50 /* main.m */; };
 		94B19B2819D28F8500CA0E50 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2719D28F8500CA0E50 /* ApplicationDelegate.m */; };
 		94B19B2B19D28F8500CA0E50 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2A19D28F8500CA0E50 /* GameScene.m */; };
@@ -112,6 +160,9 @@
 		94B19B4419D28F8600CA0E50 /* FroggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B4319D28F8600CA0E50 /* FroggerTests.m */; };
 		94B19B4F19D2948B00CA0E50 /* WelcomeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B4E19D2948B00CA0E50 /* WelcomeScene.m */; };
 		94C9641A19DD9B5E007AE24A /* Frogger-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C9641919DD9B5E007AE24A /* Frogger-Info.plist */; };
+		94FB722019E4779A00DA3A2A /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FB721D19E4779A00DA3A2A /* Stop.png */; };
+		94FB722119E4779A00DA3A2A /* Stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FB721E19E4779A00DA3A2A /* Stop@2x.png */; };
+		94FB722219E4779A00DA3A2A /* Stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94FB721F19E4779A00DA3A2A /* Stop@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +276,58 @@
 		94730E4819D6E7110013F267 /* GroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroundNode.h; sourceTree = "<group>"; };
 		94730E4919D6E7110013F267 /* GroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroundNode.m; sourceTree = "<group>"; };
 		94730E5719D6F05E0013F267 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947BA34519E08710000BDB86 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		947BA34719E158AB000BDB86 /* Railway@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Railway@3x.png"; path = "../../Images/Playgrounds/Railway@3x.png"; sourceTree = "<group>"; };
+		947BA34919E15970000BDB86 /* Wagon-0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0005.png"; path = "../../Images/Vehicles/Trains/Wagon-0005.png"; sourceTree = "<group>"; };
+		947BA34A19E15970000BDB86 /* Wagon-0005@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0005@2x.png"; path = "../../Images/Vehicles/Trains/Wagon-0005@2x.png"; sourceTree = "<group>"; };
+		947BA34B19E15970000BDB86 /* Wagon-0005@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0005@3x.png"; path = "../../Images/Vehicles/Trains/Wagon-0005@3x.png"; sourceTree = "<group>"; };
+		947BA34F19E16536000BDB86 /* RailLightsRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RailLightsRed.png; path = ../../Images/Playgrounds/RailLightsRed.png; sourceTree = "<group>"; };
+		947BA35019E16536000BDB86 /* RailLightsRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RailLightsRed@2x.png"; path = "../../Images/Playgrounds/RailLightsRed@2x.png"; sourceTree = "<group>"; };
+		947BA35119E16536000BDB86 /* RailLightsRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RailLightsRed@3x.png"; path = "../../Images/Playgrounds/RailLightsRed@3x.png"; sourceTree = "<group>"; };
+		947BA35519E16553000BDB86 /* RailLightsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RailLightsNode.h; sourceTree = "<group>"; };
+		947BA35619E16553000BDB86 /* RailLightsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RailLightsNode.m; sourceTree = "<group>"; };
+		947BA35819E16A45000BDB86 /* RailLightsGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RailLightsGreen.png; path = ../../Images/Playgrounds/RailLightsGreen.png; sourceTree = "<group>"; };
+		947BA35919E16A45000BDB86 /* RailLightsGreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RailLightsGreen@2x.png"; path = "../../Images/Playgrounds/RailLightsGreen@2x.png"; sourceTree = "<group>"; };
+		947BA35A19E16A45000BDB86 /* RailLightsGreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RailLightsGreen@3x.png"; path = "../../Images/Playgrounds/RailLightsGreen@3x.png"; sourceTree = "<group>"; };
+		947BA36619E194F5000BDB86 /* Gravel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Gravel.png; path = ../../Images/Playgrounds/Gravel.png; sourceTree = "<group>"; };
+		947BA36719E194F5000BDB86 /* Gravel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gravel@2x.png"; path = "../../Images/Playgrounds/Gravel@2x.png"; sourceTree = "<group>"; };
+		947BA36819E194F5000BDB86 /* Gravel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gravel@3x.png"; path = "../../Images/Playgrounds/Gravel@3x.png"; sourceTree = "<group>"; };
+		947BA3B019E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = nl; path = nl.lproj/GameScene.sks; sourceTree = "<group>"; };
+		947BA3B119E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = nl; path = nl.lproj/Main.storyboard; sourceTree = "<group>"; };
+		947BA3B219E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947BA3B319E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		947BA3B419E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = fr; path = fr.lproj/GameScene.sks; sourceTree = "<group>"; };
+		947BA3B519E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
+		947BA3B619E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947BA3B719E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		947BA3B819E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = uk; path = uk.lproj/GameScene.sks; sourceTree = "<group>"; };
+		947BA3B919E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/Main.storyboard; sourceTree = "<group>"; };
+		947BA3BA19E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947BA3BB19E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		947BA3BC19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = ru; path = ru.lproj/GameScene.sks; sourceTree = "<group>"; };
+		947BA3BD19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		947BA3BE19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		947BA3BF19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		947BA3C019E2DFCB000BDB86 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		947BA3C219E3D3BF000BDB86 /* SelectLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLevelScene.h; sourceTree = "<group>"; };
+		947BA3C319E3D3BF000BDB86 /* SelectLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLevelScene.m; sourceTree = "<group>"; };
+		947BA3C519E3DC61000BDB86 /* AppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStore.h; sourceTree = "<group>"; };
+		947BA3C619E3DC61000BDB86 /* AppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStore.m; sourceTree = "<group>"; };
+		947BA3C819E3E01D000BDB86 /* SceneWithAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneWithAds.h; sourceTree = "<group>"; };
+		947BA3C919E3E01D000BDB86 /* SceneWithAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneWithAds.m; sourceTree = "<group>"; };
+		947BA3CB19E40C48000BDB86 /* SelectLevelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLevelButton.h; sourceTree = "<group>"; };
+		947BA3CC19E40C48000BDB86 /* SelectLevelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLevelButton.m; sourceTree = "<group>"; };
+		947BA3CE19E44246000BDB86 /* Asphalt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Asphalt@3x.png"; path = "../../Images/Playgrounds/Asphalt@3x.png"; sourceTree = "<group>"; };
+		947BA3D019E4629B000BDB86 /* SceneLogo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SceneLogo@3x.png"; path = "../../Images/Scenes/SceneLogo@3x.png"; sourceTree = "<group>"; };
+		947BA3D219E462A4000BDB86 /* SceneTileBackground@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SceneTileBackground@3x.png"; path = "../../Images/Scenes/SceneTileBackground@3x.png"; sourceTree = "<group>"; };
+		947BA3D419E463DB000BDB86 /* Player-0001@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0001@3x.png"; path = "../../Images/Player/Player-0001@3x.png"; sourceTree = "<group>"; };
+		947BA3D519E463DB000BDB86 /* Player-0002@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0002@3x.png"; path = "../../Images/Player/Player-0002@3x.png"; sourceTree = "<group>"; };
+		947BA3D619E463DB000BDB86 /* Player-0003@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0003@3x.png"; path = "../../Images/Player/Player-0003@3x.png"; sourceTree = "<group>"; };
+		947BA3D719E463DB000BDB86 /* Player-0004@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0004@3x.png"; path = "../../Images/Player/Player-0004@3x.png"; sourceTree = "<group>"; };
+		947BA3D819E463DB000BDB86 /* Player-0005@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0005@3x.png"; path = "../../Images/Player/Player-0005@3x.png"; sourceTree = "<group>"; };
+		947BA3D919E463DB000BDB86 /* Player-0006@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0006@3x.png"; path = "../../Images/Player/Player-0006@3x.png"; sourceTree = "<group>"; };
+		947BA3DA19E463DB000BDB86 /* Player-0007@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0007@3x.png"; path = "../../Images/Player/Player-0007@3x.png"; sourceTree = "<group>"; };
+		947BA3DB19E463DB000BDB86 /* Player-0008@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Player-0008@3x.png"; path = "../../Images/Player/Player-0008@3x.png"; sourceTree = "<group>"; };
 		94A6481819DC356A00CAF266 /* Grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Grass.png; path = ../../Images/Playgrounds/Grass.png; sourceTree = "<group>"; };
 		94A6481919DC356A00CAF266 /* Grass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Grass@2x.png"; path = "../../Images/Playgrounds/Grass@2x.png"; sourceTree = "<group>"; };
 		94A6481A19DC356A00CAF266 /* Grass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Grass@3x.png"; path = "../../Images/Playgrounds/Grass@3x.png"; sourceTree = "<group>"; };
@@ -242,6 +345,23 @@
 		94A99BD019DA901E009AF19E /* SceneLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SceneLogo@2x.png"; path = "../../Images/Scenes/SceneLogo@2x.png"; sourceTree = "<group>"; };
 		94A99BD119DA901E009AF19E /* SceneTileBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SceneTileBackground.png; path = ../../Images/Scenes/SceneTileBackground.png; sourceTree = "<group>"; };
 		94A99BD219DA901E009AF19E /* SceneTileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SceneTileBackground@2x.png"; path = "../../Images/Scenes/SceneTileBackground@2x.png"; sourceTree = "<group>"; };
+		94A9ABF219DF3E0C009F65B6 /* Railway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Railway.png; path = ../../Images/Playgrounds/Railway.png; sourceTree = "<group>"; };
+		94A9ABF319DF3E0C009F65B6 /* Railway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Railway@2x.png"; path = "../../Images/Playgrounds/Railway@2x.png"; sourceTree = "<group>"; };
+		94A9ABF719DF3E3C009F65B6 /* Machine-0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Machine-0001.png"; path = "../../Images/Vehicles/Trains/Machine-0001.png"; sourceTree = "<group>"; };
+		94A9ABF819DF3E3C009F65B6 /* Machine-0001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Machine-0001@2x.png"; path = "../../Images/Vehicles/Trains/Machine-0001@2x.png"; sourceTree = "<group>"; };
+		94A9ABF919DF3E3C009F65B6 /* Wagon-0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0001.png"; path = "../../Images/Vehicles/Trains/Wagon-0001.png"; sourceTree = "<group>"; };
+		94A9ABFA19DF3E3C009F65B6 /* Wagon-0001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0001@2x.png"; path = "../../Images/Vehicles/Trains/Wagon-0001@2x.png"; sourceTree = "<group>"; };
+		94A9ABFB19DF3E3C009F65B6 /* Wagon-0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0002.png"; path = "../../Images/Vehicles/Trains/Wagon-0002.png"; sourceTree = "<group>"; };
+		94A9ABFC19DF3E3C009F65B6 /* Wagon-0002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0002@2x.png"; path = "../../Images/Vehicles/Trains/Wagon-0002@2x.png"; sourceTree = "<group>"; };
+		94A9ABFD19DF3E3C009F65B6 /* Wagon-0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0003.png"; path = "../../Images/Vehicles/Trains/Wagon-0003.png"; sourceTree = "<group>"; };
+		94A9ABFE19DF3E3C009F65B6 /* Wagon-0003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0003@2x.png"; path = "../../Images/Vehicles/Trains/Wagon-0003@2x.png"; sourceTree = "<group>"; };
+		94A9ABFF19DF3E3C009F65B6 /* Wagon-0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0004.png"; path = "../../Images/Vehicles/Trains/Wagon-0004.png"; sourceTree = "<group>"; };
+		94A9AC0019DF3E3C009F65B6 /* Wagon-0004@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0004@2x.png"; path = "../../Images/Vehicles/Trains/Wagon-0004@2x.png"; sourceTree = "<group>"; };
+		94A9AC0E19E0514C009F65B6 /* Machine-0001@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Machine-0001@3x.png"; path = "../../Images/Vehicles/Trains/Machine-0001@3x.png"; sourceTree = "<group>"; };
+		94A9AC0F19E0514C009F65B6 /* Wagon-0001@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0001@3x.png"; path = "../../Images/Vehicles/Trains/Wagon-0001@3x.png"; sourceTree = "<group>"; };
+		94A9AC1019E0514C009F65B6 /* Wagon-0002@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0002@3x.png"; path = "../../Images/Vehicles/Trains/Wagon-0002@3x.png"; sourceTree = "<group>"; };
+		94A9AC1119E0514C009F65B6 /* Wagon-0003@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0003@3x.png"; path = "../../Images/Vehicles/Trains/Wagon-0003@3x.png"; sourceTree = "<group>"; };
+		94A9AC1219E0514C009F65B6 /* Wagon-0004@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wagon-0004@3x.png"; path = "../../Images/Vehicles/Trains/Wagon-0004@3x.png"; sourceTree = "<group>"; };
 		94B19B1F19D28F8500CA0E50 /* Frogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B19B2419D28F8500CA0E50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94B19B2619D28F8500CA0E50 /* ApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
@@ -257,6 +377,9 @@
 		94B19B4D19D2948B00CA0E50 /* WelcomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScene.h; sourceTree = "<group>"; };
 		94B19B4E19D2948B00CA0E50 /* WelcomeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScene.m; sourceTree = "<group>"; };
 		94C9641919DD9B5E007AE24A /* Frogger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Frogger-Info.plist"; sourceTree = "<group>"; };
+		94FB721D19E4779A00DA3A2A /* Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Stop.png; path = ../../Images/Playgrounds/Stop.png; sourceTree = "<group>"; };
+		94FB721E19E4779A00DA3A2A /* Stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stop@2x.png"; path = "../../Images/Playgrounds/Stop@2x.png"; sourceTree = "<group>"; };
+		94FB721F19E4779A00DA3A2A /* Stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stop@3x.png"; path = "../../Images/Playgrounds/Stop@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +387,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947BA3C119E2DFCB000BDB86 /* StoreKit.framework in Frameworks */,
+				947BA34619E08710000BDB86 /* iAd.framework in Frameworks */,
 				94A6482E19DD4BDD00CAF266 /* SpriteKit.framework in Frameworks */,
 				94A6482C19DD4BBA00CAF266 /* CoreAudio.framework in Frameworks */,
 				94A6482A19DD4B6A00CAF266 /* CoreLocation.framework in Frameworks */,
@@ -374,20 +499,28 @@
 			children = (
 				942D3CB219D92ED700E46924 /* Player-0001.png */,
 				942D3CB319D92ED700E46924 /* Player-0001@2x.png */,
+				947BA3D419E463DB000BDB86 /* Player-0001@3x.png */,
 				942D3CB419D92ED700E46924 /* Player-0002.png */,
 				942D3CB519D92ED700E46924 /* Player-0002@2x.png */,
+				947BA3D519E463DB000BDB86 /* Player-0002@3x.png */,
 				942D3CB619D92ED700E46924 /* Player-0003.png */,
 				942D3CB719D92ED700E46924 /* Player-0003@2x.png */,
+				947BA3D619E463DB000BDB86 /* Player-0003@3x.png */,
 				942D3CB819D92ED700E46924 /* Player-0004.png */,
 				942D3CB919D92ED700E46924 /* Player-0004@2x.png */,
+				947BA3D719E463DB000BDB86 /* Player-0004@3x.png */,
 				942D3CBA19D92ED700E46924 /* Player-0005.png */,
 				942D3CBB19D92ED700E46924 /* Player-0005@2x.png */,
+				947BA3D819E463DB000BDB86 /* Player-0005@3x.png */,
 				942D3CBC19D92ED700E46924 /* Player-0006.png */,
 				942D3CBD19D92ED700E46924 /* Player-0006@2x.png */,
+				947BA3D919E463DB000BDB86 /* Player-0006@3x.png */,
 				942D3CBE19D92ED700E46924 /* Player-0007.png */,
 				942D3CBF19D92ED700E46924 /* Player-0007@2x.png */,
+				947BA3DA19E463DB000BDB86 /* Player-0007@3x.png */,
 				942D3CC019D92ED700E46924 /* Player-0008.png */,
 				942D3CC119D92ED700E46924 /* Player-0008@2x.png */,
+				947BA3DB19E463DB000BDB86 /* Player-0008@3x.png */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -412,6 +545,8 @@
 				94A6482319DD248E00CAF266 /* RoadNode.m */,
 				9462C5FF19D4AF55009B5D68 /* LaneNode.h */,
 				9462C60019D4AF55009B5D68 /* LaneNode.m */,
+				947BA35519E16553000BDB86 /* RailLightsNode.h */,
+				947BA35619E16553000BDB86 /* RailLightsNode.m */,
 				94730E4519D6C85C0013F267 /* LaneMarkingNode.h */,
 				94730E4619D6C85C0013F267 /* LaneMarkingNode.m */,
 				9462C5F819D448E1009B5D68 /* VehicleNode.h */,
@@ -425,6 +560,7 @@
 			children = (
 				9411406819D87A01007A411A /* LKW */,
 				9411406719D879FC007A411A /* PKW */,
+				94A9ABF619DF3E20009F65B6 /* Trains */,
 			);
 			name = Vehicles;
 			sourceTree = "<group>";
@@ -441,11 +577,27 @@
 		94A6481719DC355900CAF266 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				94FB721D19E4779A00DA3A2A /* Stop.png */,
+				94FB721E19E4779A00DA3A2A /* Stop@2x.png */,
+				94FB721F19E4779A00DA3A2A /* Stop@3x.png */,
 				94A6482519DD2CA700CAF266 /* Asphalt.png */,
 				94A6482619DD2CA700CAF266 /* Asphalt@2x.png */,
+				947BA3CE19E44246000BDB86 /* Asphalt@3x.png */,
 				94A6481819DC356A00CAF266 /* Grass.png */,
 				94A6481919DC356A00CAF266 /* Grass@2x.png */,
 				94A6481A19DC356A00CAF266 /* Grass@3x.png */,
+				947BA36619E194F5000BDB86 /* Gravel.png */,
+				947BA36719E194F5000BDB86 /* Gravel@2x.png */,
+				947BA36819E194F5000BDB86 /* Gravel@3x.png */,
+				94A9ABF219DF3E0C009F65B6 /* Railway.png */,
+				94A9ABF319DF3E0C009F65B6 /* Railway@2x.png */,
+				947BA34719E158AB000BDB86 /* Railway@3x.png */,
+				947BA34F19E16536000BDB86 /* RailLightsRed.png */,
+				947BA35019E16536000BDB86 /* RailLightsRed@2x.png */,
+				947BA35119E16536000BDB86 /* RailLightsRed@3x.png */,
+				947BA35819E16A45000BDB86 /* RailLightsGreen.png */,
+				947BA35919E16A45000BDB86 /* RailLightsGreen@2x.png */,
+				947BA35A19E16A45000BDB86 /* RailLightsGreen@3x.png */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";
@@ -457,6 +609,10 @@
 				942D3CDD19D98C2A00E46924 /* AbstractScene.m */,
 				94B19B4D19D2948B00CA0E50 /* WelcomeScene.h */,
 				94B19B4E19D2948B00CA0E50 /* WelcomeScene.m */,
+				947BA3C219E3D3BF000BDB86 /* SelectLevelScene.h */,
+				947BA3C319E3D3BF000BDB86 /* SelectLevelScene.m */,
+				947BA3CB19E40C48000BDB86 /* SelectLevelButton.h */,
+				947BA3CC19E40C48000BDB86 /* SelectLevelButton.m */,
 				9462C60C19D58A46009B5D68 /* PreparationScene.h */,
 				9462C60D19D58A46009B5D68 /* PreparationScene.m */,
 				942D3CD919D9804F00E46924 /* GameOverScene.h */,
@@ -480,15 +636,44 @@
 			children = (
 				94A99BCF19DA901E009AF19E /* SceneLogo.png */,
 				94A99BD019DA901E009AF19E /* SceneLogo@2x.png */,
+				947BA3D019E4629B000BDB86 /* SceneLogo@3x.png */,
 				94A99BD119DA901E009AF19E /* SceneTileBackground.png */,
 				94A99BD219DA901E009AF19E /* SceneTileBackground@2x.png */,
+				947BA3D219E462A4000BDB86 /* SceneTileBackground@3x.png */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		94A9ABF619DF3E20009F65B6 /* Trains */ = {
+			isa = PBXGroup;
+			children = (
+				94A9ABF719DF3E3C009F65B6 /* Machine-0001.png */,
+				94A9ABF819DF3E3C009F65B6 /* Machine-0001@2x.png */,
+				94A9AC0E19E0514C009F65B6 /* Machine-0001@3x.png */,
+				94A9ABF919DF3E3C009F65B6 /* Wagon-0001.png */,
+				94A9ABFA19DF3E3C009F65B6 /* Wagon-0001@2x.png */,
+				94A9AC0F19E0514C009F65B6 /* Wagon-0001@3x.png */,
+				94A9ABFB19DF3E3C009F65B6 /* Wagon-0002.png */,
+				94A9ABFC19DF3E3C009F65B6 /* Wagon-0002@2x.png */,
+				94A9AC1019E0514C009F65B6 /* Wagon-0002@3x.png */,
+				94A9ABFD19DF3E3C009F65B6 /* Wagon-0003.png */,
+				94A9ABFE19DF3E3C009F65B6 /* Wagon-0003@2x.png */,
+				94A9AC1119E0514C009F65B6 /* Wagon-0003@3x.png */,
+				94A9ABFF19DF3E3C009F65B6 /* Wagon-0004.png */,
+				94A9AC0019DF3E3C009F65B6 /* Wagon-0004@2x.png */,
+				94A9AC1219E0514C009F65B6 /* Wagon-0004@3x.png */,
+				947BA34919E15970000BDB86 /* Wagon-0005.png */,
+				947BA34A19E15970000BDB86 /* Wagon-0005@2x.png */,
+				947BA34B19E15970000BDB86 /* Wagon-0005@3x.png */,
+			);
+			name = Trains;
 			sourceTree = "<group>";
 		};
 		94B19B1619D28F8500CA0E50 = {
 			isa = PBXGroup;
 			children = (
+				947BA3C019E2DFCB000BDB86 /* StoreKit.framework */,
+				947BA34519E08710000BDB86 /* iAd.framework */,
 				9457964819DDF06B0020D2FE /* GameKit.framework */,
 				94A6482D19DD4BDD00CAF266 /* SpriteKit.framework */,
 				94A6482B19DD4BBA00CAF266 /* CoreAudio.framework */,
@@ -517,6 +702,10 @@
 				94B19B2F19D28F8500CA0E50 /* MainViewController.m */,
 				9457964A19DEA8900020D2FE /* GameCenter.h */,
 				9457964B19DEA8900020D2FE /* GameCenter.m */,
+				947BA3C519E3DC61000BDB86 /* AppStore.h */,
+				947BA3C619E3DC61000BDB86 /* AppStore.m */,
+				947BA3C819E3E01D000BDB86 /* SceneWithAds.h */,
+				947BA3C919E3E01D000BDB86 /* SceneWithAds.m */,
 				944E8F4919D2A8A400DEB279 /* Navigator.h */,
 				944E8F4A19D2A8A400DEB279 /* Navigator.m */,
 				9462C60219D53538009B5D68 /* Globals.h */,
@@ -628,6 +817,10 @@
 			knownRegions = (
 				en,
 				de,
+				nl,
+				fr,
+				uk,
+				ru,
 			);
 			mainGroup = 94B19B1619D28F8500CA0E50;
 			productRefGroup = 94B19B2019D28F8500CA0E50 /* Products */;
@@ -645,23 +838,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947BA34D19E15970000BDB86 /* Wagon-0005@2x.png in Resources */,
 				942D3CCD19D92ED700E46924 /* Player-0006@2x.png in Resources */,
 				942176F419DBD96500437B17 /* Tree-0001@3x.png in Resources */,
 				94A6482719DD2CA700CAF266 /* Asphalt.png in Resources */,
 				942176D519DBCEAB00437B17 /* LKW-0006.xcf in Resources */,
+				947BA3D319E462A4000BDB86 /* SceneTileBackground@3x.png in Resources */,
 				942D3CCA19D92ED700E46924 /* Player-0005.png in Resources */,
+				94A9AC1419E0514C009F65B6 /* Wagon-0001@3x.png in Resources */,
 				942176FB19DBD96500437B17 /* Tree-0004.png in Resources */,
+				947BA3E319E463DB000BDB86 /* Player-0008@3x.png in Resources */,
+				947BA3E219E463DB000BDB86 /* Player-0007@3x.png in Resources */,
 				94A6481B19DC356A00CAF266 /* Grass.png in Resources */,
+				947BA3DF19E463DB000BDB86 /* Player-0004@3x.png in Resources */,
 				94A6482819DD2CA700CAF266 /* Asphalt@2x.png in Resources */,
+				947BA3DC19E463DB000BDB86 /* Player-0001@3x.png in Resources */,
+				94A9ABF519DF3E0C009F65B6 /* Railway@2x.png in Resources */,
 				942D3CD019D92ED700E46924 /* Player-0008.png in Resources */,
+				94A9AC1719E0514C009F65B6 /* Wagon-0004@3x.png in Resources */,
 				94A99BD319DA901E009AF19E /* SceneLogo.png in Resources */,
 				94A6481D19DC356A00CAF266 /* Grass@3x.png in Resources */,
 				942D3CCB19D92ED700E46924 /* Player-0005@2x.png in Resources */,
 				942176CB19DBCE9300437B17 /* LKW-0003@3x.png in Resources */,
 				942D3CC419D92ED700E46924 /* Player-0002.png in Resources */,
+				947BA36919E194F5000BDB86 /* Gravel.png in Resources */,
 				942176CE19DBCE9300437B17 /* LKW-0006@3x.png in Resources */,
+				947BA35C19E16A45000BDB86 /* RailLightsGreen@2x.png in Resources */,
 				942176FE19DBD96500437B17 /* Tree-0005.png in Resources */,
 				942176C019DBCE6900437B17 /* PKW-0001@3x.png in Resources */,
+				947BA34C19E15970000BDB86 /* Wagon-0005.png in Resources */,
 				942176CC19DBCE9300437B17 /* LKW-0004@3x.png in Resources */,
 				9411407019D87A13007A411A /* LKW-0001@2x.png in Resources */,
 				9411407419D87A13007A411A /* LKW-0003@2x.png in Resources */,
@@ -669,15 +874,25 @@
 				94A6481C19DC356A00CAF266 /* Grass@2x.png in Resources */,
 				9411407B19D87A1F007A411A /* PKW-0001.png in Resources */,
 				942D3CC919D92ED700E46924 /* Player-0004@2x.png in Resources */,
+				94A9AC1319E0514C009F65B6 /* Machine-0001@3x.png in Resources */,
+				947BA34E19E15970000BDB86 /* Wagon-0005@3x.png in Resources */,
 				942176F219DBD96500437B17 /* Tree-0001.png in Resources */,
 				942176FC19DBD96500437B17 /* Tree-0004@2x.png in Resources */,
 				942176F819DBD96500437B17 /* Tree-0003.png in Resources */,
 				942D3CC519D92ED700E46924 /* Player-0002@2x.png in Resources */,
+				94A9AC0719DF3E3C009F65B6 /* Wagon-0003.png in Resources */,
 				942176F519DBD96500437B17 /* Tree-0002.png in Resources */,
 				94730E5119D6F00B0013F267 /* Localizable.strings in Resources */,
+				947BA35B19E16A45000BDB86 /* RailLightsGreen.png in Resources */,
+				94A9AC0219DF3E3C009F65B6 /* Machine-0001@2x.png in Resources */,
+				94FB722219E4779A00DA3A2A /* Stop@3x.png in Resources */,
 				942176BC19DB0D5F00437B17 /* LKW-0004@2x.png in Resources */,
+				947BA3DE19E463DB000BDB86 /* Player-0003@3x.png in Resources */,
 				9411401C19D6F5A6007A411A /* InfoPlist.strings in Resources */,
+				947BA35319E16536000BDB86 /* RailLightsRed@2x.png in Resources */,
 				9411406F19D87A13007A411A /* LKW-0001.png in Resources */,
+				94A9AC0919DF3E3C009F65B6 /* Wagon-0004.png in Resources */,
+				94A9AC0319DF3E3C009F65B6 /* Wagon-0001.png in Resources */,
 				942D3CC719D92ED700E46924 /* Player-0003@2x.png in Resources */,
 				9421770019DBD96500437B17 /* Tree-0005@3x.png in Resources */,
 				9421770219DBD96500437B17 /* Tree-0006@2x.png in Resources */,
@@ -687,6 +902,7 @@
 				942D3CC819D92ED700E46924 /* Player-0004.png in Resources */,
 				94B19B3519D28F8500CA0E50 /* Images.xcassets in Resources */,
 				942176F319DBD96500437B17 /* Tree-0001@2x.png in Resources */,
+				94A9AC0819DF3E3C009F65B6 /* Wagon-0003@2x.png in Resources */,
 				9421770C19DBE65400437B17 /* Levels.xml in Resources */,
 				9421770319DBD96500437B17 /* Tree-0006@3x.png in Resources */,
 				9411401019D6F482007A411A /* GameScene.sks in Resources */,
@@ -698,29 +914,50 @@
 				9411407C19D87A1F007A411A /* PKW-0001@2x.png in Resources */,
 				942176BB19DB0D5F00437B17 /* LKW-0004.png in Resources */,
 				942176F919DBD96500437B17 /* Tree-0003@2x.png in Resources */,
+				947BA3CF19E44246000BDB86 /* Asphalt@3x.png in Resources */,
 				942176DA19DBCECC00437B17 /* LKW-0005@3x.png in Resources */,
 				942176FF19DBD96500437B17 /* Tree-0005@2x.png in Resources */,
+				94A9AC0419DF3E3C009F65B6 /* Wagon-0001@2x.png in Resources */,
+				947BA3DD19E463DB000BDB86 /* Player-0002@3x.png in Resources */,
 				94B19B3319D28F8500CA0E50 /* Main.storyboard in Resources */,
 				942176D319DBCEAB00437B17 /* LKW-0005@2x.png in Resources */,
 				94A6483019DD501000CAF266 /* Pogodi.mp3 in Resources */,
+				947BA35D19E16A45000BDB86 /* RailLightsGreen@3x.png in Resources */,
+				947BA35419E16536000BDB86 /* RailLightsRed@3x.png in Resources */,
+				94FB722119E4779A00DA3A2A /* Stop@2x.png in Resources */,
 				942D3CC319D92ED700E46924 /* Player-0001@2x.png in Resources */,
 				9411403E19D84AEB007A411A /* Stones.png in Resources */,
+				94A9AC0A19DF3E3C009F65B6 /* Wagon-0004@2x.png in Resources */,
+				94A9ABF419DF3E0C009F65B6 /* Railway.png in Resources */,
 				9411407F19D87A1F007A411A /* PKW-0003.png in Resources */,
+				947BA36A19E194F5000BDB86 /* Gravel@2x.png in Resources */,
 				942176D919DBCECC00437B17 /* LKW-0005.png in Resources */,
+				947BA36B19E194F5000BDB86 /* Gravel@3x.png in Resources */,
+				94FB722019E4779A00DA3A2A /* Stop.png in Resources */,
 				942D3CCE19D92ED700E46924 /* Player-0007.png in Resources */,
+				947BA3E119E463DB000BDB86 /* Player-0006@3x.png in Resources */,
 				94C9641A19DD9B5E007AE24A /* Frogger-Info.plist in Resources */,
 				942176FD19DBD96500437B17 /* Tree-0004@3x.png in Resources */,
 				942D3CCC19D92ED700E46924 /* Player-0006.png in Resources */,
 				942176CA19DBCE9300437B17 /* LKW-0002@3x.png in Resources */,
 				94A99BD619DA901E009AF19E /* SceneTileBackground@2x.png in Resources */,
+				94A9AC1519E0514C009F65B6 /* Wagon-0002@3x.png in Resources */,
+				947BA3D119E4629B000BDB86 /* SceneLogo@3x.png in Resources */,
+				947BA35219E16536000BDB86 /* RailLightsRed.png in Resources */,
 				9411407319D87A13007A411A /* LKW-0003.png in Resources */,
 				9411407119D87A13007A411A /* LKW-0002.png in Resources */,
 				942176C219DBCE6900437B17 /* PKW-0003@3x.png in Resources */,
 				942D3CCF19D92ED700E46924 /* Player-0007@2x.png in Resources */,
+				94A9AC0519DF3E3C009F65B6 /* Wagon-0002.png in Resources */,
 				94A99BD519DA901E009AF19E /* SceneTileBackground.png in Resources */,
 				942D3CC619D92ED700E46924 /* Player-0003.png in Resources */,
 				9421770119DBD96500437B17 /* Tree-0006.png in Resources */,
+				947BA34819E158AB000BDB86 /* Railway@3x.png in Resources */,
+				947BA3E019E463DB000BDB86 /* Player-0005@3x.png in Resources */,
+				94A9AC0619DF3E3C009F65B6 /* Wagon-0002@2x.png in Resources */,
 				9411408019D87A1F007A411A /* PKW-0003@2x.png in Resources */,
+				94A9AC0119DF3E3C009F65B6 /* Machine-0001.png in Resources */,
+				94A9AC1619E0514C009F65B6 /* Wagon-0003@3x.png in Resources */,
 				942176C119DBCE6900437B17 /* PKW-0002@3x.png in Resources */,
 				942D3CC219D92ED700E46924 /* Player-0001.png in Resources */,
 				942176F719DBD96500437B17 /* Tree-0002@3x.png in Resources */,
@@ -745,12 +982,16 @@
 				9462C5FA19D448E1009B5D68 /* VehicleNode.m in Sources */,
 				94B19B3019D28F8500CA0E50 /* MainViewController.m in Sources */,
 				94A6482419DD248E00CAF266 /* RoadNode.m in Sources */,
+				947BA3C719E3DC61000BDB86 /* AppStore.m in Sources */,
 				94B19B4F19D2948B00CA0E50 /* WelcomeScene.m in Sources */,
 				9462C5EC19D400C3009B5D68 /* PlayerNode.m in Sources */,
 				94A99BC219D9B0B0009AF19E /* MissionCompleteScene.m in Sources */,
 				9462C60119D4AF55009B5D68 /* LaneNode.m in Sources */,
+				947BA3CA19E3E01D000BDB86 /* SceneWithAds.m in Sources */,
 				94B19B2819D28F8500CA0E50 /* ApplicationDelegate.m in Sources */,
 				9462C60E19D58A46009B5D68 /* PreparationScene.m in Sources */,
+				947BA3CD19E40C48000BDB86 /* SelectLevelButton.m in Sources */,
+				947BA35719E16553000BDB86 /* RailLightsNode.m in Sources */,
 				9462C5F319D409DE009B5D68 /* Playground.m in Sources */,
 				94730E4A19D6E7110013F267 /* GroundNode.m in Sources */,
 				94B19B2B19D28F8500CA0E50 /* GameScene.m in Sources */,
@@ -758,6 +999,7 @@
 				9421770A19DBDC0200437B17 /* FloraNode.m in Sources */,
 				9457964C19DEA8900020D2FE /* GameCenter.m in Sources */,
 				944E8F4B19D2A8A400DEB279 /* Navigator.m in Sources */,
+				947BA3C419E3D3BF000BDB86 /* SelectLevelScene.m in Sources */,
 				942D3CDE19D98C2A00E46924 /* AbstractScene.m in Sources */,
 				94B19B2519D28F8500CA0E50 /* main.m in Sources */,
 				9411402219D6FBFF007A411A /* DestinationNode.m in Sources */,
@@ -789,6 +1031,10 @@
 			children = (
 				9411401119D6F482007A411A /* en */,
 				9411401319D6F486007A411A /* de */,
+				947BA3B019E2CD3F000BDB86 /* nl */,
+				947BA3B419E2CD45000BDB86 /* fr */,
+				947BA3B819E2CD5D000BDB86 /* uk */,
+				947BA3BC19E2CD64000BDB86 /* ru */,
 			);
 			name = GameScene.sks;
 			sourceTree = "<group>";
@@ -798,6 +1044,10 @@
 			children = (
 				9411401D19D6F5A6007A411A /* de */,
 				9411401F19D6F5AD007A411A /* en */,
+				947BA3B319E2CD3F000BDB86 /* nl */,
+				947BA3B719E2CD45000BDB86 /* fr */,
+				947BA3BB19E2CD5D000BDB86 /* uk */,
+				947BA3BF19E2CD64000BDB86 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -807,6 +1057,10 @@
 			children = (
 				94730E5719D6F05E0013F267 /* de */,
 				9411400C19D6F255007A411A /* en */,
+				947BA3B219E2CD3F000BDB86 /* nl */,
+				947BA3B619E2CD45000BDB86 /* fr */,
+				947BA3BA19E2CD5D000BDB86 /* uk */,
+				947BA3BE19E2CD64000BDB86 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -816,6 +1070,10 @@
 			children = (
 				944B7DF919D6F1CD001BF920 /* de */,
 				9411400F19D6F255007A411A /* en */,
+				947BA3B119E2CD3F000BDB86 /* nl */,
+				947BA3B519E2CD45000BDB86 /* fr */,
+				947BA3B919E2CD5D000BDB86 /* uk */,
+				947BA3BD19E2CD64000BDB86 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

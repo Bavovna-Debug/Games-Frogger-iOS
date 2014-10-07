@@ -8,7 +8,12 @@
 
 @interface AbstractScene : SKScene
 
-- (void)makeBackground;
+- (void)playAudioWithName:(NSString *)resourceName
+                   ofType:(NSString *)resourceType;
+
+- (void)createBackground:(Boolean)withLogo;
+
+- (void)createTitle;
 
 - (void)makeLabel:(NSString *)text;
 

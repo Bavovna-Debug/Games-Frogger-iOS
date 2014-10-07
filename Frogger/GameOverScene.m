@@ -4,15 +4,12 @@
 //  Copyright (c) 2014 Meine Werke. All rights reserved.
 //
 
-#import <AVFoundation/AVAudioPlayer.h>
-
 #import "GameOverScene.h"
-#import "WelcomeScene.h"
+#import "SelectLevelScene.h"
 
 @interface GameOverScene ()
 
-@property (nonatomic, strong) AVAudioPlayer  *gameOverPlayer;
-@property (nonatomic, strong) NSTimer        *welcomeTimer;
+@property (nonatomic, strong) NSTimer *welcomeTimer;
 
 @end
 
@@ -22,12 +19,13 @@
 
 - (void)didMoveToView:(SKView *)view
 {
-    [self makeBackground];
+    [self createBackground:YES];
+    [self createTitle];
 
     NSString *label = NSLocalizedString(@"SCENE_LABEL_GAME_OVER", nil);
     [self makeLabel:label];
 
-    //[self playAudio];
+    //[self playAudioWithName:@"GameOver" ofType:@"m4a"];
 
     self.welcomeTimer =
     [NSTimer scheduledTimerWithTimeInterval:2.0f
@@ -37,26 +35,14 @@
                                     repeats:NO];
 }
 
-- (void)playAudio
-{
-    NSURL *url =
-    [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GameOver"
-                                                           ofType:@"m4a"]];
-    self.gameOverPlayer =
-    [[AVAudioPlayer alloc] initWithContentsOfURL:url
-                                           error:nil];
-
-    [self.gameOverPlayer play];
-}
-
 - (void)switchToWelcomeScene
 {
-    SKAction *action = [SKAction fadeOutWithDuration:1.0f];
+    SKAction *action = [SKAction fadeOutWithDuration:0.5f];
 
     [self.scene runAction:action completion:^{
-        SKScene *welcomeScene = [[WelcomeScene alloc]initWithSize:self.size];
+        SKScene *nextScene = [[SelectLevelScene alloc] initWithSize:self.size];
 
-        [self.view presentScene:welcomeScene];
+        [self.view presentScene:nextScene];
     }];
 
     [self.scene removeFromParent];

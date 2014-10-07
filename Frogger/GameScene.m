@@ -6,6 +6,8 @@
 
 #import <AVFoundation/AVAudioPlayer.h>
 
+#import "ApplicationDelegate.h"
+#import "AppStore.h"
 #import "GameCenter.h"
 #import "GameOverScene.h"
 #import "GameScene.h"
@@ -13,13 +15,15 @@
 #import "MissionCompleteScene.h"
 #import "PlayerNode.h"
 #import "Playground.h"
+#import "SelectLevelScene.h"
 #import "VehicleNode.h"
 
-@interface GameScene () <SKPhysicsContactDelegate>
+@interface GameScene () <SKPhysicsContactDelegate, AppStoreDelegate>
 
 @property (nonatomic, strong) Playground     *playground;
 @property (nonatomic, strong) AVAudioPlayer  *backgroundMusicPlayer;
 @property (nonatomic, strong) NSDate         *gameBegin;
+@property (nonatomic, strong) NSTimer        *unlockReminderTimer;
 
 @end
 
@@ -47,23 +51,35 @@
         [[AVAudioPlayer alloc] initWithContentsOfURL:[self.playground levelMusicURL]
                                                error:nil];
         [self.backgroundMusicPlayer setNumberOfLoops:5];
+
+        SKSpriteNode *stopButton = [SKSpriteNode spriteNodeWithImageNamed:@"Stop"];
+        [stopButton setName:@"stopButton"];
+        [stopButton setZPosition:NodeStopButton];
+        [stopButton setPosition:CGPointMake(CGRectGetWidth(stopButton.frame) / 2,
+                                            CGRectGetHeight(self.frame) - CGRectGetHeight(stopButton.frame) / 2)];
+        [self addChild:stopButton];
     }
 
     [self.backgroundMusicPlayer play];
 
     self.gameBegin = [NSDate date];
+
+    AppStore *appStore = [AppStore sharedAppStore];
+    if ([appStore gameUnlocked] == NO)
+    {
+        [self showBanner];
+        [self startUnlockReminder];
+        [appStore setDelegate:self];
+    }
 }
 
 - (void)initPlayground
 {
-    CGFloat playgroundWidthInMeter;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        playgroundWidthInMeter = PlaygroundWidthInMeterOnPad;
-    else
-        playgroundWidthInMeter = PlaygroundWidthInMeterOnPhone;
+    UIApplication *application = [UIApplication sharedApplication];
+    ApplicationDelegate *applicationDelegate = (ApplicationDelegate *)[application delegate];
 
-    self.playground = [[Playground alloc] initWithSize:self.size
-                                          widthInMeter:playgroundWidthInMeter];
+    self.playground = [[Playground alloc] initWithLevelId:[applicationDelegate levelId]
+                                                     size:self.size];
     [self addChild:self.playground];
 }
 
@@ -77,6 +93,13 @@
 - (void)touchesBegan:(NSSet *)touches
            withEvent:(UIEvent *)event
 {
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    if (node != nil) {
+        if ([node.name isEqualToString:@"stopButton"] == YES)
+            [self stopGame];
+    }
 }
 
 #pragma mark SKPhysicsContactDelegate delegate
@@ -135,6 +158,23 @@
     }
 }
 
+- (void)stopGame
+{
+    SKAction *action = [SKAction fadeOutWithDuration:0.2f];
+
+    [self.scene runAction:action completion:^{
+        SKScene *nextScene = [[SelectLevelScene alloc]initWithSize:self.size];
+
+        [self.view presentScene:nextScene];
+    }];
+
+    [self stopUnlockReminder];
+
+    [self.playground quit];
+
+    [self.scene removeFromParent];
+}
+
 - (void)gameOver
 {
     NSDate *now = [NSDate date];
@@ -146,10 +186,12 @@
     SKAction *action = [SKAction fadeOutWithDuration:0.2f];
 
     [self.scene runAction:action completion:^{
-        SKScene *gameOverScene = [[GameOverScene alloc]initWithSize:self.size];
+        SKScene *nextScene = [[GameOverScene alloc]initWithSize:self.size];
 
-        [self.view presentScene:gameOverScene];
+        [self.view presentScene:nextScene];
     }];
+
+    [self stopUnlockReminder];
 
     [self.playground quit];
 
@@ -174,6 +216,8 @@
         [self.view presentScene:missionCompleteScene];
     }];
 
+    [self stopUnlockReminder];
+
     [self.playground quit];
 
     [self.scene removeFromParent];
@@ -192,5 +236,12 @@
     self.view.layer.transform = t;
 }
 */
+
+#pragma mark App Store
+
+- (void)gameWasUnlocked
+{
+    [self hideBanner];
+}
 
 @end

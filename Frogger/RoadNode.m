@@ -46,6 +46,8 @@
         self.roadType = RoadTypeCityStreet;
     } else if ([attrRoadType isEqualToString:@"Highway"]) {
         self.roadType = RoadTypeHighway;
+    } else if ([attrRoadType isEqualToString:@"Railway"]) {
+        self.roadType = RoadTypeRailway;
     } else {
         // Error;
     }
@@ -70,9 +72,9 @@
     return physicsBody;
 }
 
-- (SKTexture *)backgroundTexture:(CGSize)roadSize
+- (SKTexture *)backgroundTexture
 {
-    UIGraphicsBeginImageContext(roadSize);
+    UIGraphicsBeginImageContext(self.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     switch (self.roadType)
@@ -81,6 +83,35 @@
         case RoadTypeHighway:
         {
             UIImage *templateImage = [UIImage imageNamed:@"Asphalt"];
+
+            CGContextDrawTiledImage(context,
+                                    (CGRect){ CGPointZero, templateImage.size },
+                                    [templateImage CGImage]);
+
+            if ([self withPedestrian] == YES)
+            {
+                SKColor *stripesColor = [SKColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:0.8f];
+                [stripesColor setFill];
+
+                CGRect stripeFrame = CGRectMake(CGRectGetMidX(self.frame) - 16.0f,
+                                                0.0f,
+                                                48.0f,
+                                                16.0f);
+                stripeFrame.origin.x += randomBetween(-CGRectGetWidth(self.frame) * 0.4f,
+                                                      CGRectGetWidth(self.frame) * 0.4f);
+                while (CGRectGetMinY(stripeFrame) < CGRectGetHeight(self.frame))
+                {
+                    CGContextFillRect(context, CGRectInset(stripeFrame, 0.0f, 4.0f));
+                    stripeFrame = CGRectOffset(stripeFrame, 0.0f, CGRectGetHeight(stripeFrame));
+                }
+            }
+
+            break;
+        }
+
+        case RoadTypeRailway:
+        {
+            UIImage *templateImage = [UIImage imageNamed:@"Gravel"];
 
             CGContextDrawTiledImage(context,
                                     (CGRect){ CGPointZero, templateImage.size },
@@ -119,7 +150,7 @@
 
 - (void)startTraffic
 {
-    [self setTexture:[self backgroundTexture:self.size]];
+    [self setTexture:[self backgroundTexture]];
 
     for (SKSpriteNode *node in [self children])
     {

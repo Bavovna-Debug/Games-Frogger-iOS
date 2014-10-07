@@ -9,6 +9,7 @@
 
 @interface Playground : SKSpriteNode
 
+@property (nonatomic, assign, readonly)  NSUInteger              levelId;
 @property (nonatomic, assign, readonly)  CLLocationCoordinate2D  centerCoordinate;
 @property (nonatomic, assign, readonly)  CLLocationDirection     direction;
 @property (nonatomic, assign, readonly)  CLLocationDistance      widthInMeter;
@@ -16,8 +17,8 @@
 
 @property (nonatomic, assign, readonly)  CGFloat                 scaleFactor;
 
-- (id)initWithSize:(CGSize)size
-      widthInMeter:(CGFloat)widthInMeter;
+- (id)initWithLevelId:(NSUInteger)levelId
+                 size:(CGSize)size;
 
 - (void)quit;
 

@@ -1,0 +1,23 @@
+/******************************************************************************/
+/*                                                                            */
+/*  Frogger                                                                   */
+/*                                                                            */
+/*  Copyright (c) 2014 Meine Werke. All rights reserved.                      */
+/*                                                                            */
+/******************************************************************************/
+
+"SCENE_LABEL_TAP_SCREEN"            = "Нажми на экран";
+"SCENE_LABEL_PREPARING"             = "Калибровка GPS...";
+"SCENE_LABEL_GAME_OVER"             = "Ну, бывает...";
+"SCENE_LABEL_MISSION_COMPLETE"      = "Вы выиграли!";
+
+"ALERT_BUTTON_OK"                   = "OK";
+
+"AD_OFF_MESSAGE"                    = "Хотите избавиться от назойливой рекламы и активировать все уровни?";
+"AD_OFF_BUTTON_NOT_YET"             = "Нет, позже";
+"AD_OFF_BUTTON_DETAILS"             = "Подробнее";
+
+"APP_STORE_ERROR_MESSAGE"           = "Не удается обработать Ваш заказ сейчас! Попробуйте позже.";
+
+"APP_STORE_CANCEL"                  = "Нет, позже";
+"APP_STORE_SUBMIT"                  = "Купить - %@";

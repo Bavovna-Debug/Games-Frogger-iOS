@@ -52,6 +52,8 @@
         self.surfaceType = GroundTypeLargeRoundStones;
     } else if ([attrSurface isEqualToString:@"Grass"]) {
         self.surfaceType = GroundTypeGrass;
+    } else if ([attrSurface isEqualToString:@"TreeLine"]) {
+        self.surfaceType = GroundTypeTreeLine;
     } else if ([attrSurface isEqualToString:@"Forest"]) {
         self.surfaceType = GroundTypeForest;
     } else {
@@ -130,6 +132,25 @@
             tree = [[FloraNode alloc] init];
             [self addChild:tree];
             [tree setPosition:CGPointMake(CGRectGetWidth(self.frame) / 2 - 24.0f, CGRectGetMidY(self.frame))];
+
+            break;
+        }
+
+        case GroundTypeTreeLine:
+        {
+            UIImage *templateImage = [UIImage imageNamed:@"Grass"];
+
+            CGContextDrawTiledImage(context,
+                                    (CGRect){ CGPointZero, templateImage.size },
+                                    [templateImage CGImage]);
+
+            for (int x = CGRectGetMinX(self.frame) + 10.0f; x < CGRectGetMaxX(self.frame) + 20.0f; x += 100.0f)
+            {
+                FloraNode *tree = [[FloraNode alloc] init];
+                [tree setPosition:CGPointMake(x + round(randomBetween(-10.0f, 10.0f)),
+                                              CGRectGetMidY(self.frame))];
+                [self addChild:tree];
+            }
 
             break;
         }

@@ -13,6 +13,8 @@
 
 @implementation ApplicationDelegate
 
+@synthesize levelId = _levelId;
+
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -69,9 +69,9 @@
 
 - (void)placeTrees
 {
-    for (int x = CGRectGetMinX(self.frame) + 20; x < CGRectGetMaxX(self.frame); x += 50)
+    for (int x = CGRectGetMinX(self.frame) - 20.0f; x < CGRectGetMaxX(self.frame) + 20.0f; x += 50.0f)
     {
-        for (int y = CGRectGetMinY(self.frame) + 20; y < CGRectGetMaxY(self.frame); y += 50)
+        for (int y = CGRectGetMinY(self.frame) + 20.0f; y < CGRectGetMaxY(self.frame); y += 50.0f)
         {
             FloraNode *tree = [[FloraNode alloc] init];
             [tree setPosition:CGPointMake(x + round(randomBetween(-10.0f, 10.0f)),

@@ -7,10 +7,12 @@
 #import "Globals.h"
 #import "LaneNode.h"
 #import "Playground.h"
+#import "RailLightsNode.h"
 #import "RoadNode.h"
 #import "VehicleNode.h"
 
-#define LaneWidth 50.0f
+#define RoadLaneWidth 50.0f
+#define RailLaneWidth 80.0f
 
 @interface LaneNode ()
 
@@ -30,6 +32,7 @@
 
 - (id)initWithAttributes:(NSDictionary *)attributes
               playground:(SKSpriteNode *)playground
+                    road:(SKSpriteNode *)road
 {
     CGFloat playgroundWidth = CGRectGetWidth(playground.frame);
 
@@ -44,7 +47,19 @@
     [self setName:@"laneNode"];
     [self setZPosition:NodeZLane];
 
-    CGSize size = CGSizeMake(playgroundWidth, LaneWidth);
+    CGFloat laneWidth;
+    switch ([(RoadNode *)road roadType])
+    {
+        case RoadTypeCityStreet:
+        case RoadTypeHighway:
+            laneWidth = RoadLaneWidth;
+            break;
+
+        case RoadTypeRailway:
+            laneWidth = RailLaneWidth;
+            break;
+    }
+    CGSize size = CGSizeMake(playgroundWidth, laneWidth);
 
     [self setSize:size];
 
@@ -123,8 +138,74 @@
     return physicsBody;
 }
 
+- (SKTexture *)backgroundTexture
+{
+    UIGraphicsBeginImageContext(self.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    RoadNode *road = (RoadNode *)self.parent;
+    switch ([road roadType])
+    {
+        case RoadTypeCityStreet:
+        case RoadTypeHighway:
+            break;
+
+        case RoadTypeRailway:
+        {
+            UIImage *tileImage = [UIImage imageNamed:@"Railway"];
+
+            CGRect segmentRect = CGRectMake(0.0f,
+                                            (CGRectGetHeight(self.frame) - tileImage.size.height) / 2,
+                                            tileImage.size.width,
+                                            tileImage.size.height);
+
+            while (CGRectGetMinX(segmentRect) < CGRectGetWidth(self.frame))
+            {
+                CGContextDrawImage(context,
+                                   segmentRect,
+                                   [tileImage CGImage]);
+
+                segmentRect = CGRectOffset(segmentRect, CGRectGetWidth(segmentRect), 0.0f);
+            }
+            break;
+        }
+    }
+
+    UIImage *textureImage = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+
+    SKTexture *texture = [SKTexture textureWithImage:textureImage];
+
+    return texture;
+}
+
 - (void)startTraffic
 {
+    [self setTexture:[self backgroundTexture]];
+
+    RoadNode *road = (RoadNode *)self.parent;
+    if ([road roadType] == RoadTypeRailway)
+    {
+        RailLightsNode *lights = [[RailLightsNode alloc] initWithLane:self];
+
+        CGPoint point = CGPointZero;
+        point.x += randomBetween(-CGRectGetWidth(self.frame) * 0.4f, CGRectGetWidth(self.frame) * 0.4f);
+        switch ([self trafficDirection])
+        {
+            case TrafficDirectionLeftToRight:
+                point.y -= CGRectGetHeight(self.frame) / 2 - CGRectGetHeight(lights.frame) / 2;
+                break;
+                
+            case TrafficDirectionRightToLeft:
+                point.y += CGRectGetHeight(self.frame) / 2 - CGRectGetHeight(lights.frame) / 2;
+                break;
+        }
+
+        [lights setPosition:point];
+        [self addChild:lights];
+    }
+
     self.trafficTimer =
     [NSTimer scheduledTimerWithTimeInterval:1.0f
                                      target:self
@@ -185,7 +266,7 @@
     }
 
     RoadNode *road = (RoadNode *)self.parent;
-    switch ([road roadType ])
+    switch ([road roadType])
     {
         case RoadTypeCityStreet:
         {
@@ -208,6 +289,11 @@
 
             break;
         }
+
+        case RoadTypeRailway:
+        {
+            vehicleType = VehicleTypeTrain;
+        }
     }
 
     speed = randomBetween(self.speedFrom, self.speedTo);
@@ -221,10 +307,14 @@
     else
         startPosition = CGRectGetWidth(self.frame) / 2 + vehicle.size.height / 2 - 1;
 
-    CGFloat laneOffsetRange = (CGRectGetHeight(self.frame) - CGRectGetWidth(vehicle.frame)) / 2;
-    lanePosition = randomBetween(-laneOffsetRange,
-                                 laneOffsetRange);
-    lanePosition = floor(lanePosition);
+    if ([road roadType] == RoadTypeRailway) {
+        lanePosition = 0.0f;
+    } else {
+        CGFloat laneOffsetRange = (CGRectGetHeight(self.frame) - CGRectGetWidth(vehicle.frame)) / 2;
+        lanePosition = randomBetween(-laneOffsetRange,
+                                     laneOffsetRange);
+        lanePosition = floor(lanePosition);
+    }
 
     [vehicle setPosition:CGPointMake(startPosition, lanePosition)];
 
@@ -234,7 +324,7 @@
 
     [self addChild:vehicle];
 
-    [vehicle startVehicle];
+    [vehicle scheduleVehicle];
 }
 
 @end

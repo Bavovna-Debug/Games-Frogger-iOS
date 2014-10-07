@@ -17,7 +17,8 @@
 @property (nonatomic, assign, readonly) CGFloat           intervalTo;
 
 - (id)initWithAttributes:(NSDictionary *)attributes
-              playground:(SKSpriteNode *)playground;
+              playground:(SKSpriteNode *)playground
+                    road:(SKSpriteNode *)road;
 
 - (void)startTraffic;
 

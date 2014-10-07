@@ -12,7 +12,8 @@
 
 typedef enum {
     VehicleTypePKW,
-    VehicleTypeLKW
+    VehicleTypeLKW,
+    VehicleTypeTrain
 } VehicleType;
 
 @property (nonatomic, assign, readonly) VehicleType     vehicleType;
@@ -22,6 +23,8 @@ typedef enum {
 - (id)initWithType:(VehicleType)vehicleType
     driveDirection:(DriveDirection)driveDirection
       drivingSpeed:(CGFloat)drivingSpeed;
+
+- (void)scheduleVehicle;
 
 - (void)startVehicle;
 

@@ -21,14 +21,17 @@
 #define NodeZPlayground  0.0f
 #define NodeZRoad           1.0f
 #define NodeZLane               1.0f
+#define NodeZRailLights             2.0f
 #define NodeZVehicle                1.0f
 #define NodeZGround         1.0f
 #define NodeZFloraTree          3.0f
 #define NodeZPlayer         3.0f
+#define NodeStopButton                  99.0f
 
 typedef enum {
     RoadTypeCityStreet,
-    RoadTypeHighway
+    RoadTypeHighway,
+    RoadTypeRailway
 } RoadType;
 
 typedef enum {

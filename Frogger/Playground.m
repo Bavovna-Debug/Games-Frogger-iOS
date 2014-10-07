@@ -15,6 +15,8 @@
 
 @interface Playground () <NSXMLParserDelegate>
 
+@property (nonatomic, assign, readwrite) NSUInteger              levelId;
+
 @property (nonatomic, assign, readwrite) CLLocationCoordinate2D  centerCoordinate;
 @property (nonatomic, assign, readwrite) CLLocationDirection     direction;
 
@@ -35,16 +37,22 @@
 @end
 
 @implementation Playground
+{
+    Boolean levelFound;
+    Boolean idiomFound;
+}
 
 #pragma mark Object cunstructors/destructors
 
-- (id)initWithSize:(CGSize)size
-      widthInMeter:(CGFloat)widthInMeter
+- (id)initWithLevelId:(NSUInteger)levelId
+                 size:(CGSize)size
 {
     self = [super init];
     if (self == nil)
         return nil;
 
+    self.levelId = levelId;
+    
     [self setSize:size];
 
     [self setName:@"playgroundNode"];
@@ -52,14 +60,9 @@
 
     [self setPhysicsBody:[self preparePhysicsBody]];
 
-    [self parseLevels];
+    [self parseLevel];
 
     self.navigator = [Navigator sharedNavigator];
-
-    CGFloat lengthToWidthRatio = size.height / size.width;
-    [self setWidthInMeter:widthInMeter];
-    [self setLengthInMeter:widthInMeter * lengthToWidthRatio];
-    [self setScaleFactor:size.width / widthInMeter];
 
     CLLocationCoordinate2D currentCoordinate = [self.navigator deviceCoordinate];
     CLLocationDirection currentDirection = [self.navigator deviceDirection];
@@ -99,8 +102,8 @@
     CGPoint nodePosition;
 
     if ([node.name isEqualToString:@"playerNode"] == YES) {
-        [nextNode setPosition:CGPointMake(CGRectGetMidX(self.frame),
-                                          CGRectGetMinY(self.frame))];
+        nodePosition = CGPointMake(CGRectGetMidX(self.frame),
+                                   CGRectGetMinY(self.frame));
     } else {
         if (lastNode == nil) {
             nodePosition = CGPointMake(CGRectGetWidth(self.frame) / 2,
@@ -174,14 +177,14 @@
     return position;
 }
 
-#pragma mark XML parsing
+#pragma mark XML
 
-- (void)parseLevels
+- (void)parseLevel
 {
-    NSString *Path = [[NSBundle mainBundle] bundlePath];
-    NSString *DataPath = [ Path stringByAppendingPathComponent:@"Levels.xml"];
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    path = [path stringByAppendingPathComponent:@"Levels.xml"];
 
-    NSData *xmlData = [[NSData alloc] initWithContentsOfFile:DataPath];
+    NSData *xmlData = [[NSData alloc] initWithContentsOfFile:path];
 
     NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
 
@@ -190,25 +193,71 @@
     [xmlParser parse];
 }
 
-BOOL parsing;
-
 - (void)parser:(NSXMLParser *)parser
 didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qualifiedName
     attributes:(NSDictionary *)attributes
 {
-    if ([elementName isEqualToString:@"Level"] == YES) {
-        parsing = YES;
+    if ([elementName isEqualToString:@"Level"] == YES)
+    {
+        NSString *attrLevelId = [attributes objectForKey:@"Id"];
+        NSString *attrMusicTitle = [attributes objectForKey:@"MusicTitle"];
+        NSScanner *scanner;
 
-        self.levelMusicTitle = [attributes objectForKey:@"MusicTitle"];
+        int levelId;
+
+        scanner = [NSScanner scannerWithString:attrLevelId];
+        [scanner scanInt:&levelId];
+
+        if (levelId == self.levelId) {
+            levelFound = YES;
+
+            self.levelMusicTitle = attrMusicTitle;
+        }
 
         return;
     }
 
-    if (parsing == NO)
+    if (levelFound == NO)
         return;
 
+    if ([elementName isEqualToString:@"Idiom"] == YES)
+    {
+        NSString *attrIdiomType = [attributes objectForKey:@"Type"];
+        NSString *attrWidthInMeter = [attributes objectForKey:@"WidthInMeter"];
+        NSScanner *scanner;
+
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            if ([attrIdiomType isEqualToString:@"Pad"] == NO) {
+                return;
+            }
+        } else {
+            if ([attrIdiomType isEqualToString:@"Phone"] == NO) {
+                return;
+            }
+        }
+
+        int widthInMeter;
+
+        scanner = [NSScanner scannerWithString:attrWidthInMeter];
+        [scanner scanInt:&widthInMeter];
+
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            widthInMeter *= 1.5f;
+
+        CGSize size = self.size;
+        CGFloat lengthToWidthRatio = size.height / size.width;
+        [self setWidthInMeter:widthInMeter];
+        [self setLengthInMeter:widthInMeter * lengthToWidthRatio];
+        [self setScaleFactor:size.width / widthInMeter];
+
+        idiomFound = YES;
+    }
+
+    if (idiomFound == NO)
+        return;
+    
     if ([elementName isEqualToString:@"Ground"] == YES) {
         self.parsingGround =
         [[GroundNode alloc] initWithAttributes:attributes
@@ -220,11 +269,14 @@ didStartElement:(NSString *)elementName
     } else if ([elementName isEqualToString:@"Lane"] == YES) {
         self.parsingLane =
         [[LaneNode alloc] initWithAttributes:attributes
-                                  playground:self];
+                                  playground:self
+                                        road:self.parsingRoad];
     } else if ([elementName isEqualToString:@"LaneMarking"] == YES) {
         self.parsingLaneMarking =
         [[LaneMarkingNode alloc] initWithAttributes:attributes
                                          playground:self];
+    } else if ([elementName isEqualToString:@"Pedestrian"] == YES) {
+        [self.parsingRoad setWithPedestrian:YES];
     } else if ([elementName isEqualToString:@"Destination"] == YES) {
         self.parsingDestination =
         [[DestinationNode alloc] initWithWidth:CGRectGetWidth(self.frame)
@@ -237,8 +289,19 @@ didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qualifiedName
 {
+    if (levelFound == NO)
+        return;
+
     if ([elementName isEqualToString:@"Level"] == YES) {
-        parsing = NO;
+        levelFound = NO;
+        return;
+    }
+
+    if (idiomFound == NO)
+        return;
+
+    if ([elementName isEqualToString:@"Idiom"] == YES) {
+        idiomFound = NO;
         return;
     }
 

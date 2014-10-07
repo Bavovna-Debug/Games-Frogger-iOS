@@ -18,7 +18,8 @@
 
 - (void)didMoveToView:(SKView *)view
 {
-    [self makeBackground];
+    [self createBackground:YES];
+    [self createTitle];
 
     NSString *label = NSLocalizedString(@"SCENE_LABEL_PREPARING", nil);
     [self makeLabel:label];
@@ -30,7 +31,7 @@
 
 - (void)navigatorDidCompleteCalibration
 {
-    SKScene *gameScene = [[GameScene alloc]initWithSize:self.size];
+    SKScene *gameScene = [[GameScene alloc] initWithSize:self.size];
 
     SKTransition *doors = [SKTransition doorwayWithDuration:0.5f];
 

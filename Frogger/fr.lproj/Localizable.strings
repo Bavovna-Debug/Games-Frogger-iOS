@@ -6,18 +6,18 @@
 /*                                                                            */
 /******************************************************************************/
 
-"SCENE_LABEL_TAP_SCREEN"            = "Tap screen";
-"SCENE_LABEL_PREPARING"             = "GPS wird kalibriert...";
+"SCENE_LABEL_TAP_SCREEN"            = "Appuyez sur l'écran";
+"SCENE_LABEL_PREPARING"             = "GPS déterminer...";
 "SCENE_LABEL_GAME_OVER"             = "Uuuups...";
-"SCENE_LABEL_MISSION_COMPLETE"      = "Du hast gewonnen!";
+"SCENE_LABEL_MISSION_COMPLETE"      = "Vous avez gagné!";
 
 "ALERT_BUTTON_OK"                   = "OK";
 
-"AD_OFF_MESSAGE"                    = "Mach die lästige Werbung weg und aktiviere alle Levels.";
-"AD_OFF_BUTTON_NOT_YET"             = "Nein, danke";
-"AD_OFF_BUTTON_DETAILS"             = "Details...";
+"AD_OFF_MESSAGE"                    = "Faire les publicités ennuyeuses off et activer tous les niveaux.";
+"AD_OFF_BUTTON_NOT_YET"             = "Non, merci";
+"AD_OFF_BUTTON_DETAILS"             = "Détails...";
 
-"APP_STORE_ERROR_MESSAGE"           = "Ihre Bestellung kann in Moment nicht bearbeitet werden! Versuchen Sie es später.";
+"APP_STORE_ERROR_MESSAGE"           = "Vous ne pouvez pas procéder à votre achat en ce moment! Essayez plus tard.";
 
-"APP_STORE_CANCEL"                  = "Nein, danke";
-"APP_STORE_SUBMIT"                  = "Kaufen - %@";
+"APP_STORE_CANCEL"                  = "Non, merci";
+"APP_STORE_SUBMIT"                  = "Acheter - %@";

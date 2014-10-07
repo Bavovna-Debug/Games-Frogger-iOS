@@ -11,6 +11,7 @@
 typedef enum {
     GroundTypeLargeRoundStones,
     GroundTypeGrass,
+    GroundTypeTreeLine,
     GroundTypeForest
 } GroundType;
 

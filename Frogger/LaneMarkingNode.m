@@ -51,8 +51,7 @@
 
     [self setPhysicsBody:[self preparePhysicsBody:size]];
 
-    [self setTexture:[self backgroundTexture:size
-                             laneMarkingType:self.laneMarkingType]];
+    [self setTexture:[self backgroundTexture]];
 
     return self;
 }
@@ -91,8 +90,7 @@
     return physicsBody;
 }
 
-- (SKTexture *)backgroundTexture:(CGSize)roadSize
-                 laneMarkingType:(LaneMarkingType)laneMarkingType
+- (SKTexture *)backgroundTexture
 {
     SKColor *stripesColor = [SKColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:0.7f];
 
@@ -101,7 +99,7 @@
 
     [stripesColor setFill];
 
-    switch (laneMarkingType)
+    switch (self.laneMarkingType)
     {
         case LaneMarkingTypeDouble:
         {

@@ -4,8 +4,8 @@
 //  Copyright (c) 2014 Meine Werke. All rights reserved.
 //
 
-#import "SceneWithAds.h"
+#import "AbstractScene.h"
 
-@interface GameScene : SceneWithAds
+@interface SelectLevelScene : AbstractScene
 
 @end
