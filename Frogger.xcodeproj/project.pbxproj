@@ -722,11 +722,11 @@
 			isa = PBXGroup;
 			children = (
 				94C9641919DD9B5E007AE24A /* Frogger-Info.plist */,
+				94B19B2419D28F8500CA0E50 /* main.m */,
 				9421770B19DBE65400437B17 /* Levels.xml */,
 				94A99BC419DA806E009AF19E /* Audio */,
 				9411402619D83E2E007A411A /* Images */,
 				94730E4B19D6EEFD0013F267 /* Localizations */,
-				94B19B2419D28F8500CA0E50 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

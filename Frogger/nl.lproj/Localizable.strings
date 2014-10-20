@@ -13,6 +13,10 @@
 
 "ALERT_BUTTON_OK"                   = "OK";
 
+"ALERT_INTRODUCTION"                = "G'Frogger is een motion control spel. Om de speler door het terrein te bewegen moet je gaan in die richting - de speler in de virtuele realiteit beweegt wanneer je in de echte wereld bewegen. Fiets, scooter of skateboard kan hier ook gebruikt worden om de speler te versnellen.";
+
+"ALERT_DONT_TOUCH_SCREEN"           = "G'Frogger is een motion control spel. Om de speler door het terrein te bewegen moet je gaan in die richting - de speler in de virtuele realiteit beweegt wanneer je in de echte wereld bewegen. Fiets, scooter of skateboard kan hier ook gebruikt worden. Speeloppervlak op het scherm van uw iPhone/iPad komt overeen met ongeveer %.0f tot %.0f meter.";
+
 "AD_OFF_MESSAGE"                    = "Wilt u zich te ontdoen van vervelende advertenties en activeer alle niveaus?";
 "AD_OFF_BUTTON_NOT_YET"             = "Nee, dank u";
 "AD_OFF_BUTTON_DETAILS"             = "Details...";

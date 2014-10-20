@@ -20,6 +20,8 @@
 - (id)initWithLevelId:(NSUInteger)levelId
                  size:(CGSize)size;
 
+- (void)repositionPlayer;
+
 - (void)quit;
 
 - (NSURL *)levelMusicURL;

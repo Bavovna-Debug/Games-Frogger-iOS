@@ -13,6 +13,10 @@
 
 "ALERT_BUTTON_OK"                   = "OK";
 
+"ALERT_INTRODUCTION"                = "G'Frogger is a motion control game. In order to move the player through the terrain you need to go in the appropriate direction - the player will move in the virtual reality only when you move in the real world. Bicycle, scooter or skateboard can also be used to accelerate the player.";
+
+"ALERT_DONT_TOUCH_SCREEN"           = "G'Frogger is a motion control game. In order to move the player through the terrain you need to go in the appropriate direction - the player will move in the virtual reality only when you move in the real world. Bicycle, scooter or skateboard can also be used. Playing surface on the screen of your iPhone/iPad corresponds to about %.0f to %.0f meters.";
+
 "AD_OFF_MESSAGE"                    = "Would you like to get rid of annoying ads and activate all levels?";
 "AD_OFF_BUTTON_NOT_YET"             = "No, not yet";
 "AD_OFF_BUTTON_DETAILS"             = "Details...";

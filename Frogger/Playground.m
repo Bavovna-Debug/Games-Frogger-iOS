@@ -64,14 +64,9 @@
 
     self.navigator = [Navigator sharedNavigator];
 
-    CLLocationCoordinate2D currentCoordinate = [self.navigator deviceCoordinate];
-    CLLocationDirection currentDirection = [self.navigator deviceDirection];
+    [self setDirection:[self.navigator deviceDirection]];
 
-    currentCoordinate = [self.navigator shift:currentCoordinate
-                                      heading:currentDirection
-                                     distance:self.lengthInMeter / 2 - 4.0f];
-    [self setCenterCoordinate:currentCoordinate];
-    [self setDirection:currentDirection];
+    [self repositionPlayer];
 
     return self;
 }
@@ -117,6 +112,14 @@
     [nextNode setPosition:nodePosition];
 
     [super addChild:node];
+}
+
+- (void)repositionPlayer
+{
+    CLLocationCoordinate2D currentCoordinate = [self.navigator shift:[self.navigator deviceCoordinate]
+                                                             heading:[self.navigator deviceDirection]
+                                                            distance:self.lengthInMeter / 2 - 4.0f];
+    [self setCenterCoordinate:currentCoordinate];
 }
 
 - (void)quit

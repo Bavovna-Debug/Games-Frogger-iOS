@@ -4,8 +4,8 @@
 //  Copyright (c) 2014 Meine Werke. All rights reserved.
 //
 
-#ifndef Frogger_Nodes_h
-#define Frogger_Nodes_h
+#ifndef Globals_h
+#define Globals_h
 
 #define NodeCategoryPlayer          0x0001
 #define NodeCategoryPlayground      0x0002

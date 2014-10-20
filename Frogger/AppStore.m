@@ -34,6 +34,9 @@
     if (self == nil)
         return nil;
 
+    if ([self gameUnlocked] == NO)
+        [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+
     return self;
 }
 
@@ -106,8 +109,6 @@
     [alertView setAlertViewStyle:UIAlertViewStyleDefault];
     [alertView show];
 }
-
-//[[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
 {

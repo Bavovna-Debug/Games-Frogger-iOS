@@ -20,26 +20,6 @@
     [self makeLabel:label];
 }
 
-- (SKTexture *)adButtonTexture
-{
-    UIGraphicsBeginImageContext(CGSizeMake(50.0f, 50.0f));
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    CGRect logoRect = CGRectMake(0, 0, 50, 50);
-
-    CGContextDrawImage(context,
-                       logoRect,
-                       [[UIImage imageNamed:@"Tree-0001"] CGImage]);
-
-    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
-
-    UIGraphicsEndImageContext();
-
-    SKTexture *texture = [SKTexture textureWithImage:backgroundImage];
-
-    return texture;
-}
-
 - (void)touchesBegan:(NSSet *)touches
            withEvent:(UIEvent *)event
 {

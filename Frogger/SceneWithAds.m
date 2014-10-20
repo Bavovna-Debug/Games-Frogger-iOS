@@ -40,7 +40,7 @@
 - (void)startUnlockReminder
 {
     unlockReminderTimer =
-    [NSTimer scheduledTimerWithTimeInterval:30.0f
+    [NSTimer scheduledTimerWithTimeInterval:UnlockReminderInterval
                                      target:self
                                    selector:@selector(unlockReminder)
                                    userInfo:nil

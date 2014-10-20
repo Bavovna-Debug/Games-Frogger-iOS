@@ -23,7 +23,6 @@
 @property (nonatomic, strong) Playground     *playground;
 @property (nonatomic, strong) AVAudioPlayer  *backgroundMusicPlayer;
 @property (nonatomic, strong) NSDate         *gameBegin;
-@property (nonatomic, strong) NSTimer        *unlockReminderTimer;
 
 @end
 
@@ -34,7 +33,8 @@
 
 - (void)didMoveToView:(SKView *)view
 {
-    if (sceneReady == NO) {
+    if (sceneReady == NO)
+    {
         [self setBackgroundColor:[SKColor clearColor]];
         [self setScaleMode:SKSceneScaleModeAspectFill];
 
@@ -97,8 +97,11 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     if (node != nil) {
-        if ([node.name isEqualToString:@"stopButton"] == YES)
+        if ([node.name isEqualToString:@"stopButton"] == YES) {
             [self stopGame];
+        } else {
+            [self dontTouchScreenAlert];
+        }
     }
 }
 
@@ -153,7 +156,8 @@
         }
     } else if ([nameA isEqualToString:@"playerNode"] == YES) {
         if ([nameB isEqualToString:@"playgroundNode"] == YES) {
-            NSLog(@"GONE");
+            NSLog(@"Left playground");
+            [self.playground repositionPlayer];
         }
     }
 }
@@ -236,6 +240,24 @@
     self.view.layer.transform = t;
 }
 */
+
+- (void)dontTouchScreenAlert
+{
+    NSString *okButton = NSLocalizedString(@"ALERT_BUTTON_OK", nil);
+    NSString *message = NSLocalizedString(@"ALERT_DONT_TOUCH_SCREEN", nil);
+    message = [NSString stringWithFormat:message,
+               [self.playground widthInMeter],
+               [self.playground lengthInMeter]];
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:message
+                                                       delegate:self
+                                              cancelButtonTitle:okButton
+                                              otherButtonTitles:nil];
+
+    [alertView setAlertViewStyle:UIAlertViewStyleDefault];
+    [alertView show];
+}
 
 #pragma mark App Store
 
