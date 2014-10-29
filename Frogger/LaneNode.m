@@ -11,8 +11,8 @@
 #import "RoadNode.h"
 #import "VehicleNode.h"
 
-#define RoadLaneWidth 50.0f
-#define RailLaneWidth 80.0f
+#define RoadLaneWidth 40.0f
+#define RailLaneWidth 50.0f
 
 @interface LaneNode ()
 
@@ -189,18 +189,7 @@
     {
         RailLightsNode *lights = [[RailLightsNode alloc] initWithLane:self];
 
-        CGPoint point = CGPointZero;
-        point.x += randomBetween(-CGRectGetWidth(self.frame) * 0.4f, CGRectGetWidth(self.frame) * 0.4f);
-        switch ([self trafficDirection])
-        {
-            case TrafficDirectionLeftToRight:
-                point.y -= CGRectGetHeight(self.frame) / 2 - CGRectGetHeight(lights.frame) / 2;
-                break;
-                
-            case TrafficDirectionRightToLeft:
-                point.y += CGRectGetHeight(self.frame) / 2 - CGRectGetHeight(lights.frame) / 2;
-                break;
-        }
+        CGPoint point = CGPointMake(randomBetween(-CGRectGetWidth(self.frame) * 0.25f, CGRectGetWidth(self.frame) * 0.25f), 0.0f);
 
         [lights setPosition:point];
         [self addChild:lights];

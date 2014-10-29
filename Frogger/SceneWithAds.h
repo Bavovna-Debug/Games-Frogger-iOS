@@ -8,8 +8,6 @@
 
 @interface SceneWithAds : SKScene
 
-#define UnlockReminderInterval 40.0f
-
 - (void)showBanner;
 
 - (void)hideBanner;

@@ -7,7 +7,7 @@
 #import "Globals.h"
 #import "Navigator.h"
 
-@interface Navigator ()
+@interface Navigator () <CLLocationManagerDelegate>
 
 @property (nonatomic, assign, readwrite) Boolean                 calibrating;
 @property (nonatomic, assign, readwrite) CLLocationCoordinate2D  startPosition;

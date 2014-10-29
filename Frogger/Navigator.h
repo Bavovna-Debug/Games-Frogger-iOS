@@ -7,7 +7,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
-@interface Navigator : NSObject <CLLocationManagerDelegate>
+@interface Navigator : NSObject
 
 @property (nonatomic, strong, readwrite) id calibrationDelegate;
 @property (nonatomic, strong, readwrite) id navigationDelegate;

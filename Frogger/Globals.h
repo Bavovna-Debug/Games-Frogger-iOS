@@ -7,6 +7,12 @@
 #ifndef Globals_h
 #define Globals_h
 
+#define UnlockReminderInterval      60.0f
+#define RemoveAdsProductIdentifier  @"Zeppelinium.Frogger.Unlock"
+#define GameUnlockedKey             @"gameUnlocked"
+#define IntroductionCounterKey      @"introductionCounter"
+#define TimesToShowIntroduction     5
+
 #define NodeCategoryPlayer          0x0001
 #define NodeCategoryPlayground      0x0002
 #define NodeCategoryGround          0x0004

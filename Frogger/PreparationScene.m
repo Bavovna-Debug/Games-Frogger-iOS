@@ -6,10 +6,13 @@
 
 #import "AppStore.h"
 #import "GameScene.h"
+#import "Globals.h"
 #import "Navigator.h"
 #import "PreparationScene.h"
 
 @interface PreparationScene () <UIAlertViewDelegate, NavigatorCalibrationDelegate>
+
+@property (assign, nonatomic) Boolean mustShowIntroduction;
 
 @end
 
@@ -26,7 +29,8 @@
     [self makeLabel:label];
 
     if ([[AppStore sharedAppStore] gameUnlocked] == NO) {
-        [self showIntroduction];
+        if ([self mustShowIntroduction] == YES)
+            [self showIntroduction];
     } else {
         [self startCalibration];
     }
@@ -46,6 +50,30 @@
     SKTransition *doors = [SKTransition doorwayWithDuration:0.5f];
 
     [self.view presentScene:gameScene transition:doors];
+}
+
+-(Boolean)mustShowIntroduction
+{
+    NSInteger introductionCounter = [[NSUserDefaults standardUserDefaults] integerForKey:IntroductionCounterKey];
+
+    if (introductionCounter < TimesToShowIntroduction) {
+        introductionCounter++;
+
+        [[NSUserDefaults standardUserDefaults] setInteger:introductionCounter
+                                                   forKey:IntroductionCounterKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (void)setGameUnlocked:(BOOL)gameUnlocked
+{
+    [[NSUserDefaults standardUserDefaults] setBool:gameUnlocked
+                                            forKey:GameUnlockedKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)showIntroduction

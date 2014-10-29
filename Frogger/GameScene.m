@@ -50,7 +50,7 @@
         self.backgroundMusicPlayer =
         [[AVAudioPlayer alloc] initWithContentsOfURL:[self.playground levelMusicURL]
                                                error:nil];
-        [self.backgroundMusicPlayer setNumberOfLoops:5];
+        //[self.backgroundMusicPlayer setNumberOfLoops:5];
 
         SKSpriteNode *stopButton = [SKSpriteNode spriteNodeWithImageNamed:@"Stop"];
         [stopButton setName:@"stopButton"];
@@ -115,7 +115,12 @@
     NSString *nameA = [[bodyA node] name];
     NSString *nameB = [[bodyB node] name];
 
-    if ([nameA isEqualToString:@"vehicleNode"] == YES) {
+    if ([nameA isEqualToString:@"playgroundNode"] == YES) {
+        if ([nameB isEqualToString:@"playerNode"] == YES) {
+            NSLog(@"Left playground");
+            [self.playground repositionPlayer];
+        }
+    } else if ([nameA isEqualToString:@"vehicleNode"] == YES) {
         if ([nameB isEqualToString:@"playerNode"] == YES) {
             [self gameOver];
         }
@@ -153,11 +158,6 @@
 
             [vehicle stopVehicle];
             [vehicle removeFromParent];
-        }
-    } else if ([nameA isEqualToString:@"playerNode"] == YES) {
-        if ([nameB isEqualToString:@"playgroundNode"] == YES) {
-            NSLog(@"Left playground");
-            [self.playground repositionPlayer];
         }
     }
 }
@@ -226,20 +226,6 @@
 
     [self.scene removeFromParent];
 }
-
-/*
-- (void)rotateFrontViewOnXAxis
-{
-    self.rotAngle -= 10;
-
-    float angle = (M_PI / 180.0f) * self.rotAngle/10;
-
-    CATransform3D r = CATransform3DMakeRotation(angle, 1.0, 0.0, 0.0);
-    CATransform3D t = CATransform3DMakeTranslation(10, 0.0, 0.0);
-
-    self.view.layer.transform = t;
-}
-*/
 
 - (void)dontTouchScreenAlert
 {

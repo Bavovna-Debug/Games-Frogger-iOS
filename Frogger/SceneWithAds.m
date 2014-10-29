@@ -7,6 +7,7 @@
 #import <iAd/iAd.h>
 
 #import "AppStore.h"
+#import "Globals.h"
 #import "SceneWithAds.h"
 
 @interface SceneWithAds () <ADBannerViewDelegate, UIAlertViewDelegate>
@@ -39,12 +40,14 @@
 
 - (void)startUnlockReminder
 {
-    unlockReminderTimer =
-    [NSTimer scheduledTimerWithTimeInterval:UnlockReminderInterval
-                                     target:self
-                                   selector:@selector(unlockReminder)
-                                   userInfo:nil
-                                    repeats:NO];
+    if (unlockReminderTimer == nil) {
+        unlockReminderTimer =
+        [NSTimer scheduledTimerWithTimeInterval:UnlockReminderInterval
+                                         target:self
+                                       selector:@selector(unlockReminder)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
 }
 
 - (void)stopUnlockReminder

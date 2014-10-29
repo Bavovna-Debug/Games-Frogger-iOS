@@ -23,5 +23,11 @@
 
 "APP_STORE_ERROR_MESSAGE"           = "Kan niet doorgaan met uw aankoop op dit moment! Probeer het later.";
 
-"APP_STORE_CANCEL"                  = "Nee, dank u";
-"APP_STORE_SUBMIT"                  = "Kopen - %@";
+"APP_STORE_NOT_YET"                 = "Nee, dank u";
+"APP_STORE_BUY_NOW"                 = "Kopen - %@";
+
+"APP_STORE_UNLOCK_BUTTON"           = "Unlock spel";
+"APP_STORE_BUY_MESSAGE"             = "Wil je dit spel kopen of naar uw vorige aankoop op dit apparaat te herstellen?";
+"APP_STORE_BUY_IT"                  = "Kopen";
+"APP_STORE_RESTORE_PURCHASE"        = "Restore aankoop";
+"APP_STORE_CANCEL"                  = "Afbreken";

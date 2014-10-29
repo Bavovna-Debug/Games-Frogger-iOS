@@ -23,5 +23,11 @@
 
 "APP_STORE_ERROR_MESSAGE"           = "Ihre Bestellung kann in Moment nicht bearbeitet werden! Versuchen Sie es später.";
 
-"APP_STORE_CANCEL"                  = "Nein, danke";
-"APP_STORE_SUBMIT"                  = "Kaufen - %@";
+"APP_STORE_NOT_YET"                 = "Nein, danke";
+"APP_STORE_BUY_NOW"                 = "Kaufen - %@";
+
+"APP_STORE_UNLOCK_BUTTON"           = "Spiel Freischalten";
+"APP_STORE_BUY_MESSAGE"             = "Möchten Sie dieses Spiel kaufen oder Ihren vorherigen Kauf auf diesem Gerät wiederherstellen?";
+"APP_STORE_BUY_IT"                  = "Kaufen";
+"APP_STORE_RESTORE_PURCHASE"        = "Kauf Wiederherstellen";
+"APP_STORE_CANCEL"                  = "Abbrechen";

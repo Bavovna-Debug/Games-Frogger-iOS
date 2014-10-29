@@ -23,5 +23,11 @@
 
 "APP_STORE_ERROR_MESSAGE"           = "Vous ne pouvez pas procéder à votre achat en ce moment! Essayez plus tard.";
 
-"APP_STORE_CANCEL"                  = "Non, merci";
-"APP_STORE_SUBMIT"                  = "Acheter - %@";
+"APP_STORE_NOT_YET"                 = "Non, merci";
+"APP_STORE_BUY_NOW"                 = "Acheter - %@";
+
+"APP_STORE_UNLOCK_BUTTON"           = "Débloquez jeu";
+"APP_STORE_BUY_MESSAGE"             = "Voulez-vous acheter ce jeu ou restaurer votre achat précédent sur ​​ce dispositif?";
+"APP_STORE_BUY_IT"                  = "Acheter";
+"APP_STORE_RESTORE_PURCHASE"        = "Achat restaurer";
+"APP_STORE_CANCEL"                  = "Avorter";

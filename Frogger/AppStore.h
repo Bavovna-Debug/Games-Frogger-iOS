@@ -8,22 +8,19 @@
 
 @interface AppStore : NSObject
 
-#define RemoveAdsProductIdentifier  @"Zeppelinium.Frogger.Unlock"
-#define GameUnlockedKey             @"gameUnlocked"
-
 @property (nonatomic, strong, readwrite) id delegate;
 
 @property (nonatomic, assign) BOOL gameUnlocked;
 
 + (AppStore *)sharedAppStore;
 
-- (id)init;
-
 - (BOOL)gameUnlocked;
 
 - (void)setGameUnlocked:(BOOL)gameUnlocked;
 
 - (void)purchaseUnlock;
+
+- (void)restorePurchasedUnlock;
 
 @end
 

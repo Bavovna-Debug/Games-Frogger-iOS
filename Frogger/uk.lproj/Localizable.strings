@@ -23,5 +23,11 @@
 
 "APP_STORE_ERROR_MESSAGE"           = "Не вдається обробити Ваше замовлення зараз! Спробуйте пізніше.";
 
-"APP_STORE_CANCEL"                  = "Ні, пізніше";
-"APP_STORE_SUBMIT"                  = "Купити - %@";
+"APP_STORE_NOT_YET"                 = "Ні, пізніше";
+"APP_STORE_BUY_NOW"                 = "Купити - %@";
+
+"APP_STORE_UNLOCK_BUTTON"           = "Розблокувати гру";
+"APP_STORE_BUY_MESSAGE"             = "Бажаєте купити цю гру, або відновити попередню покупку на цьому пристрої?";
+"APP_STORE_BUY_IT"                  = "Купити";
+"APP_STORE_RESTORE_PURCHASE"        = "Відновити покупку";
+"APP_STORE_CANCEL"                  = "Відмінити";

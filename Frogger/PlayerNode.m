@@ -17,7 +17,6 @@
 @property (nonatomic, weak)   Playground              *playground;
 
 @property (nonatomic, strong) SKAction                *walkingAnimation;
-@property (nonatomic, strong) NSTimer                 *walkingTimer;
 
 @property (nonatomic, strong) NSDate                  *lastMovement;
 @property (nonatomic, assign) CLLocationCoordinate2D  lastCoordinate;
@@ -26,9 +25,6 @@
 @end
 
 @implementation PlayerNode
-{
-    Boolean walking;
-}
 
 #pragma mark Object cunstructors/destructors
 
@@ -37,8 +33,6 @@
     self = [super initWithImageNamed:@"Player-0001"];
     if (self == nil)
         return nil;
-
-    walking = NO;
 
     [self setName:@"playerNode"];
     [self setZPosition:NodeZPlayer];
@@ -55,11 +49,8 @@
 
     self.walkingAnimation = [self prepareWalkingAnimation];
 
-    self.walkingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                                         target:self
-                                                       selector:@selector(walkingChecker)
-                                                       userInfo:nil
-                                                        repeats:YES];
+    [self runAction:self.walkingAnimation withKey:@"walkingAnimation"];
+
     return self;
 }
 
@@ -106,26 +97,6 @@
     [SKAction repeatActionForever:walkingAnimation];
 
     return repeatWalkingAnimation;
-}
-
-- (void)walkingChecker
-{
-    NSDate *now = [NSDate date];
-    NSTimeInterval sinceLastMovement = [now timeIntervalSinceDate:self.lastMovement];
-
-    if (walking == YES) {
-        if ((sinceLastMovement > 2.0f) || (self.lastSpeed == 0.0f)) {
-            [self removeActionForKey:@"walkingAnimation"];
-
-            walking = NO;
-        }
-    } else {
-        if ((sinceLastMovement < 2.0f) || (self.lastSpeed > 0.0f)) {
-            [self runAction:self.walkingAnimation withKey:@"walkingAnimation"];
-
-            walking = YES;
-        }
-    }
 }
 
 #pragma mark Navigator delegate

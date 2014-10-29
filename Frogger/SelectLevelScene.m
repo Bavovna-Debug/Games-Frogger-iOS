@@ -22,8 +22,9 @@
 {
     [self createBackground:NO];
     [self createTitle];
-
-    [self parseLevelList];
+    [self createLevelList];
+    if ([[AppStore sharedAppStore] gameUnlocked] == NO)
+        [self createUnlockButton];
 }
 
 - (void)touchesBegan:(NSSet *)touches
@@ -31,29 +32,95 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SelectLevelButton *buttonNode = (SelectLevelButton *)[self nodeAtPoint:location];
-    NSUInteger levelId = [buttonNode levelId];
+    SKNode *touchedNode = [self nodeAtPoint:location];
 
-    AppStore *appStore = [AppStore sharedAppStore];
-    if (([appStore gameUnlocked] == NO) && (levelId > 1))
-        return;
+    if ([touchedNode.name isEqualToString:@"levelButton"] == YES) {
+        SelectLevelButton *buttonNode = (SelectLevelButton *)touchedNode;
+        NSUInteger levelId = [buttonNode levelId];
 
-    UIApplication *application = [UIApplication sharedApplication];
-    ApplicationDelegate *applicationDelegate = (ApplicationDelegate *)[application delegate];
-    [applicationDelegate setLevelId:levelId];
+        AppStore *appStore = [AppStore sharedAppStore];
+        if (([appStore gameUnlocked] == NO) && (levelId > 1))
+            return;
 
-    SKAction *action = [SKAction fadeOutWithDuration:0.2f];
+        UIApplication *application = [UIApplication sharedApplication];
+        ApplicationDelegate *applicationDelegate = (ApplicationDelegate *)[application delegate];
+        [applicationDelegate setLevelId:levelId];
 
-    [self runAction:action completion:^{
-        SKScene *nextScene = [[PreparationScene alloc]initWithSize:self.size];
+        SKAction *action = [SKAction fadeOutWithDuration:0.2f];
 
-        [self.view presentScene:nextScene];
-    }];
+        [self runAction:action completion:^{
+            SKScene *nextScene = [[PreparationScene alloc]initWithSize:self.size];
+            
+            [self.view presentScene:nextScene];
+        }];
+    } else if ([touchedNode.name isEqualToString:@"unlockButton"] == YES) {
+        [self showIntroduction];
+    }
+}
+
+- (void)createUnlockButton
+{
+    CGSize buttonSize = CGSizeMake(CGRectGetWidth(self.frame) - 16.0f, 32.0f);
+    CGPoint buttonPosition = CGPointMake(CGRectGetWidth(self.frame) - buttonSize.width / 2,
+                                         buttonSize.height / 2);
+
+    UIGraphicsBeginImageContext(buttonSize);
+
+    CGRect buttonRect = CGRectMake(0.0f, 0.0f, buttonSize.width, buttonSize.height);
+    NSString *buttonText = NSLocalizedString(@"APP_STORE_UNLOCK_BUTTON", nil);
+    UIColor *textColor = [UIColor colorWithRed:0.502f green:1.000f blue:0.000f alpha:1.0f];
+    UIFont *textFont = [UIFont fontWithName:@"Times New Roman" size:18.0f];
+
+    [textColor set];
+    [buttonText drawInRect:buttonRect
+                  withFont:textFont];
+
+    UIImage *textureImage = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+
+    SKTexture *texture = [SKTexture textureWithImage:textureImage];
+
+    SKSpriteNode *buttonNode = [[SKSpriteNode alloc] initWithTexture:texture];
+
+    [buttonNode setName:@"unlockButton"];
+    [buttonNode setPosition:buttonPosition];
+
+    [self addChild:buttonNode];
+}
+
+- (void)showIntroduction
+{
+    NSString *buyItButton            = NSLocalizedString(@"APP_STORE_BUY_IT", nil);
+    NSString *restorePurchaseButton  = NSLocalizedString(@"APP_STORE_RESTORE_PURCHASE", nil);
+    NSString *cancelButton           = NSLocalizedString(@"APP_STORE_CANCEL", nil);
+    NSString *message                = NSLocalizedString(@"APP_STORE_BUY_MESSAGE", nil);
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:message
+                                                       delegate:self
+                                              cancelButtonTitle:cancelButton
+                                              otherButtonTitles:buyItButton, restorePurchaseButton, nil];
+
+    [alertView setAlertViewStyle:UIAlertViewStyleDefault];
+    [alertView show];
+}
+
+#pragma mark Alert
+
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[AppStore sharedAppStore] purchaseUnlock];
+    } else if (buttonIndex == 2) {
+        [[AppStore sharedAppStore] restorePurchasedUnlock];
+    }
 }
 
 #pragma mark XML
 
-- (void)parseLevelList
+- (void)createLevelList
 {
     NSString *path = [[NSBundle mainBundle] bundlePath];
     path = [path stringByAppendingPathComponent:@"Levels.xml"];

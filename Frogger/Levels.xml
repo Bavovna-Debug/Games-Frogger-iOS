@@ -2,7 +2,7 @@
     
     <Level Id="1" Title="Country" MusicTitle="Pogodi">
 
-        <Idiom Type="Phone" WidthInMeter="80">
+        <Idiom Type="Phone" WidthInMeter="60">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
@@ -11,6 +11,10 @@
                 <Lane TrafficDirection="LeftToRight" Speed="2.0-6.0" Interval="4.0-8.0" />
                 <LaneMarking Type="Double" />
                 <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-8.0" />
+                <LaneMarking Type="Dash" />
+                <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-8.0" />
+                <LaneMarking Type="Dash" />
+                <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="6.0-10.0" />
                 <LaneMarking Type="Solid" />
             </Road>
             <Ground Surface="Grass" Length="40" />
@@ -24,7 +28,7 @@
             <Destination />
         </Idiom>
 
-        <Idiom Type="Pad" WidthInMeter="120">
+        <Idiom Type="Pad" WidthInMeter="100">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
@@ -33,9 +37,19 @@
                 <Lane TrafficDirection="LeftToRight" Speed="2.0-6.0" Interval="4.0-8.0" />
                 <LaneMarking Type="Double" />
                 <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-8.0" />
+                <LaneMarking Type="Dash" />
+                <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="6.0-10.0" />
                 <LaneMarking Type="Solid" />
             </Road>
             <Ground Surface="Grass" Length="60" />
+            <Road RoadType="Highway">
+                <LaneMarking Type="Solid" />
+                <Lane TrafficDirection="LeftToRight" Speed="4.0-12.0" Interval="4.0-12.0" />
+                <LaneMarking Type="Double" />
+                <Lane TrafficDirection="RightToLeft" Speed="4.0-12.0" Interval="4.0-12.0" />
+                <LaneMarking Type="Solid" />
+            </Road>
+            <Ground Surface="Grass" Length="40" />
             <Road RoadType="Highway">
                 <LaneMarking Type="Solid" />
                 <Lane TrafficDirection="LeftToRight" Speed="4.0-12.0" Interval="4.0-12.0" />
@@ -62,7 +76,7 @@
 
     <Level Id="2" Title="Big city" MusicTitle="Pogodi">
 
-        <Idiom Type="Phone" WidthInMeter="80">
+        <Idiom Type="Phone" WidthInMeter="60">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
@@ -73,6 +87,7 @@
             </Road>
             <Ground Surface="TreeLine" Length="40" />
             <Road RoadType="Railway">
+                <Lane TrafficDirection="LeftToRight" Speed="8.0-20.0" Interval="12.0-16.0" />
                 <Lane TrafficDirection="RightToLeft" Speed="8.0-20.0" Interval="12.0-16.0" />
             </Road>
             <Ground Surface="TreeLine" Length="40" />
@@ -86,7 +101,7 @@
             <Destination />
         </Idiom>
 
-        <Idiom Type="Pad" WidthInMeter="120">
+        <Idiom Type="Pad" WidthInMeter="100">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
@@ -97,6 +112,7 @@
             </Road>
             <Ground Surface="TreeLine" Length="40" />
             <Road RoadType="Railway">
+                <Lane TrafficDirection="LeftToRight" Speed="8.0-20.0" Interval="12.0-16.0" />
                 <Lane TrafficDirection="RightToLeft" Speed="8.0-20.0" Interval="12.0-16.0" />
             </Road>
             <Ground Surface="TreeLine" Length="40" />
@@ -115,6 +131,8 @@
                 <Lane TrafficDirection="LeftToRight" Speed="2.0-6.0" Interval="4.0-8.0" />
                 <LaneMarking Type="Double" />
                 <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="2.0-8.0" />
+                <LaneMarking Type="Dash" />
+                <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="2.0-8.0" />
                 <LaneMarking Type="Solid" />
             </Road>
             <Ground Surface="Grass" Length="40" />
@@ -132,22 +150,27 @@
 
     <Level Id="3" Title="Terrible rails" MusicTitle="Pogodi">
 
-        <Idiom Type="Phone" WidthInMeter="80">
+        <Idiom Type="Phone" WidthInMeter="60">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="Railway">
                 <Lane TrafficDirection="LeftToRight" Speed="15.0-25.0" Interval="10.0-15.0" />
                 <Lane TrafficDirection="LeftToRight" Speed="15.0-25.0" Interval="20.0-25.0" />
             </Road>
-            <Ground Surface="TreeLine" Length="10" />
+            <Ground Surface="TreeLine" Length="20" />
             <Road RoadType="Railway">
                 <Lane TrafficDirection="RightToLeft" Speed="15.0-25.0" Interval="20.0-25.0" />
                 <Lane TrafficDirection="RightToLeft" Speed="15.0-25.0" Interval="15.0-20.0" />
                 <Lane TrafficDirection="RightToLeft" Speed="15.0-25.0" Interval="10.0-15.0" />
             </Road>
+            <Ground Surface="TreeLine" Length="20" />
+            <Road RoadType="Railway">
+                <Lane TrafficDirection="LeftToRight" Speed="15.0-25.0" Interval="10.0-15.0" />
+                <Lane TrafficDirection="LeftToRight" Speed="15.0-25.0" Interval="20.0-25.0" />
+            </Road>
             <Destination />
         </Idiom>
 
-        <Idiom Type="Pad" WidthInMeter="120">
+        <Idiom Type="Pad" WidthInMeter="100">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="Railway">
                 <Lane TrafficDirection="LeftToRight" Speed="15.0-25.0" Interval="10.0-15.0" />
@@ -166,6 +189,13 @@
                 <Lane TrafficDirection="RightToLeft" Speed="20.0-30.0" Interval="15.0-20.0" />
                 <Lane TrafficDirection="LeftToRight" Speed="20.0-30.0" Interval="15.0-20.0" />
                 <Lane TrafficDirection="RightToLeft" Speed="20.0-30.0" Interval="15.0-20.0" />
+                <Lane TrafficDirection="LeftToRight" Speed="20.0-30.0" Interval="15.0-20.0" />
+                <Lane TrafficDirection="RightToLeft" Speed="20.0-30.0" Interval="15.0-20.0" />
+            </Road>
+            <Ground Surface="TreeLine" Length="40" />
+            <Road RoadType="Railway">
+                <Lane TrafficDirection="LeftToRight" Speed="25.0-30.0" Interval="12.0-18.0" />
+                <Lane TrafficDirection="RightToLeft" Speed="25.0-30.0" Interval="12.0-18.0" />
             </Road>
             <Destination />
         </Idiom>
@@ -174,7 +204,7 @@
 
     <Level Id="4" Title="London" MusicTitle="Pogodi">
 
-        <Idiom Type="Phone" WidthInMeter="80">
+        <Idiom Type="Phone" WidthInMeter="60">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
@@ -183,7 +213,7 @@
                 <Lane TrafficDirection="LeftToRight" Speed="2.0-4.0" Interval="4.0-8.0" />
                 <LaneMarking Type="Solid" />
             </Road>
-            <Ground Surface="TreeLine" Length="20" />
+            <Ground Surface="TreeLine" Length="40" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
                 <Lane TrafficDirection="RightToLeft" Speed="5.0-7.0" Interval="4.0-8.0" />
@@ -191,7 +221,7 @@
                 <Lane TrafficDirection="LeftToRight" Speed="5.0-7.0" Interval="4.0-8.0" />
                 <LaneMarking Type="Solid" />
             </Road>
-            <Ground Surface="TreeLine" Length="20" />
+            <Ground Surface="TreeLine" Length="40" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
                 <Lane TrafficDirection="RightToLeft" Speed="8.0-10.0" Interval="4.0-8.0" />
@@ -202,7 +232,7 @@
             <Destination />
         </Idiom>
 
-        <Idiom Type="Pad" WidthInMeter="120">
+        <Idiom Type="Pad" WidthInMeter="100">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
@@ -235,17 +265,27 @@
                 <Lane TrafficDirection="LeftToRight" Speed="8.0-10.0" Interval="4.0-8.0" />
                 <LaneMarking Type="Solid" />
             </Road>
+            <Ground Surface="TreeLine" Length="80" />
+            <Road RoadType="CityStreet">
+                <LaneMarking Type="Solid" />
+                <Lane TrafficDirection="RightToLeft" Speed="10.0-12.0" Interval="4.0-8.0" />
+                <LaneMarking Type="Dash" />
+                <Lane TrafficDirection="LeftToRight" Speed="10.0-12.0" Interval="4.0-8.0" />
+                <LaneMarking Type="Solid" />
+            </Road>
             <Destination />
         </Idiom>
 
     </Level>
 
-    <Level Id="5" Title="Welcome to Moscow" MusicTitle="Pogodi">
+    <Level Id="5" Title="New York City" MusicTitle="Pogodi">
 
         <Idiom Type="Phone" WidthInMeter="80">
             <Ground Surface="Stones" Length="50" />
             <Road RoadType="CityStreet">
                 <LaneMarking Type="Solid" />
+                <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
+                <LaneMarking Type="Dash" />
                 <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
                 <LaneMarking Type="Dash" />
                 <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
@@ -278,6 +318,8 @@
                 <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
                 <LaneMarking Type="Dash" />
                 <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
+                <LaneMarking Type="Dash" />
+                <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
                 <LaneMarking Type="Solid" />
                 <Lane TrafficDirection="LeftToRight" Speed="4.0-8.0" Interval="4.0-6.0" />
                 <LaneMarking Type="Dash" />
@@ -287,6 +329,8 @@
                 <LaneMarking Type="Dash" />
                 <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-6.0" />
                 <LaneMarking Type="Solid" />
+                <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-6.0" />
+                <LaneMarking Type="Dash" />
                 <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-6.0" />
                 <LaneMarking Type="Dash" />
                 <Lane TrafficDirection="RightToLeft" Speed="4.0-8.0" Interval="4.0-6.0" />

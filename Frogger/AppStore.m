@@ -7,6 +7,7 @@
 #import <StoreKit/StoreKit.h>
 
 #import "AppStore.h"
+#import "Globals.h"
 
 @interface AppStore () <SKProductsRequestDelegate, SKPaymentTransactionObserver, UIAlertViewDelegate>
 
@@ -28,21 +29,13 @@
     return appStore;
 }
 
-- (id)init
-{
-    self = [super init];
-    if (self == nil)
-        return nil;
-
-    if ([self gameUnlocked] == NO)
-        [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-
-    return self;
-}
-
 - (BOOL)gameUnlocked
 {
+#ifdef DEBUG
+    return YES;
+#else
     return [[NSUserDefaults standardUserDefaults] boolForKey:GameUnlockedKey];
+#endif
 }
 
 - (void)setGameUnlocked:(BOOL)gameUnlocked
@@ -80,6 +73,11 @@
     [productsRequest start];
 }
 
+- (void)restorePurchasedUnlock
+{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 - (void)productsRequest:(SKProductsRequest *)request
      didReceiveResponse:(SKProductsResponse *)response
 {
@@ -96,8 +94,8 @@
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [formatter setLocale:priceLocale];
 
-    NSString *cancelButton = NSLocalizedString(@"APP_STORE_CANCEL", nil);
-    NSString *submitButton = NSLocalizedString(@"APP_STORE_SUBMIT", nil);
+    NSString *cancelButton = NSLocalizedString(@"APP_STORE_NOT_YET", nil);
+    NSString *submitButton = NSLocalizedString(@"APP_STORE_BUY_NOW", nil);
     submitButton = [NSString stringWithFormat:submitButton, [formatter stringFromNumber:price]];
 
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil

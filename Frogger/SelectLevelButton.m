@@ -23,6 +23,7 @@
     if (self == nil)
         return nil;
 
+    self.name = @"levelButton";
     self.levelId = levelId;
 
     return self;
@@ -31,10 +32,9 @@
 - (SKTexture *)buttonTexture:(NSUInteger)levelId
                   levelTitle:(NSString *)levelTitle
 {
-    CGSize size = CGSizeMake(300.0f, 80.0f);
+    CGSize size = CGSizeMake(300.0f, 72.0f);
 
     UIGraphicsBeginImageContext(size);
-    //CGContextRef context = UIGraphicsGetCurrentContext();
 
     UIColor *levelIdColor;
     UIColor *levelTitleColor;

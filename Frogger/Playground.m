@@ -64,8 +64,6 @@
 
     self.navigator = [Navigator sharedNavigator];
 
-    [self setDirection:[self.navigator deviceDirection]];
-
     [self repositionPlayer];
 
     return self;
@@ -119,6 +117,9 @@
     CLLocationCoordinate2D currentCoordinate = [self.navigator shift:[self.navigator deviceCoordinate]
                                                              heading:[self.navigator deviceDirection]
                                                             distance:self.lengthInMeter / 2 - 4.0f];
+
+    [self setDirection:[self.navigator deviceDirection]];
+
     [self setCenterCoordinate:currentCoordinate];
 }
 
