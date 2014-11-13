@@ -206,8 +206,9 @@
 - (void)stopTraffic
 {
     if (self.trafficTimer != nil) {
-        [self.trafficTimer invalidate];
+        NSTimer *timer = self.trafficTimer;
         self.trafficTimer = nil;
+        [timer invalidate];
     }
 
     for (SKSpriteNode *node in [self children])

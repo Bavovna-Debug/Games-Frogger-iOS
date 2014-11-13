@@ -17,6 +17,8 @@
 
 "ALERT_DONT_TOUCH_SCREEN"           = "G'Frogger est un jeu de commande de mouvement. Pour déplacer le joueur à travers le terrain dans la bonne direction vous devez aller - le joueur ne se déplacer dans la réalité virtuelle lorsque vous déplacez dans le monde réel. Vélo, scooter ou skateboard peuvent également être utilisées ici. Surface de jeu sur l'écran de votre iPhone/iPad correspond environ %.0f à %.0f mètres.";
 
+"ALERT_LEFT_PLAYGROUND"             = "Le joueur a quitté le terrain de jeu. Soit vous marchez dans le sens mal ou GPS sur votre iPhone/iPad n'a pas été correctement calibrés. Player est repositionné au début du jeux.";
+
 "AD_OFF_MESSAGE"                    = "Faire les publicités ennuyeuses off et activer tous les niveaux.";
 "AD_OFF_BUTTON_NOT_YET"             = "Non, merci";
 "AD_OFF_BUTTON_DETAILS"             = "Détails...";

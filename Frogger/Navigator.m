@@ -94,7 +94,7 @@
     self.calibrating       = YES;
     self.calibrationDelta  = 0;
 
-    self.calibrationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f
+    self.calibrationTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f
                                                              target:self
                                                            selector:@selector(checkCalibration)
                                                            userInfo:nil
@@ -124,8 +124,9 @@
     }
 
     if (self.calibrationTimer != nil) {
-        [self.calibrationTimer invalidate];
+        NSTimer *timer = self.calibrationTimer;
         self.calibrationTimer = nil;
+        [timer invalidate];
     }
 
     self.calibrating = NO;

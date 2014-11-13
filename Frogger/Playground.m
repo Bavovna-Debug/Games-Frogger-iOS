@@ -25,14 +25,14 @@
 
 @property (nonatomic, assign, readwrite) CGFloat                 scaleFactor;
 
-@property (nonatomic, strong) Navigator *navigator;
+@property (nonatomic, strong)            Navigator               *navigator;
 
-@property (nonatomic, strong) NSString         *levelMusicTitle;
-@property (nonatomic, strong) GroundNode       *parsingGround;
-@property (nonatomic, strong) RoadNode         *parsingRoad;
-@property (nonatomic, strong) LaneNode         *parsingLane;
-@property (nonatomic, strong) LaneMarkingNode  *parsingLaneMarking;
-@property (nonatomic, strong) DestinationNode  *parsingDestination;
+@property (nonatomic, strong)            NSString                *levelMusicTitle;
+@property (nonatomic, strong)            GroundNode              *parsingGround;
+@property (nonatomic, strong)            RoadNode                *parsingRoad;
+@property (nonatomic, strong)            LaneNode                *parsingLane;
+@property (nonatomic, strong)            LaneMarkingNode         *parsingLaneMarking;
+@property (nonatomic, strong)            DestinationNode         *parsingDestination;
 
 @end
 

@@ -60,20 +60,34 @@
 
 - (void)createUnlockButton
 {
-    CGSize buttonSize = CGSizeMake(CGRectGetWidth(self.frame) - 16.0f, 32.0f);
-    CGPoint buttonPosition = CGPointMake(CGRectGetWidth(self.frame) - buttonSize.width / 2,
-                                         buttonSize.height / 2);
-
-    UIGraphicsBeginImageContext(buttonSize);
-
-    CGRect buttonRect = CGRectMake(0.0f, 0.0f, buttonSize.width, buttonSize.height);
     NSString *buttonText = NSLocalizedString(@"APP_STORE_UNLOCK_BUTTON", nil);
     UIColor *textColor = [UIColor colorWithRed:0.502f green:1.000f blue:0.000f alpha:1.0f];
     UIFont *textFont = [UIFont fontWithName:@"Times New Roman" size:18.0f];
 
-    [textColor set];
-    [buttonText drawInRect:buttonRect
-                  withFont:textFont];
+    // Make a copy of the default paragraph style.
+    //
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+
+    // Set line break mode.
+    //
+    [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
+
+    // Set text alignment.
+    //
+    [paragraphStyle setAlignment:NSTextAlignmentLeft];
+
+    NSDictionary *buttonAttributes = @{ NSFontAttributeName:textFont,
+                                        NSParagraphStyleAttributeName:paragraphStyle,
+                                        NSForegroundColorAttributeName:textColor };
+
+    CGSize buttonSize = [buttonText sizeWithAttributes:buttonAttributes];
+    CGPoint buttonPosition = CGPointMake(CGRectGetWidth(self.frame) - buttonSize.width / 2 - 8.0f,
+                                         buttonSize.height / 2 + 8.0f);
+
+    UIGraphicsBeginImageContext(buttonSize);
+
+    [buttonText drawInRect:CGRectMake(0.0f, 0.0f, buttonSize.width, buttonSize.height)
+            withAttributes:buttonAttributes];
 
     UIImage *textureImage = UIGraphicsGetImageFromCurrentImageContext();
 

@@ -55,13 +55,32 @@
     UIFont *levelTitleFont = [UIFont fontWithName:@"Bradley Hand" size:28.0f];
 
     NSString *levelIdString = [NSString stringWithFormat:@"%lu", (unsigned long)levelId];
-    [levelIdColor set];
-    [levelIdString drawInRect:levelIdRect
-                     withFont:levelIdFont];
 
-    [levelTitleColor set];
+    // Make a copy of the default paragraph style.
+    //
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+
+    // Set line break mode.
+    //
+    [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
+
+    // Set text alignment.
+    //
+    [paragraphStyle setAlignment:NSTextAlignmentLeft];
+
+    NSDictionary *levelIdAttributes = @{ NSFontAttributeName:levelIdFont,
+                                         NSParagraphStyleAttributeName:paragraphStyle,
+                                         NSForegroundColorAttributeName:levelIdColor };
+
+    NSDictionary *levelTitleAttributes = @{ NSFontAttributeName:levelTitleFont,
+                                            NSParagraphStyleAttributeName:paragraphStyle,
+                                            NSForegroundColorAttributeName:levelTitleColor };
+
+    [levelIdString drawInRect:levelIdRect
+               withAttributes:levelIdAttributes ];
+
     [levelTitle drawInRect:levelTitleRect
-                  withFont:levelTitleFont];
+                  withAttributes:levelTitleAttributes];
 
     UIImage *textureImage = UIGraphicsGetImageFromCurrentImageContext();
 

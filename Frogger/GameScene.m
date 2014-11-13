@@ -21,6 +21,7 @@
 @interface GameScene () <SKPhysicsContactDelegate, AppStoreDelegate>
 
 @property (nonatomic, strong) Playground     *playground;
+@property (nonatomic, strong) PlayerNode     *player;
 @property (nonatomic, strong) AVAudioPlayer  *backgroundMusicPlayer;
 @property (nonatomic, strong) NSDate         *gameBegin;
 
@@ -47,20 +48,21 @@
 
         sceneReady = YES;
 
-        self.backgroundMusicPlayer =
+        /*self.backgroundMusicPlayer =
         [[AVAudioPlayer alloc] initWithContentsOfURL:[self.playground levelMusicURL]
                                                error:nil];
-        //[self.backgroundMusicPlayer setNumberOfLoops:5];
+        [self.backgroundMusicPlayer setNumberOfLoops:5];*/
 
         SKSpriteNode *stopButton = [SKSpriteNode spriteNodeWithImageNamed:@"Stop"];
+        CGPoint stopButtonPoint = CGPointMake(CGRectGetWidth(self.frame) - CGRectGetWidth(stopButton.frame) / 2,
+                                              CGRectGetHeight(stopButton.frame) / 2);
         [stopButton setName:@"stopButton"];
         [stopButton setZPosition:NodeStopButton];
-        [stopButton setPosition:CGPointMake(CGRectGetWidth(stopButton.frame) / 2,
-                                            CGRectGetHeight(self.frame) - CGRectGetHeight(stopButton.frame) / 2)];
+        [stopButton setPosition:stopButtonPoint];
         [self addChild:stopButton];
     }
 
-    [self.backgroundMusicPlayer play];
+    //[self.backgroundMusicPlayer play];
 
     self.gameBegin = [NSDate date];
 
@@ -71,6 +73,13 @@
         [self startUnlockReminder];
         [appStore setDelegate:self];
     }
+}
+
+- (void)willMoveFromView:(SKView *)view
+{
+    [self.player stop];
+    self.player = nil;
+    self.playground = nil;
 }
 
 - (void)initPlayground
@@ -85,9 +94,9 @@
 
 - (void)initPlayer
 {
-    PlayerNode *playerNode = [[PlayerNode alloc] initWithPlayground:self.playground];
+    self.player = [[PlayerNode alloc] initWithPlayground:self.playground];
 
-    [self.playground addChild:playerNode];
+    [self.playground addChild:self.player];
 }
 
 - (void)touchesBegan:(NSSet *)touches

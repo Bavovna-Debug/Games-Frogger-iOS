@@ -53,8 +53,10 @@
 - (void)stopUnlockReminder
 {
     if (unlockReminderTimer != nil) {
-        [unlockReminderTimer invalidate];
+        NSTimer *timer = unlockReminderTimer;
         unlockReminderTimer = nil;
+        [timer invalidate];
+
     }
 }
 

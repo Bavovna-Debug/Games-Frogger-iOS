@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) Navigator               *navigator;
 @property (nonatomic, weak)   Playground              *playground;
+@property (nonatomic, strong) NSTimer                 *playgroundTimer;
 
 @property (nonatomic, strong) SKAction                *walkingAnimation;
 
@@ -51,6 +52,12 @@
 
     [self runAction:self.walkingAnimation withKey:@"walkingAnimation"];
 
+    self.playgroundTimer =
+    [NSTimer scheduledTimerWithTimeInterval:3.0f
+                                     target:self
+                                   selector:@selector(isPlayerOnPlayground)
+                                   userInfo:nil
+                                    repeats:YES];
     return self;
 }
 
@@ -99,6 +106,15 @@
     return repeatWalkingAnimation;
 }
 
+- (void)stop
+{
+    if (self.playgroundTimer != nil) {
+        NSTimer *timer = self.playgroundTimer;
+        self.playgroundTimer = nil;
+        [timer invalidate];
+    }
+}
+
 #pragma mark Navigator delegate
 
 - (void)navigatorDirectionDidChangeFrom:(CLLocationDirection)from
@@ -143,6 +159,33 @@
             [self runAction:[SKAction moveTo:thisPosition
                                     duration:0.2f]];
     }
+}
+
+- (void)isPlayerOnPlayground
+{
+#ifdef DEBUG
+    NSLog(@"GND: %f x %f", self.playground.frame.origin.x, self.playground.frame.origin.y);
+    NSLog(@"SIZ: %f x %f", self.playground.frame.size.width, self.playground.frame.size.height);
+    NSLog(@"PLA: %f x %f", self.position.x, self.position.y);
+#endif
+/*
+    if ([self.playground containsPoint:[self position]] == NO)
+    {
+        [self.playground repositionPlayer];
+
+        NSString *okButton = NSLocalizedString(@"ALERT_BUTTON_OK", nil);
+        NSString *message = NSLocalizedString(@"ALERT_LEFT_PLAYGROUND", nil);
+
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:okButton
+                                                  otherButtonTitles:nil];
+
+        [alertView setAlertViewStyle:UIAlertViewStyleDefault];
+        [alertView show];
+    }
+*/
 }
 
 @end

@@ -12,4 +12,6 @@
 
 - (id)initWithPlayground:(Playground *)playground;
 
+- (void)stop;
+
 @end

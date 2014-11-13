@@ -35,16 +35,15 @@
 		94A6482A19DD4B6A00CAF266 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A6482919DD4B6A00CAF266 /* CoreLocation.framework */; };
 		94A6482C19DD4BBA00CAF266 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A6482B19DD4BBA00CAF266 /* CoreAudio.framework */; };
 		94A6482E19DD4BDD00CAF266 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A6482D19DD4BDD00CAF266 /* SpriteKit.framework */; };
-		94A6483019DD501000CAF266 /* Pogodi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94A6482F19DD501000CAF266 /* Pogodi.mp3 */; };
 		94A99BC219D9B0B0009AF19E /* MissionCompleteScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A99BC119D9B0B0009AF19E /* MissionCompleteScene.m */; };
 		94B19B2519D28F8500CA0E50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2419D28F8500CA0E50 /* main.m */; };
 		94B19B2819D28F8500CA0E50 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2719D28F8500CA0E50 /* ApplicationDelegate.m */; };
 		94B19B2B19D28F8500CA0E50 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2A19D28F8500CA0E50 /* GameScene.m */; };
 		94B19B3019D28F8500CA0E50 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B2F19D28F8500CA0E50 /* MainViewController.m */; };
-		94B19B3319D28F8500CA0E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B19B3119D28F8500CA0E50 /* Main.storyboard */; };
 		94B19B3519D28F8500CA0E50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B19B3419D28F8500CA0E50 /* Images.xcassets */; };
 		94B19B4419D28F8600CA0E50 /* FroggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B4319D28F8600CA0E50 /* FroggerTests.m */; };
 		94B19B4F19D2948B00CA0E50 /* WelcomeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B19B4E19D2948B00CA0E50 /* WelcomeScene.m */; };
+		94E8F4CD1A08C6DD00E0CED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E8F4CC1A08C6DD00E0CED1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,6 @@
 		942D3CDA19D9804F00E46924 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		942D3CDC19D98C2A00E46924 /* AbstractScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractScene.h; sourceTree = "<group>"; };
 		942D3CDD19D98C2A00E46924 /* AbstractScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractScene.m; sourceTree = "<group>"; };
-		944B7DF919D6F1CD001BF920 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
 		944E8F4919D2A8A400DEB279 /* Navigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigator.h; sourceTree = "<group>"; };
 		944E8F4A19D2A8A400DEB279 /* Navigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navigator.m; sourceTree = "<group>"; };
 		9457964819DDF06B0020D2FE /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -93,16 +91,12 @@
 		947BA34519E08710000BDB86 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		947BA35519E16553000BDB86 /* RailLightsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RailLightsNode.h; sourceTree = "<group>"; };
 		947BA35619E16553000BDB86 /* RailLightsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RailLightsNode.m; sourceTree = "<group>"; };
-		947BA3B119E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = nl; path = nl.lproj/Main.storyboard; sourceTree = "<group>"; };
 		947BA3B219E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		947BA3B319E2CD3F000BDB86 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		947BA3B519E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
 		947BA3B619E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		947BA3B719E2CD45000BDB86 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		947BA3B919E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = uk; path = uk.lproj/Main.storyboard; sourceTree = "<group>"; };
 		947BA3BA19E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		947BA3BB19E2CD5D000BDB86 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		947BA3BD19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		947BA3BE19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		947BA3BF19E2CD64000BDB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		947BA3C019E2DFCB000BDB86 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -119,7 +113,6 @@
 		94A6482919DD4B6A00CAF266 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		94A6482B19DD4BBA00CAF266 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		94A6482D19DD4BDD00CAF266 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		94A6482F19DD501000CAF266 /* Pogodi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Pogodi.mp3; path = ../../Audio/Pogodi.mp3; sourceTree = "<group>"; };
 		94A99BC019D9B0B0009AF19E /* MissionCompleteScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionCompleteScene.h; sourceTree = "<group>"; };
 		94A99BC119D9B0B0009AF19E /* MissionCompleteScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionCompleteScene.m; sourceTree = "<group>"; };
 		94B19B1F19D28F8500CA0E50 /* Frogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +130,7 @@
 		94B19B4D19D2948B00CA0E50 /* WelcomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScene.h; sourceTree = "<group>"; };
 		94B19B4E19D2948B00CA0E50 /* WelcomeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScene.m; sourceTree = "<group>"; };
 		94C9641919DD9B5E007AE24A /* Frogger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Frogger-Info.plist"; sourceTree = "<group>"; };
-		94F4F31D1A002197009E7485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94E8F4CC1A08C6DD00E0CED1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		94F4F31E1A0021A7009E7485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94F4F31F1A0021D8009E7485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94F4F3201A002215009E7485 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -230,7 +223,6 @@
 		94A99BC419DA806E009AF19E /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				94A6482F19DD501000CAF266 /* Pogodi.mp3 */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -262,6 +254,7 @@
 		94B19B2119D28F8500CA0E50 /* Frogger */ = {
 			isa = PBXGroup;
 			children = (
+				94E8F4CC1A08C6DD00E0CED1 /* Main.storyboard */,
 				94B19B2619D28F8500CA0E50 /* ApplicationDelegate.h */,
 				94B19B2719D28F8500CA0E50 /* ApplicationDelegate.m */,
 				94B19B2E19D28F8500CA0E50 /* MainViewController.h */,
@@ -277,7 +270,6 @@
 				9462C60219D53538009B5D68 /* Globals.h */,
 				94A99BC319D9B1AA009AF19E /* Scenes */,
 				942D3CD819D9800600E46924 /* Game */,
-				94B19B3119D28F8500CA0E50 /* Main.storyboard */,
 				94B19B3419D28F8500CA0E50 /* Images.xcassets */,
 				94B19B2219D28F8500CA0E50 /* Supporting Files */,
 			);
@@ -407,9 +399,8 @@
 				94730E5119D6F00B0013F267 /* Localizable.strings in Resources */,
 				9411401C19D6F5A6007A411A /* InfoPlist.strings in Resources */,
 				94B19B3519D28F8500CA0E50 /* Images.xcassets in Resources */,
+				94E8F4CD1A08C6DD00E0CED1 /* Main.storyboard in Resources */,
 				9421770C19DBE65400437B17 /* Levels.xml in Resources */,
-				94B19B3319D28F8500CA0E50 /* Main.storyboard in Resources */,
-				94A6483019DD501000CAF266 /* Pogodi.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,19 +493,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		94B19B3119D28F8500CA0E50 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				944B7DF919D6F1CD001BF920 /* de */,
-				947BA3B119E2CD3F000BDB86 /* nl */,
-				947BA3B519E2CD45000BDB86 /* fr */,
-				947BA3B919E2CD5D000BDB86 /* uk */,
-				947BA3BD19E2CD64000BDB86 /* ru */,
-				94F4F31D1A002197009E7485 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -552,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -588,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -604,7 +582,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Frogger/Frogger-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -621,7 +599,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Frogger/Frogger-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

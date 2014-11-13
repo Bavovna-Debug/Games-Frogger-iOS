@@ -242,8 +242,9 @@
 - (void)stopVehicle
 {
     if (self.scheduleTimer != nil) {
-        [self.scheduleTimer invalidate];
+        NSTimer *timer = self.scheduleTimer;
         self.scheduleTimer = nil;
+        [timer invalidate];
     }
 
     [self.physicsBody setVelocity:CGVectorMake(0.0f, 0.0f)];
