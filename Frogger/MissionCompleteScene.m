@@ -15,7 +15,7 @@
 
 @implementation MissionCompleteScene
 
-#pragma mark UI events
+#pragma mark - UI events
 
 - (void)didMoveToView:(SKView *)view
 {

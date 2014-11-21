@@ -42,7 +42,7 @@
     Boolean idiomFound;
 }
 
-#pragma mark Object cunstructors/destructors
+#pragma mark - Object cunstructors/destructors
 
 - (id)initWithLevelId:(NSUInteger)levelId
                  size:(CGSize)size
@@ -145,7 +145,7 @@
                                             ofType:@"mp3"]];
 }
 
-#pragma mark GPS
+#pragma mark - GPS
 
 - (void)moveCenterWithHeading:(CLLocationDegrees)heading
                      distance:(CLLocationDistance)distance
@@ -181,7 +181,7 @@
     return position;
 }
 
-#pragma mark XML
+#pragma mark - XML
 
 - (void)parseLevel
 {

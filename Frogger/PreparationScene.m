@@ -18,7 +18,7 @@
 
 @implementation PreparationScene
 
-#pragma mark UI events
+#pragma mark - UI events
 
 - (void)didMoveToView:(SKView *)view
 {
@@ -91,7 +91,7 @@
     [alertView show];
 }
 
-#pragma mark Alert
+#pragma mark - Alert
 
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex

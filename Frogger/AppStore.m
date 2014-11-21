@@ -166,7 +166,7 @@
         [self.delegate gameWasUnlocked];
 }
 
-#pragma mark Alert
+#pragma mark - Alert
 
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex

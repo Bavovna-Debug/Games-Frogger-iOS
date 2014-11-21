@@ -27,7 +27,7 @@
 
 @implementation PlayerNode
 
-#pragma mark Object cunstructors/destructors
+#pragma mark - Object cunstructors/destructors
 
 - (id)initWithPlayground:(Playground *)playground
 {
@@ -115,7 +115,7 @@
     }
 }
 
-#pragma mark Navigator delegate
+#pragma mark - Navigator delegate
 
 - (void)navigatorDirectionDidChangeFrom:(CLLocationDirection)from
                                      to:(CLLocationDirection)to

@@ -114,7 +114,7 @@
     }
 }
 
-#pragma mark SKPhysicsContactDelegate delegate
+#pragma mark - SKPhysicsContactDelegate delegate
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
@@ -254,7 +254,7 @@
     [alertView show];
 }
 
-#pragma mark App Store
+#pragma mark - App Store
 
 - (void)gameWasUnlocked
 {

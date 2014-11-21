@@ -14,7 +14,7 @@
 
 @implementation MainViewController
 
-#pragma mark UI events
+#pragma mark - UI events
 
 - (void)viewDidLoad
 {

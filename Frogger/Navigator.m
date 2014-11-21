@@ -41,7 +41,7 @@
     return navigator;
 }
 
-#pragma mark Object cunstructors/destructors
+#pragma mark - Object cunstructors/destructors
 
 - (id)init
 {
@@ -67,7 +67,7 @@
     return self;
 }
 
-#pragma mark Navigation activation/deactivation
+#pragma mark - Navigation activation/deactivation
 
 - (void)startNavigation
 {
@@ -81,7 +81,7 @@
     [self.locationManager stopUpdatingLocation];
 }
 
-#pragma mark Calibration
+#pragma mark - Calibration
 
 - (void)calibrate
 {
@@ -135,7 +135,7 @@
         [self.calibrationDelegate navigatorDidCompleteCalibration];
 }
 
-#pragma mark Navigation help tools
+#pragma mark - Navigation help tools
 
 - (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
                                   to:(CLLocationCoordinate2D)toCoordinate
@@ -208,7 +208,7 @@
     return toCoordinate;
 }
 
-#pragma mark Game help tools
+#pragma mark - Game help tools
 
 - (CLLocationCoordinate2D)randomLocationNearCoordinate:(CLLocationCoordinate2D)coordinate
                                              rangeFrom:(CLLocationDistance)rangeFrom
@@ -223,7 +223,7 @@
     return guessedLocation;
 }
 
-#pragma mark CLLocationManagerDelegate delegate
+#pragma mark - CLLocationManager delegate
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
