@@ -28,7 +28,7 @@
     //[self playAudioWithName:@"Applause" ofType:@"m4a"];
 
     self.welcomeTimer =
-    [NSTimer scheduledTimerWithTimeInterval:2.0f
+    [NSTimer scheduledTimerWithTimeInterval:5.0f
                                      target:self
                                    selector:@selector(switchToWelcomeScene)
                                    userInfo:nil

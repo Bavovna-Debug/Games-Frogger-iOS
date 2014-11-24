@@ -7,10 +7,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
+@protocol NavigatorCalibrationDelegate;
+@protocol NavigatorDelegate;
+
 @interface Navigator : NSObject
 
-@property (nonatomic, strong, readwrite) id calibrationDelegate;
-@property (nonatomic, strong, readwrite) id navigationDelegate;
+@property (nonatomic, strong, readwrite) id<NavigatorCalibrationDelegate>  calibrationDelegate;
+@property (nonatomic, strong, readwrite) id<NavigatorDelegate>             navigationDelegate;
 
 @property (nonatomic, assign, readonly) Boolean                 calibrating;
 @property (nonatomic, assign, readonly) CLLocationCoordinate2D  startPosition;
@@ -26,21 +29,21 @@
 
 - (void)calibrate;
 
-- (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
++ (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
                                   to:(CLLocationCoordinate2D)toCoordinate;
 
-- (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
++ (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
                                   to:(CLLocationCoordinate2D)toCoordinate
                           forHeading:(CLLocationDirection)forHeading;
 
-- (CLLocationDistance)distanceFrom:(CLLocationCoordinate2D)fromCoordinate
++ (CLLocationDistance)distanceFrom:(CLLocationCoordinate2D)fromCoordinate
                                 to:(CLLocationCoordinate2D)toCoordinate;
 
-- (CLLocationCoordinate2D)shift:(CLLocationCoordinate2D)coordinate
++ (CLLocationCoordinate2D)shift:(CLLocationCoordinate2D)coordinate
                         heading:(CLLocationDegrees)heading
                        distance:(CLLocationDistance)distance;
 
-- (CLLocationCoordinate2D)randomLocationNearCoordinate:(CLLocationCoordinate2D)coordinate
++ (CLLocationCoordinate2D)randomLocationNearCoordinate:(CLLocationCoordinate2D)coordinate
                                              rangeFrom:(CLLocationDistance)rangeFrom
                                                rangeTo:(CLLocationDistance)rangeTo;
 

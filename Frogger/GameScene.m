@@ -75,13 +75,6 @@
     }
 }
 
-- (void)willMoveFromView:(SKView *)view
-{
-    [self.player stop];
-    self.player = nil;
-    self.playground = nil;
-}
-
 - (void)initPlayground
 {
     UIApplication *application = [UIApplication sharedApplication];
@@ -97,6 +90,10 @@
     self.player = [[PlayerNode alloc] initWithPlayground:self.playground];
 
     [self.playground addChild:self.player];
+
+    CGPoint startPosition = [self.playground repositionPlayer];
+
+    [self.player moveToPosition:startPosition];
 }
 
 - (void)touchesBegan:(NSSet *)touches
@@ -127,7 +124,7 @@
     if ([nameA isEqualToString:@"playgroundNode"] == YES) {
         if ([nameB isEqualToString:@"playerNode"] == YES) {
             NSLog(@"Left playground");
-            [self.playground repositionPlayer];
+            //[self.playground repositionPlayer];
         }
     } else if ([nameA isEqualToString:@"vehicleNode"] == YES) {
         if ([nameB isEqualToString:@"playerNode"] == YES) {
@@ -183,6 +180,8 @@
 
     [self stopUnlockReminder];
 
+    [self.player stop];
+
     [self.playground quit];
 
     [self.scene removeFromParent];
@@ -205,6 +204,8 @@
     }];
 
     [self stopUnlockReminder];
+
+    [self.player stop];
 
     [self.playground quit];
 

@@ -20,7 +20,7 @@
 - (id)initWithLevelId:(NSUInteger)levelId
                  size:(CGSize)size;
 
-- (void)repositionPlayer;
+- (CGPoint)repositionPlayer;
 
 - (void)quit;
 

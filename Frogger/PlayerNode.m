@@ -115,6 +115,12 @@
     }
 }
 
+- (void)moveToPosition:(CGPoint)position
+{
+    [self runAction:[SKAction moveTo:position
+                            duration:0.2f]];
+}
+
 #pragma mark - Navigator delegate
 
 - (void)navigatorDirectionDidChangeFrom:(CLLocationDirection)from
@@ -134,13 +140,13 @@
     NSDate *thisMovement = [NSDate date];
     NSTimeInterval sinceLastMovement = [thisMovement timeIntervalSinceDate:self.lastMovement];
 
-    CLLocationDistance distance = [self.navigator distanceFrom:self.lastCoordinate
-                                                            to:coordinate];
+    CLLocationDistance distance = [Navigator distanceFrom:self.lastCoordinate
+                                                       to:coordinate];
     CGFloat speedInMeterPerSecond = distance / sinceLastMovement;
 
     if ((sinceLastMovement < 2.0f) && (self.lastSpeed < 1.2f) && (speedInMeterPerSecond > 10.0f)) {
-        CLLocationDirection heading = [self.navigator directionFrom:self.lastCoordinate
-                                                                 to:coordinate];
+        CLLocationDirection heading = [Navigator directionFrom:self.lastCoordinate
+                                                            to:coordinate];
 
         [self.playground moveCenterWithHeading:heading
                                       distance:distance];
@@ -156,22 +162,23 @@
         CGPoint thisPosition = [self.playground positionFromCoordinate:coordinate];
 
         if (CGPointEqualToPoint(lastPosition, thisPosition) == NO)
-            [self runAction:[SKAction moveTo:thisPosition
-                                    duration:0.2f]];
+            [self moveToPosition:thisPosition];
     }
 }
 
 - (void)isPlayerOnPlayground
 {
 #ifdef DEBUG
-    NSLog(@"GND: %f x %f", self.playground.frame.origin.x, self.playground.frame.origin.y);
-    NSLog(@"SIZ: %f x %f", self.playground.frame.size.width, self.playground.frame.size.height);
+    NSLog(@"GND: %f x %f", self.playground.scene.frame.origin.x, self.playground.scene.frame.origin.y);
+    NSLog(@"SIZ: %f x %f", self.playground.scene.frame.size.width, self.playground.scene.frame.size.height);
     NSLog(@"PLA: %f x %f", self.position.x, self.position.y);
 #endif
-/*
-    if ([self.playground containsPoint:[self position]] == NO)
+
+    if (CGRectContainsPoint(self.playground.scene.frame, self.position) == NO)
     {
-        [self.playground repositionPlayer];
+        CGPoint adjustedPosition = [self.playground repositionPlayer];
+
+        [self moveToPosition:adjustedPosition];
 
         NSString *okButton = NSLocalizedString(@"ALERT_BUTTON_OK", nil);
         NSString *message = NSLocalizedString(@"ALERT_LEFT_PLAYGROUND", nil);
@@ -185,7 +192,6 @@
         [alertView setAlertViewStyle:UIAlertViewStyleDefault];
         [alertView show];
     }
-*/
 }
 
 @end

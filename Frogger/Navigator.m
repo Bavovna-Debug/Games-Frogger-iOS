@@ -23,11 +23,14 @@
 
 @implementation Navigator
 
-@synthesize startPosition = _startPosition;
-@synthesize deviceCoordinate = _deviceCoordinate;
-@synthesize deviceAltitude = _deviceAltitude;
-@synthesize deviceDirection = _deviceDirection;
-@synthesize locationManager = _locationManager;
+@synthesize calibrationDelegate  = _calibrationDelegate;
+@synthesize navigationDelegate   = _navigationDelegate;
+
+@synthesize calibrating       = _calibration;
+@synthesize startPosition     = _startPosition;
+@synthesize deviceCoordinate  = _deviceCoordinate;
+@synthesize deviceAltitude    = _deviceAltitude;
+@synthesize deviceDirection   = _deviceDirection;
 
 + (Navigator *)sharedNavigator
 {
@@ -135,9 +138,43 @@
         [self.calibrationDelegate navigatorDidCompleteCalibration];
 }
 
-#pragma mark - Navigation help tools
+#pragma mark - CLLocationManager delegate
 
-- (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = (CLLocation *)[locations lastObject];
+
+    if (self.calibrating == YES)
+    {
+        CLLocationDistance delta = [Navigator distanceFrom:[self deviceCoordinate]
+                                                        to:location.coordinate];
+        self.calibrationDelta = MAX(self.calibrationDelta, delta);
+    }
+
+    [self setDeviceAltitude:location.altitude];
+    [self setDeviceCoordinate:location.coordinate];
+
+    if ((self.navigationDelegate != nil) && [self.navigationDelegate respondsToSelector:@selector(navigatorCoordinateDidChangeTo:)])
+        [self.navigationDelegate navigatorCoordinateDidChangeTo:location.coordinate];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didUpdateHeading:(CLHeading *)newHeading
+{
+    CLLocationDirection oldDirection = self.deviceDirection;
+    CLLocationDirection newDirection = newHeading.trueHeading;
+
+    [self setDeviceDirection:newDirection];
+
+    if ((self.navigationDelegate != nil) && [self.navigationDelegate respondsToSelector:@selector(navigatorDirectionDidChangeFrom:to:)])
+        [self.navigationDelegate navigatorDirectionDidChangeFrom:oldDirection
+                                                              to:newDirection];
+}
+
+#pragma mark - Navigation static API
+
++ (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
                                   to:(CLLocationCoordinate2D)toCoordinate
 {
     CLLocationDegrees fromLatitude = degreesToRadians(fromCoordinate.latitude);
@@ -154,7 +191,7 @@
     return (degree >= 0.0f) ? degree : 360.0f + degree;
 }
 
-- (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
++ (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
                                   to:(CLLocationCoordinate2D)toCoordinate
                           forHeading:(CLLocationDirection)forHeading
 {
@@ -170,7 +207,7 @@
     return headingRelative;
 }
 
-- (CLLocationDistance)distanceFrom:(CLLocationCoordinate2D)fromCoordinate
++ (CLLocationDistance)distanceFrom:(CLLocationCoordinate2D)fromCoordinate
                                 to:(CLLocationCoordinate2D)toCoordinate
 {
     CLLocation *fromLocation = [[CLLocation alloc] initWithLatitude:fromCoordinate.latitude
@@ -183,7 +220,7 @@
     return distance;
 }
 
-- (CLLocationCoordinate2D)shift:(CLLocationCoordinate2D)fromCoordinate
++ (CLLocationCoordinate2D)shift:(CLLocationCoordinate2D)fromCoordinate
                         heading:(CLLocationDegrees)heading
                        distance:(CLLocationDistance)distance
 {
@@ -208,53 +245,17 @@
     return toCoordinate;
 }
 
-#pragma mark - Game help tools
-
-- (CLLocationCoordinate2D)randomLocationNearCoordinate:(CLLocationCoordinate2D)coordinate
++ (CLLocationCoordinate2D)randomLocationNearCoordinate:(CLLocationCoordinate2D)coordinate
                                              rangeFrom:(CLLocationDistance)rangeFrom
                                                rangeTo:(CLLocationDistance)rangeTo
 {
     CLLocationDegrees guessedDegrees = randomValue(360.0f);
     CLLocationDistance guessedDistance = randomRange(rangeFrom, rangeTo);
-    CLLocationCoordinate2D guessedLocation = [self shift:coordinate
-                                                 heading:guessedDegrees
-                                                distance:guessedDistance];
+    CLLocationCoordinate2D guessedLocation = [Navigator shift:coordinate
+                                                      heading:guessedDegrees
+                                                     distance:guessedDistance];
 
     return guessedLocation;
-}
-
-#pragma mark - CLLocationManager delegate
-
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations
-{
-    CLLocation *location = (CLLocation *)[locations lastObject];
-
-    if (self.calibrating == YES)
-    {
-        CLLocationDistance delta = [self distanceFrom:[self deviceCoordinate]
-                                                   to:location.coordinate];
-        self.calibrationDelta = MAX(self.calibrationDelta, delta);
-    }
-
-    [self setDeviceAltitude:location.altitude];
-    [self setDeviceCoordinate:location.coordinate];
-
-    if ((self.navigationDelegate != nil) && [self.navigationDelegate respondsToSelector:@selector(navigatorCoordinateDidChangeTo:)])
-        [self.navigationDelegate navigatorCoordinateDidChangeTo:location.coordinate];
-}
-
-- (void)locationManager:(CLLocationManager *)manager
-       didUpdateHeading:(CLHeading *)newHeading
-{
-    CLLocationDirection oldDirection = self.deviceDirection;
-    CLLocationDirection newDirection = newHeading.trueHeading;
-
-    [self setDeviceDirection:newDirection];
-
-    if ((self.navigationDelegate != nil) && [self.navigationDelegate respondsToSelector:@selector(navigatorDirectionDidChangeFrom:to:)])
-        [self.navigationDelegate navigatorDirectionDidChangeFrom:oldDirection
-                                                              to:newDirection];
 }
 
 @end

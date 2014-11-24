@@ -112,15 +112,19 @@
     [super addChild:node];
 }
 
-- (void)repositionPlayer
+- (CGPoint)repositionPlayer
 {
-    CLLocationCoordinate2D currentCoordinate = [self.navigator shift:[self.navigator deviceCoordinate]
-                                                             heading:[self.navigator deviceDirection]
-                                                            distance:self.lengthInMeter / 2 - 4.0f];
+    CLLocationCoordinate2D currentCoordinate = [Navigator shift:[self.navigator deviceCoordinate]
+                                                        heading:[self.navigator deviceDirection]
+                                                       distance:self.lengthInMeter / 2 - 4.0f];
 
     [self setDirection:[self.navigator deviceDirection]];
 
     [self setCenterCoordinate:currentCoordinate];
+
+    CGPoint playerPosition = CGPointMake(CGRectGetWidth(self.frame) / 2, 20.0f);
+
+    return playerPosition;
 }
 
 - (void)quit
@@ -151,9 +155,9 @@
                      distance:(CLLocationDistance)distance
 {
     CLLocationCoordinate2D centerCoordinate = self.centerCoordinate;
-    centerCoordinate = [self.navigator shift:centerCoordinate
-                                     heading:heading
-                                    distance:distance];
+    centerCoordinate = [Navigator shift:centerCoordinate
+                                heading:heading
+                               distance:distance];
     [self setCenterCoordinate:centerCoordinate];
 }
 
@@ -163,12 +167,12 @@
     CLLocationDirection directionFromCenter;
     CLLocationDistance distanceFromCenter;
 
-    directionFromCenter = [self.navigator directionFrom:[self centerCoordinate]
-                                                     to:coordinate
-                                             forHeading:[self direction]];
+    directionFromCenter = [Navigator directionFrom:[self centerCoordinate]
+                                                to:coordinate
+                                        forHeading:[self direction]];
 
-    distanceFromCenter = [self.navigator distanceFrom:[self centerCoordinate]
-                                                   to:coordinate];
+    distanceFromCenter = [Navigator distanceFrom:[self centerCoordinate]
+                                              to:coordinate];
 
     CGFloat x = distanceFromCenter * cos((90.0f - directionFromCenter) * M_PI / 180);
     CGFloat y = distanceFromCenter * sin((90.0f - directionFromCenter) * M_PI / 180);

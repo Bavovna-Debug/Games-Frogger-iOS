@@ -14,4 +14,6 @@
 
 - (void)stop;
 
+- (void)moveToPosition:(CGPoint)position;
+
 @end
