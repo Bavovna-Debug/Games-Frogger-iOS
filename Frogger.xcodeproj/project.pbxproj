@@ -21,6 +21,7 @@
 		9462C5FA19D448E1009B5D68 /* VehicleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9462C5F919D448E1009B5D68 /* VehicleNode.m */; };
 		9462C60119D4AF55009B5D68 /* LaneNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9462C60019D4AF55009B5D68 /* LaneNode.m */; };
 		9462C60E19D58A46009B5D68 /* PreparationScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9462C60D19D58A46009B5D68 /* PreparationScene.m */; };
+		947122DE1A2722AF00DE0015 /* Pogodi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 947122DD1A2722AF00DE0015 /* Pogodi.mp3 */; };
 		94730E4719D6C85C0013F267 /* LaneMarkingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94730E4619D6C85C0013F267 /* LaneMarkingNode.m */; };
 		94730E4A19D6E7110013F267 /* GroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94730E4919D6E7110013F267 /* GroundNode.m */; };
 		94730E5119D6F00B0013F267 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94730E5319D6F00B0013F267 /* Localizable.strings */; };
@@ -83,6 +84,7 @@
 		9462C60219D53538009B5D68 /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		9462C60C19D58A46009B5D68 /* PreparationScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparationScene.h; sourceTree = "<group>"; };
 		9462C60D19D58A46009B5D68 /* PreparationScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreparationScene.m; sourceTree = "<group>"; };
+		947122DD1A2722AF00DE0015 /* Pogodi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Pogodi.mp3; path = ../../Medien/Audio/Pogodi.mp3; sourceTree = "<group>"; };
 		94730E4519D6C85C0013F267 /* LaneMarkingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaneMarkingNode.h; sourceTree = "<group>"; };
 		94730E4619D6C85C0013F267 /* LaneMarkingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaneMarkingNode.m; sourceTree = "<group>"; };
 		94730E4819D6E7110013F267 /* GroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroundNode.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		94A99BC419DA806E009AF19E /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				947122DD1A2722AF00DE0015 /* Pogodi.mp3 */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947122DE1A2722AF00DE0015 /* Pogodi.mp3 in Resources */,
 				94730E5119D6F00B0013F267 /* Localizable.strings in Resources */,
 				9411401C19D6F5A6007A411A /* InfoPlist.strings in Resources */,
 				94B19B3519D28F8500CA0E50 /* Images.xcassets in Resources */,

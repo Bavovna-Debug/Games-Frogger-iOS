@@ -26,6 +26,15 @@
         appStore = [[AppStore alloc] init];
     });
 
+#ifdef DEBUG
+    NSLog(@"TRY");
+    NSDictionary* dict = [appStore getStoreReceipt:YES];
+    for (NSString* key in dict) {
+        id value = [dict objectForKey:key];
+        NSLog(@"<%@>\n<%@>", key, value);
+    }
+#endif
+
     return appStore;
 }
 
@@ -144,15 +153,14 @@
                 break;
 
             case SKPaymentTransactionStateFailed:
-                if (transaction.error.code != SKErrorPaymentCancelled) {
-                    NSLog(@"Transaction state -> Cancelled");
-                }
+                if ((transaction.error != nil) && (transaction.error.code != SKErrorPaymentCancelled))
+                    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                NSLog(@"Transaction state -> Failed (%ld)", (long)transaction.error.code);
                 break;
 
             case SKPaymentTransactionStateDeferred:
-                NSLog(@"Transaction state -> Deferred");
+                NSLog(@"Transaction state -> Deferred (%ld)", (long)transaction.error.code);
                 break;
         }
     }
@@ -179,5 +187,144 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
         [[SKPaymentQueue defaultQueue] addPayment:payment];
     }
 }
+
+#pragma mark - TEST
+
+#ifdef DEBUG
+
+- (NSDictionary *)getStoreReceipt:(BOOL)sandbox {
+
+    NSArray *objects;
+    NSArray *keys;
+    NSDictionary *dictionary;
+
+    BOOL gotreceipt = false;
+
+    @try {
+
+        NSURL *receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
+
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[receiptUrl path]]) {
+
+            NSData *receiptData = [NSData dataWithContentsOfURL:receiptUrl];
+
+            //NSString *receiptString = [self base64forData:receiptData];
+            NSString *receiptString =
+            [NSString stringWithContentsOfFile:[receiptUrl path]
+                                  usedEncoding:nil
+                                         error:NULL];
+            if (receiptString != nil) {
+
+                objects = [[NSArray alloc] initWithObjects:receiptString, nil];
+                keys = [[NSArray alloc] initWithObjects:@"receipt-data", nil];
+                dictionary = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+
+                //NSString *postData = [self getJsonStringFromDictionary:dictionary];
+                NSError *error;
+                NSData *ZpostData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
+                NSString *postData = [NSString stringWithUTF8String:ZpostData.bytes];
+
+                NSString *urlSting = @"https://buy.itunes.apple.com/verifyReceipt";
+                if (sandbox) urlSting = @"https://sandbox.itunes.apple.com/verifyReceipt";
+
+                dictionary = [self getJsonDictionaryWithPostFromUrlString:urlSting andDataString:postData];
+
+                if ([dictionary objectForKey:@"status"] != nil) {
+
+                    if ([[dictionary objectForKey:@"status"] intValue] == 0) {
+
+                        gotreceipt = true;
+
+                    }
+                }
+
+            }
+
+        }
+
+    } @catch (NSException * e) {
+        gotreceipt = false;
+    }
+
+    if (!gotreceipt) {
+        objects = [[NSArray alloc] initWithObjects:@"-1", nil];
+        keys = [[NSArray alloc] initWithObjects:@"status", nil];
+        dictionary = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    }
+
+    return dictionary;
+}
+
+
+
+- (NSDictionary *) getJsonDictionaryWithPostFromUrlString:(NSString *)urlString andDataString:(NSString *)dataString {
+    NSString *jsonString = [self getStringWithPostFromUrlString:urlString andDataString:dataString];
+    NSLog(@"%@", jsonString); // see what the response looks like
+    return [self getDictionaryFromJsonString:jsonString];
+}
+
+
+- (NSDictionary *) getDictionaryFromJsonString:(NSString *)jsonstring {
+    NSError *jsonError;
+    NSDictionary *dictionary = (NSDictionary *) [NSJSONSerialization JSONObjectWithData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&jsonError];
+    if (jsonError) {
+        dictionary = [[NSDictionary alloc] init];
+    }
+    return dictionary;
+}
+
+
+- (NSString *) getStringWithPostFromUrlString:(NSString *)urlString andDataString:(NSString *)dataString {
+    NSString *s = @"";
+    @try {
+        NSData *postdata = [dataString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postlength = [NSString stringWithFormat:@"%d", [postdata length]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:urlString]];
+        [request setTimeoutInterval:60];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postlength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postdata];
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        if (data != nil) {
+            s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        }
+    }
+    @catch (NSException *exception) {
+        s = @"";
+    }
+    return s;
+}
+
+
+// from http://stackoverflow.com/questions/2197362/converting-nsdata-to-base64
+- (NSString*)base64forData:(NSData*)theData {
+    const uint8_t* input = (const uint8_t*)[theData bytes];
+    NSInteger length = [theData length];
+    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
+    uint8_t* output = (uint8_t*)data.mutableBytes;
+    NSInteger i;
+    for (i=0; i < length; i += 3) {
+        NSInteger value = 0;
+        NSInteger j;
+        for (j = i; j < (i + 3); j++) {
+            value <<= 8;
+
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        NSInteger theIndex = (i / 3) * 4;
+        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
+        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
+        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
+        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
+    }
+    return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+}
+
+#endif
 
 @end

@@ -48,10 +48,12 @@
 
         sceneReady = YES;
 
-        /*self.backgroundMusicPlayer =
+#ifdef DEBUG
+        self.backgroundMusicPlayer =
         [[AVAudioPlayer alloc] initWithContentsOfURL:[self.playground levelMusicURL]
                                                error:nil];
-        [self.backgroundMusicPlayer setNumberOfLoops:5];*/
+        [self.backgroundMusicPlayer setNumberOfLoops:5];
+#endif
 
         SKSpriteNode *stopButton = [SKSpriteNode spriteNodeWithImageNamed:@"Stop"];
         CGPoint stopButtonPoint = CGPointMake(CGRectGetWidth(self.frame) - CGRectGetWidth(stopButton.frame) / 2,
@@ -62,7 +64,9 @@
         [self addChild:stopButton];
     }
 
-    //[self.backgroundMusicPlayer play];
+#ifdef DEBUG
+    [self.backgroundMusicPlayer play];
+#endif
 
     self.gameBegin = [NSDate date];
 

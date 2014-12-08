@@ -105,10 +105,10 @@
 
 - (void)showIntroduction
 {
+    NSString *message                = NSLocalizedString(@"APP_STORE_BUY_MESSAGE", nil);
     NSString *buyItButton            = NSLocalizedString(@"APP_STORE_BUY_IT", nil);
     NSString *restorePurchaseButton  = NSLocalizedString(@"APP_STORE_RESTORE_PURCHASE", nil);
     NSString *cancelButton           = NSLocalizedString(@"APP_STORE_CANCEL", nil);
-    NSString *message                = NSLocalizedString(@"APP_STORE_BUY_MESSAGE", nil);
 
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                         message:message
