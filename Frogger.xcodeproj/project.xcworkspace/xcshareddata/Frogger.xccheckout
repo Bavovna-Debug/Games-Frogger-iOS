@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2D2FC8E1-2F94-45A4-AAA0-557E444A609C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Frogger</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6A207AD591F6048C0E97431932E12900D4DC1D81</key>
+		<string>git-xcode:frogger/ios</string>
+		<key>B80B9F9E39B4661214520E1DAA64C4E1BC8FA6F0</key>
+		<string>git-xcode:frogger/media</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Frogger.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6A207AD591F6048C0E97431932E12900D4DC1D81</key>
+		<string>../..</string>
+		<key>B80B9F9E39B4661214520E1DAA64C4E1BC8FA6F0</key>
+		<string>../../../Medien</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git-xcode:frogger/ios</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6A207AD591F6048C0E97431932E12900D4DC1D81</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6A207AD591F6048C0E97431932E12900D4DC1D81</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B80B9F9E39B4661214520E1DAA64C4E1BC8FA6F0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Medien</string>
+		</dict>
+	</array>
+</dict>
+</plist>

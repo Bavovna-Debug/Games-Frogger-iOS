@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "SceneWithAds.h"

@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import <iAd/iAd.h>
@@ -38,6 +38,8 @@
     [bannerView setAlpha:0.0f];
 }
 
+#ifdef UNLOCK_REMINDER
+
 - (void)startUnlockReminder
 {
     if (unlockReminderTimer == nil) {
@@ -59,6 +61,8 @@
 
     }
 }
+
+#endif
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
@@ -94,6 +98,8 @@ didFailToReceiveAdWithError:(NSError *)error
     }
 }
 
+#ifdef UNLOCK_REMINDER
+
 - (void)unlockReminder
 {
     if ([[AppStore sharedAppStore] gameUnlocked] == YES)
@@ -116,15 +122,20 @@ didFailToReceiveAdWithError:(NSError *)error
     [alertView show];
 }
 
+#endif
+
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+#ifdef UNLOCK_REMINDER
     unlockReminderTimer =
     [NSTimer scheduledTimerWithTimeInterval:30.0f
                                      target:self
                                    selector:@selector(unlockReminder)
                                    userInfo:nil
                                     repeats:NO];
+#endif
+    
     if (buttonIndex == 1)
         [[AppStore sharedAppStore] purchaseUnlock];
 }

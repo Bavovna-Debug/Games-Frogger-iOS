@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "Globals.h"
@@ -74,7 +74,7 @@
     else
         angle = 270.0f;
 
-    [self runAction:[SKAction rotateToAngle:degreesToRadians(angle) duration:0.0f]];
+    [self runAction:[SKAction rotateToAngle:DegreesToRadians(angle) duration:0.0f]];
 }
 
 - (void)switchToRed

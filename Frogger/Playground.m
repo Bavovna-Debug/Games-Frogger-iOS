@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "DestinationNode.h"
@@ -90,8 +90,8 @@
 
 - (void)addChild:(SKNode *)node
 {
-    SKSpriteNode *nextNode = (SKSpriteNode *)node;
-    SKSpriteNode *lastNode = [[self children] lastObject];
+    SKSpriteNode *nextNode = (SKSpriteNode *) node;
+    SKSpriteNode *lastNode = (SKSpriteNode *) [[self children] lastObject];
     CGPoint nodePosition;
 
     if ([node.name isEqualToString:@"playerNode"] == YES) {
@@ -329,7 +329,7 @@ didStartElement:(NSString *)elementName
 
 - (CGFloat)freeSpace
 {
-    SKSpriteNode *lastNode = [[self children] lastObject];
+    SKSpriteNode *lastNode = (SKSpriteNode *) [[self children] lastObject];
 
     return CGRectGetHeight(self.frame) - CGRectGetMaxY(lastNode.frame);
 }

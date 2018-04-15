@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "SelectLevelScene.h"
@@ -25,8 +25,9 @@
 {
     SKAction *action = [SKAction fadeOutWithDuration:0.5f];
 
-    [self runAction:action completion:^{
-        SKScene *nextScene = [[SelectLevelScene alloc]initWithSize:self.size];
+    [self runAction:action completion:^
+    {
+        SKScene *nextScene = [[SelectLevelScene alloc] initWithSize:self.size];
 
         [self.view presentScene:nextScene];
     }];

@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "GameOverScene.h"
@@ -39,7 +39,8 @@
 {
     SKAction *action = [SKAction fadeOutWithDuration:0.5f];
 
-    [self.scene runAction:action completion:^{
+    [self.scene runAction:action completion:^
+    {
         SKScene *nextScene = [[SelectLevelScene alloc] initWithSize:self.size];
 
         [self.view presentScene:nextScene];

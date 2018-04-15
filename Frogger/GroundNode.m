@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "FloraNode.h"
@@ -147,7 +147,7 @@
             for (int x = CGRectGetMinX(self.frame) + 10.0f; x < CGRectGetMaxX(self.frame) + 20.0f; x += 100.0f)
             {
                 FloraNode *tree = [[FloraNode alloc] init];
-                [tree setPosition:CGPointMake(x + round(randomBetween(-10.0f, 10.0f)),
+                [tree setPosition:CGPointMake(x + round(RandomBetween(-10.0f, 10.0f)),
                                               CGRectGetMidY(self.frame))];
                 [self addChild:tree];
             }

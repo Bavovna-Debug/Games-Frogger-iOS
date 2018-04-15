@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -10,7 +10,7 @@
 
 @property (nonatomic, strong, readwrite) id delegate;
 
-@property (nonatomic, assign) BOOL gameUnlocked;
+@property (nonatomic, assign, readonly)  BOOL gameUnlocked;
 
 + (AppStore *)sharedAppStore;
 

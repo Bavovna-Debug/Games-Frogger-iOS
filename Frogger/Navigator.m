@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "Globals.h"
@@ -57,7 +57,8 @@
     [self.locationManager setHeadingFilter:2.0f];
     [self.locationManager setDelegate:self];
 
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
         [self.locationManager requestWhenInUseAuthorization];
     }
 
@@ -88,12 +89,6 @@
 
 - (void)calibrate
 {
-#ifdef DEBUG
-    if (self.calibrationDelegate != nil)
-        [self.calibrationDelegate navigatorDidCompleteCalibration];
-    return;
-#endif
-
     self.calibrating       = YES;
     self.calibrationDelta  = 0;
 
@@ -106,27 +101,32 @@
 
 - (void)checkCalibration
 {
-    if (self.deviceDirection == 0.0f) {
+    if (self.deviceDirection == 0.0f)
+    {
         self.calibrationDelta = 0.0f;
         return;
     }
 
-    /*if (self.deviceAltitude == 0.0f) {
+    /*if (self.deviceAltitude == 0.0f) 
+    {
         self.calibrationDelta = 0.0f;
         return;
     }*/
 
-    if ((self.deviceCoordinate.latitude == 0.0f) && (self.deviceCoordinate.longitude == 0.0f)) {
+    if ((self.deviceCoordinate.latitude == 0.0f) && (self.deviceCoordinate.longitude == 0.0f))
+    {
         self.calibrationDelta = 0.0f;
         return;
     }
 
-    if (self.calibrationDelta > 5.0f) {
+    if (self.calibrationDelta > 10.0f)
+    {
         self.calibrationDelta = 0.0f;
         return;
     }
 
-    if (self.calibrationTimer != nil) {
+    if (self.calibrationTimer != nil)
+    {
         NSTimer *timer = self.calibrationTimer;
         self.calibrationTimer = nil;
         [timer invalidate];
@@ -135,7 +135,11 @@
     self.calibrating = NO;
 
     if (self.calibrationDelegate != nil)
+    {
+        usleep(100 * 1000);
+
         [self.calibrationDelegate navigatorDidCompleteCalibration];
+    }
 }
 
 #pragma mark - CLLocationManager delegate
@@ -177,16 +181,16 @@
 + (CLLocationDirection)directionFrom:(CLLocationCoordinate2D)fromCoordinate
                                   to:(CLLocationCoordinate2D)toCoordinate
 {
-    CLLocationDegrees fromLatitude = degreesToRadians(fromCoordinate.latitude);
-    CLLocationDegrees fromLongitude = degreesToRadians(fromCoordinate.longitude);
-    CLLocationDegrees toLatitude = degreesToRadians(toCoordinate.latitude);
-    CLLocationDegrees toLongitude = degreesToRadians(toCoordinate.longitude);
+    CLLocationDegrees fromLatitude = DegreesToRadians(fromCoordinate.latitude);
+    CLLocationDegrees fromLongitude = DegreesToRadians(fromCoordinate.longitude);
+    CLLocationDegrees toLatitude = DegreesToRadians(toCoordinate.latitude);
+    CLLocationDegrees toLongitude = DegreesToRadians(toCoordinate.longitude);
 
     CLLocationDirection degree;
 
     degree = atan2(sin(toLongitude - fromLongitude) * cos(toLatitude), cos(fromLatitude) * sin(toLatitude) - sin(fromLatitude) * cos(toLatitude) * cos(toLongitude - fromLongitude));
 
-    degree = radiandsToDegrees(degree);
+    degree = RadiandsToDegrees(degree);
 
     return (degree >= 0.0f) ? degree : 360.0f + degree;
 }
@@ -226,11 +230,11 @@
 {
     double distanceRadians = distance / 6371000.0f;
 
-    double bearingRadians = degreesToRadians(heading);
+    double bearingRadians = DegreesToRadians(heading);
 
-    double fromLatitudeRadians = degreesToRadians(fromCoordinate.latitude);
+    double fromLatitudeRadians = DegreesToRadians(fromCoordinate.latitude);
 
-    double fromLongitudeRadians = degreesToRadians(fromCoordinate.longitude);
+    double fromLongitudeRadians = DegreesToRadians(fromCoordinate.longitude);
 
     double toLatitudeRadians = asin(sin(fromLatitudeRadians) * cos(distanceRadians) + cos(fromLatitudeRadians) * sin(distanceRadians) * cos(bearingRadians));
 
@@ -239,8 +243,8 @@
     toLongitudeRadians = fmod((toLongitudeRadians + 3 * M_PI), (2 * M_PI)) - M_PI;
 
     CLLocationCoordinate2D toCoordinate;
-    toCoordinate.latitude = radiandsToDegrees(toLatitudeRadians);
-    toCoordinate.longitude = radiandsToDegrees(toLongitudeRadians);
+    toCoordinate.latitude = RadiandsToDegrees(toLatitudeRadians);
+    toCoordinate.longitude = RadiandsToDegrees(toLongitudeRadians);
 
     return toCoordinate;
 }
@@ -249,8 +253,8 @@
                                              rangeFrom:(CLLocationDistance)rangeFrom
                                                rangeTo:(CLLocationDistance)rangeTo
 {
-    CLLocationDegrees guessedDegrees = randomValue(360.0f);
-    CLLocationDistance guessedDistance = randomRange(rangeFrom, rangeTo);
+    CLLocationDegrees guessedDegrees = RandomValue(360.0f);
+    CLLocationDistance guessedDistance = RandomRange(rangeFrom, rangeTo);
     CLLocationCoordinate2D guessedLocation = [Navigator shift:coordinate
                                                       heading:guessedDegrees
                                                      distance:guessedDistance];

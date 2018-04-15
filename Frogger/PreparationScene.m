@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "AppStore.h"
@@ -28,12 +28,19 @@
     NSString *label = NSLocalizedString(@"SCENE_LABEL_PREPARING", nil);
     [self makeLabel:label];
 
-    if ([[AppStore sharedAppStore] gameUnlocked] == NO) {
+/*
+    if ([[AppStore sharedAppStore] gameUnlocked] == NO)
+    {
         if ([self mustShowIntroduction] == YES)
             [self showIntroduction];
-    } else {
+    }
+    else
+    {
         [self startCalibration];
     }
+*/
+
+    [self showIntroduction];
 }
 
 - (void)startCalibration
@@ -56,7 +63,8 @@
 {
     NSInteger introductionCounter = [[NSUserDefaults standardUserDefaults] integerForKey:IntroductionCounterKey];
 
-    if (introductionCounter < TimesToShowIntroduction) {
+    if (introductionCounter < TimesToShowIntroduction)
+    {
         introductionCounter++;
 
         [[NSUserDefaults standardUserDefaults] setInteger:introductionCounter
@@ -64,7 +72,9 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
 
         return YES;
-    } else {
+    }
+    else
+    {
         return NO;
     }
 }

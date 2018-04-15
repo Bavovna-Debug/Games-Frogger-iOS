@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "GameCenter.h"
@@ -24,7 +24,7 @@
     [[GameCenter sharedGameCenter] authenticatePlayer:self];
 #endif
 
-    SKView *view = (SKView *)self.view;
+    SKView *view = (SKView *) self.view;
     view.ignoresSiblingOrder = YES;
 
     WelcomeScene *scene =
@@ -39,7 +39,7 @@
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
         return UIInterfaceOrientationMaskAllButUpsideDown;

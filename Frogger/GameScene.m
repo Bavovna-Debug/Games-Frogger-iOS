@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import <AVFoundation/AVAudioPlayer.h>
@@ -48,7 +48,7 @@
 
         sceneReady = YES;
 
-#ifdef DEBUG
+#ifdef PLAY_MUSIC
         self.backgroundMusicPlayer =
         [[AVAudioPlayer alloc] initWithContentsOfURL:[self.playground levelMusicURL]
                                                error:nil];
@@ -64,7 +64,7 @@
         [self addChild:stopButton];
     }
 
-#ifdef DEBUG
+#ifdef PLAY_MUSIC
     [self.backgroundMusicPlayer play];
 #endif
 
@@ -74,7 +74,9 @@
     if ([appStore gameUnlocked] == NO)
     {
         [self showBanner];
+#ifdef UNLOCK_REMINDER
         [self startUnlockReminder];
+#endif
         [appStore setDelegate:self];
     }
 }
@@ -182,7 +184,9 @@
         [self.view presentScene:nextScene];
     }];
 
+#ifdef UNLOCK_REMINDER
     [self stopUnlockReminder];
+#endif
 
     [self.player stop];
 
@@ -207,7 +211,9 @@
         [self.view presentScene:nextScene];
     }];
 
+#ifdef UNLOCK_REMINDER
     [self stopUnlockReminder];
+#endif
 
     [self.player stop];
 
@@ -234,8 +240,10 @@
         [self.view presentScene:missionCompleteScene];
     }];
 
+#ifdef UNLOCK_REMINDER
     [self stopUnlockReminder];
-
+#endif
+    
     [self.playground quit];
 
     [self.scene removeFromParent];

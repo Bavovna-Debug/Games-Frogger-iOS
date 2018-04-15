@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "FloraNode.h"
@@ -19,7 +19,7 @@
 
 - (id)init
 {
-    int randomNumber = (int)round(randomBetween(1, NumberOfTrees));
+    int randomNumber = (int) round(RandomBetween(1, NumberOfTrees));
     NSString *floraElementName = [NSString stringWithFormat:@"Tree-%04d", randomNumber];
 
     self = [super initWithImageNamed:floraElementName];
@@ -31,7 +31,7 @@
 
     [self setPhysicsBody:[self preparePhysicsBody]];
 
-    [self runAction:[SKAction rotateToAngle:round(degreesToRadians(randomBetween(0.0f, 360.0f)))
+    [self runAction:[SKAction rotateToAngle:round(DegreesToRadians(RandomBetween(0.0f, 360.0f)))
                                    duration:0.0f
                             shortestUnitArc:YES]];
 
@@ -61,9 +61,9 @@
 
 - (void)scheduleRotation
 {
-    CGFloat interval = randomBetween(1.0f, 3.0f);
+    CGFloat interval = RandomBetween(1.0f, 3.0f);
 
-    [self runAction:[SKAction rotateByAngle:degreesToRadians(round(randomBetween(-3.0f, 3.0f)))
+    [self runAction:[SKAction rotateByAngle:DegreesToRadians(round(RandomBetween(-3.0f, 3.0f)))
                                    duration:interval]];
 
     self.rotationTimer =

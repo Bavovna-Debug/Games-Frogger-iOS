@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "Globals.h"
@@ -80,7 +80,7 @@
         case VehicleTypePKW:
         {
             NSString *imageName = [NSString stringWithFormat:@"PKW-%04d",
-                                   (int16_t)round(randomBetween(1, NumberOfPKW))];
+                                   (int16_t) round(RandomBetween(1, NumberOfPKW))];
             UIImage *vehicleImage = [UIImage imageNamed:imageName];
 
             UIGraphicsBeginImageContext(CGSizeMake(vehicleImage.size.width,
@@ -106,7 +106,7 @@
         case VehicleTypeLKW:
         {
             NSString *imageName = [NSString stringWithFormat:@"LKW-%04d",
-                                   (int16_t)round(randomBetween(1, NumberOfLKW))];
+                                   (int16_t) round(RandomBetween(1, NumberOfLKW))];
             UIImage *vehicleImage = [UIImage imageNamed:imageName];
 
             UIGraphicsBeginImageContext(CGSizeMake(vehicleImage.size.width,
@@ -131,7 +131,7 @@
 
         case VehicleTypeTrain:
         {
-            NSUInteger numberOfVehicles = round(randomBetween(3, 8));
+            NSUInteger numberOfVehicles = round(RandomBetween(3, 8));
             NSMutableArray *vehicles = [NSMutableArray arrayWithCapacity:numberOfVehicles];
 
             UIImage *machineImage = [UIImage imageNamed:@"Machine-0001"];
@@ -143,7 +143,7 @@
             while ([vehicles count] < numberOfVehicles)
             {
                 NSString *imageName = [NSString stringWithFormat:@"Wagon-%04d",
-                                       (int16_t)round(randomBetween(1, NumberOfRailCars))];
+                                       (int16_t) round(RandomBetween(1, NumberOfRailCars))];
                 UIImage *carImage = [UIImage imageNamed:imageName];
                 [vehicles addObject:carImage];
 
@@ -189,7 +189,7 @@
     else
         angle = 270.0f;
 
-    [self runAction:[SKAction rotateToAngle:degreesToRadians(angle) duration:0.0f]];
+    [self runAction:[SKAction rotateToAngle:DegreesToRadians(angle) duration:0.0f]];
 }
 
 - (void)scheduleVehicle
@@ -241,7 +241,8 @@
 
 - (void)stopVehicle
 {
-    if (self.scheduleTimer != nil) {
+    if (self.scheduleTimer != nil)
+    {
         NSTimer *timer = self.scheduleTimer;
         self.scheduleTimer = nil;
         [timer invalidate];
@@ -257,7 +258,7 @@
 
 - (void)slowDown
 {
-    CGFloat speedDelta = randomBetween(-1.0f, -0.5f);
+    CGFloat speedDelta = RandomBetween(-1.0f, -0.5f);
 
     self.drivingSpeed += speedDelta;
 
@@ -269,7 +270,7 @@
 
 - (void)accelerate
 {
-    CGFloat speedDelta = randomBetween(1.0f, 1.5f);
+    CGFloat speedDelta = RandomBetween(1.0f, 1.5f);
 
     self.drivingSpeed += speedDelta;
 

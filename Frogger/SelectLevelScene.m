@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "ApplicationDelegate.h"
@@ -9,6 +9,7 @@
 #import "PreparationScene.h"
 #import "SelectLevelButton.h"
 #import "SelectLevelScene.h"
+#import "Globals.h"
 
 @interface SelectLevelScene () <NSXMLParserDelegate>
 
@@ -23,6 +24,7 @@
     [self createBackground:NO];
     [self createTitle];
     [self createLevelList];
+
     if ([[AppStore sharedAppStore] gameUnlocked] == NO)
         [self createUnlockButton];
 }
@@ -34,26 +36,32 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *touchedNode = [self nodeAtPoint:location];
 
-    if ([touchedNode.name isEqualToString:@"levelButton"] == YES) {
-        SelectLevelButton *buttonNode = (SelectLevelButton *)touchedNode;
+    if ([touchedNode.name isEqualToString:@"levelButton"] == YES)
+    {
+        SelectLevelButton *buttonNode = (SelectLevelButton *) touchedNode;
         NSUInteger levelId = [buttonNode levelId];
 
+#ifdef UNLOCK_REMINDER
         AppStore *appStore = [AppStore sharedAppStore];
         if (([appStore gameUnlocked] == NO) && (levelId > 1))
             return;
-
+#endif
+        
         UIApplication *application = [UIApplication sharedApplication];
-        ApplicationDelegate *applicationDelegate = (ApplicationDelegate *)[application delegate];
+        ApplicationDelegate *applicationDelegate = (ApplicationDelegate *) [application delegate];
         [applicationDelegate setLevelId:levelId];
 
         SKAction *action = [SKAction fadeOutWithDuration:0.2f];
 
-        [self runAction:action completion:^{
+        [self runAction:action completion:^
+        {
             SKScene *nextScene = [[PreparationScene alloc]initWithSize:self.size];
             
             [self.view presentScene:nextScene];
         }];
-    } else if ([touchedNode.name isEqualToString:@"unlockButton"] == YES) {
+    }
+    else if ([touchedNode.name isEqualToString:@"unlockButton"] == YES)
+    {
         [self showIntroduction];
     }
 }
@@ -101,6 +109,8 @@
     [buttonNode setPosition:buttonPosition];
 
     [self addChild:buttonNode];
+
+    [buttonNode setZPosition:NodeZUnlockButton];
 }
 
 - (void)showIntroduction
@@ -125,9 +135,12 @@
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
+    if (buttonIndex == 1)
+    {
         [[AppStore sharedAppStore] purchaseUnlock];
-    } else if (buttonIndex == 2) {
+    }
+    else if (buttonIndex == 2)
+    {
         [[AppStore sharedAppStore] restorePurchasedUnlock];
     }
 }
@@ -147,8 +160,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 
     [xmlParser parse];
 }
-
-BOOL parsing;
 
 - (void)parser:(NSXMLParser *)parser
 didStartElement:(NSString *)elementName
@@ -176,6 +187,8 @@ didStartElement:(NSString *)elementName
         [buttonNode setPosition:buttonPosition];
 
         [self addChild:buttonNode];
+
+        [buttonNode setZPosition:NodeZLevelButton];
     }
 }
 

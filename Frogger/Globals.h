@@ -1,13 +1,19 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #ifndef Globals_h
 #define Globals_h
 
+#define PLAY_MUSIC
+#undef UNLOCK_REMINDER
+
+#ifdef UNLOCK_REMINDER
 #define UnlockReminderInterval      60.0f
+#endif
+
 #define RemoveAdsProductIdentifier  @"Zeppelinium.Frogger.Unlock"
 #define GameUnlockedKey             @"gameUnlocked"
 #define IntroductionCounterKey      @"introductionCounter"
@@ -24,41 +30,62 @@
 #define NodeCategoryVehicle         0x0100
 #define NodeCategoryDestination     0x8000
 
-#define NodeZPlayground  0.0f
-#define NodeZRoad           1.0f
-#define NodeZLane               1.0f
+#define NodeZBackground             0.0f
+#define NodeZLabel                  1.0f
+#define NodeZLevelButton            2.0f
+#define NodeZUnlockButton           2.0f
+
+#define NodeZPlayground             0.0f
+#define NodeZRoad                   1.0f
+#define NodeZLane                   1.0f
 #define NodeZRailLights             2.0f
 #define NodeZVehicle                1.0f
-#define NodeZGround         1.0f
-#define NodeZFloraTree          3.0f
-#define NodeZPlayer         3.0f
-#define NodeStopButton                  99.0f
+#define NodeZGround                 1.0f
+#define NodeZFloraTree              3.0f
+#define NodeZPlayer                 3.0f
+#define NodeStopButton              99.0f
 
-typedef enum {
+typedef enum
+{
     RoadTypeCityStreet,
     RoadTypeHighway,
     RoadTypeRailway
 } RoadType;
 
-typedef enum {
+typedef enum
+{
     TrafficDirectionLeftToRight,
     TrafficDirectionRightToLeft,
 } TrafficDirection;
 
-typedef enum {
+typedef enum
+{
     DriveDirectionLeftToRight,
     DriveDirectionRightToLeft
 } DriveDirection;
 
-#define randomValue(max) (((float)arc4random() / RAND_MAX) * max)
-#define randomRange(min, max) (min + ((float)arc4random() / RAND_MAX) * (max - min))
+#define RandomValue(max) \
+        (((float)arc4random() / RAND_MAX) * max)
 
-#define randomFloat() rand() / (CGFloat) RAND_MAX
-#define randomBetween(low, high) randomFloat() * (high - low) + low
+#define RandomRange(min, max) \
+        (min + ((float)arc4random() / RAND_MAX) * (max - min))
 
-#define degreesToRadians(degrees) (degrees * (M_PI / 180.0f))
-#define radiandsToDegrees(radiands) (radiands * (180.0f / M_PI))
-#define oppositeDirection(direction) ((direction < 180.0f) ? (direction + 180.0f) : (direction - 180.0f))
-#define correctDegrees(x) ((x < 0.0f) ? (360.0f + x) : ((x >= 360.0f) ? (x - 360.0f) : x))
+#define RandomFloat() \
+        rand() / (CGFloat) RAND_MAX
+
+#define RandomBetween(low, high) \
+        RandomFloat() * (high - low) + low
+
+#define DegreesToRadians(degrees) \
+        (degrees * (M_PI / 180.0f))
+
+#define RadiandsToDegrees(radiands) \
+        (radiands * (180.0f / M_PI))
+
+#define OppositeDirection(direction) \
+        ((direction < 180.0f) ? (direction + 180.0f) : (direction - 180.0f))
+
+#define CorrectDegrees(x) \
+        ((x < 0.0f) ? (360.0f + x) : ((x >= 360.0f) ? (x - 360.0f) : x))
 
 #endif

@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "Globals.h"
@@ -127,8 +127,8 @@
                                      to:(CLLocationDirection)to
 {
     CLLocationDirection direction = to - [self.playground direction];
-    direction = correctDegrees(direction);
-    direction = degreesToRadians(direction);
+    direction = CorrectDegrees(direction);
+    direction = DegreesToRadians(direction);
 
     [self runAction:[SKAction rotateToAngle:-direction
                                    duration:0.2f

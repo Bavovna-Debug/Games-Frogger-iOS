@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "AppStore.h"
@@ -39,14 +39,22 @@
     UIColor *levelIdColor;
     UIColor *levelTitleColor;
 
+#ifdef UNLOCK_REMINDER
     AppStore *appStore = [AppStore sharedAppStore];
-    if (([appStore gameUnlocked] == NO) && (levelId > 1)) {
+    if (([appStore gameUnlocked] == NO) && (levelId > 1))
+    {
         levelIdColor = [UIColor darkGrayColor];
         levelTitleColor = [UIColor darkGrayColor];
-    } else {
+    }
+    else
+    {
         levelIdColor = [UIColor orangeColor];
         levelTitleColor = [UIColor whiteColor];
     }
+#else
+    levelIdColor = [UIColor orangeColor];
+    levelTitleColor = [UIColor whiteColor];
+#endif
 
     CGRect levelIdRect = CGRectMake(0.0f, 0.0f, 32.0f, size.height);
     CGRect levelTitleRect = CGRectMake(CGRectGetMaxX(levelIdRect), 0.0f, size.width, size.height);

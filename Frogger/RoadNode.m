@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "LaneNode.h"
@@ -97,7 +97,7 @@
                                                 0.0f,
                                                 48.0f,
                                                 16.0f);
-                stripeFrame.origin.x += randomBetween(-CGRectGetWidth(self.frame) * 0.4f,
+                stripeFrame.origin.x += RandomBetween(-CGRectGetWidth(self.frame) * 0.4f,
                                                       CGRectGetWidth(self.frame) * 0.4f);
                 while (CGRectGetMinY(stripeFrame) < CGRectGetHeight(self.frame))
                 {

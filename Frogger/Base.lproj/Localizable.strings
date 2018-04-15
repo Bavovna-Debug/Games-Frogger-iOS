@@ -2,7 +2,7 @@
 /*                                                                            */
 /*  Frogger                                                                   */
 /*                                                                            */
-/*  Copyright (c) 2014 Meine Werke. All rights reserved.                      */
+/*  Copyright © 2014-2017 Meine Werke. All rights reserved.                      */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,8 @@
 
 "ALERT_LEFT_PLAYGROUND"             = "Player has left the playground. Either you are walking in wrong direction or GPS on your iPhone/iPad was not calibrated correctly. Player is repositioned to the beginning of playground.";
 
-"AD_OFF_MESSAGE"                    = "Would you like to get rid of annoying ads and activate all levels?";
+//"AD_OFF_MESSAGE"                    = "Would you like to get rid of annoying ads and activate all levels?";
+"AD_OFF_MESSAGE"                    = "Would you like to get rid of annoying ads?";
 "AD_OFF_BUTTON_NOT_YET"             = "No, not yet";
 "AD_OFF_BUTTON_DETAILS"             = "Details...";
 

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6A207AD591F6048C0E97431932E12900D4DC1D81",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B80B9F9E39B4661214520E1DAA64C4E1BC8FA6F0" : 0,
+    "6A207AD591F6048C0E97431932E12900D4DC1D81" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2D2FC8E1-2F94-45A4-AAA0-557E444A609C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B80B9F9E39B4661214520E1DAA64C4E1BC8FA6F0" : "Medien\/",
+    "6A207AD591F6048C0E97431932E12900D4DC1D81" : "iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Frogger",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Frogger.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git-xcode:frogger\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6A207AD591F6048C0E97431932E12900D4DC1D81"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git-xcode:frogger\/media",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B80B9F9E39B4661214520E1DAA64C4E1BC8FA6F0"
+    }
+  ]
+}

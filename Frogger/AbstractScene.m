@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import <AVFoundation/AVAudioPlayer.h>
@@ -52,7 +52,7 @@
                                      -logoImage.size.width,
                                      -logoImage.size.height);
 
-        CGContextRotateCTM(context, degreesToRadians(180.0f));
+        CGContextRotateCTM(context, DegreesToRadians(180.0f));
 
         CGContextDrawImage(context,
                            logoRect,
@@ -70,6 +70,8 @@
 
     [background setPosition:CGPointMake(CGRectGetMidX(self.frame),
                                         CGRectGetMidY(self.frame))];
+
+    [background setZPosition:NodeZBackground];
 }
 
 - (void)createTitle
@@ -86,6 +88,8 @@
                                        CGRectGetHeight(self.frame) * 0.9f)];
 
     [self addChild:labelNode];
+
+    [labelNode setZPosition:NodeZLabel];
 }
 
 - (void)makeLabel:(NSString *)text

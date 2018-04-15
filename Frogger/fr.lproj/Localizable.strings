@@ -2,7 +2,7 @@
 /*                                                                            */
 /*  Frogger                                                                   */
 /*                                                                            */
-/*  Copyright (c) 2014 Meine Werke. All rights reserved.                      */
+/*  Copyright © 2014-2017 Meine Werke. All rights reserved.                      */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,8 @@
 
 "ALERT_LEFT_PLAYGROUND"             = "Le joueur a quitté le terrain de jeu. Soit vous marchez dans le sens mal ou GPS sur votre iPhone/iPad n'a pas été correctement calibrés. Player est repositionné au début du jeux.";
 
-"AD_OFF_MESSAGE"                    = "Faire les publicités ennuyeuses off et activer tous les niveaux.";
+//"AD_OFF_MESSAGE"                    = "Faire les publicités ennuyeuses off et activer tous les niveaux.";
+"AD_OFF_MESSAGE"                    = "Faire les publicités ennuyeuses off.";
 "AD_OFF_BUTTON_NOT_YET"             = "Non, merci";
 "AD_OFF_BUTTON_DETAILS"             = "Détails...";
 

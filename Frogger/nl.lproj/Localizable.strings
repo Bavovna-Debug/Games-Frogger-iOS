@@ -2,7 +2,7 @@
 /*                                                                            */
 /*  Frogger                                                                   */
 /*                                                                            */
-/*  Copyright (c) 2014 Meine Werke. All rights reserved.                      */
+/*  Copyright © 2014-2017 Meine Werke. All rights reserved.                      */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,8 @@
 
 "ALERT_LEFT_PLAYGROUND"             = "Speler heeft de speeltuin vertrokken. Ofwel je loopt in de verkeerde richting of GPS op het iPhone/iPad is niet juist gekalibreerd. Speler wordt verplaatst naar het begin van de speeltuin.";
 
-"AD_OFF_MESSAGE"                    = "Wilt u zich te ontdoen van vervelende advertenties en activeer alle niveaus?";
+//"AD_OFF_MESSAGE"                    = "Wilt u zich te ontdoen van vervelende advertenties en activeer alle niveaus?";
+"AD_OFF_MESSAGE"                    = "Wilt u zich te ontdoen van vervelende advertenties?";
 "AD_OFF_BUTTON_NOT_YET"             = "Nee, dank u";
 "AD_OFF_BUTTON_DETAILS"             = "Details...";
 

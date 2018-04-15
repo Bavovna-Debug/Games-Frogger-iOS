@@ -1,7 +1,7 @@
 //
 //  Frogger
 //
-//  Copyright (c) 2014 Meine Werke. All rights reserved.
+//  Copyright © 2014-2017 Meine Werke. All rights reserved.
 //
 
 #import "Globals.h"
@@ -189,7 +189,7 @@
     {
         RailLightsNode *lights = [[RailLightsNode alloc] initWithLane:self];
 
-        CGPoint point = CGPointMake(randomBetween(-CGRectGetWidth(self.frame) * 0.25f, CGRectGetWidth(self.frame) * 0.25f), 0.0f);
+        CGPoint point = CGPointMake(RandomBetween(-CGRectGetWidth(self.frame) * 0.25f, CGRectGetWidth(self.frame) * 0.25f), 0.0f);
 
         [lights setPosition:point];
         [self addChild:lights];
@@ -224,7 +224,7 @@
 
 - (void)scheduleVehicle
 {
-    CGFloat interval = randomBetween(self.intervalFrom, self.intervalTo);
+    CGFloat interval = RandomBetween(self.intervalFrom, self.intervalTo);
 
     [self startVehicle];
 
@@ -260,7 +260,7 @@
     {
         case RoadTypeCityStreet:
         {
-            int randomNumber = (int)round(randomBetween(1, 10));
+            int randomNumber = (int) round(RandomBetween(1, 10));
             if (randomNumber < 4)
                 vehicleType = VehicleTypePKW;
             else
@@ -271,7 +271,7 @@
 
         case RoadTypeHighway:
         {
-            int randomNumber = (int)round(randomBetween(1, 10));
+            int randomNumber = (int) round(RandomBetween(1, 10));
             if (randomNumber < 7)
                 vehicleType = VehicleTypePKW;
             else
@@ -286,7 +286,7 @@
         }
     }
 
-    speed = randomBetween(self.speedFrom, self.speedTo);
+    speed = RandomBetween(self.speedFrom, self.speedTo);
 
     VehicleNode *vehicle = [[VehicleNode alloc] initWithType:vehicleType
                                               driveDirection:direction
@@ -301,7 +301,7 @@
         lanePosition = 0.0f;
     } else {
         CGFloat laneOffsetRange = (CGRectGetHeight(self.frame) - CGRectGetWidth(vehicle.frame)) / 2;
-        lanePosition = randomBetween(-laneOffsetRange,
+        lanePosition = RandomBetween(-laneOffsetRange,
                                      laneOffsetRange);
         lanePosition = floor(lanePosition);
     }
